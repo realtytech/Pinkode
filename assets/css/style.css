@@ -58,7 +58,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 3rem;
   margin-top:5vh;
   width: 40vw;
-  min-width: 400px;
+  min-width: 300px;
   background: #ffffff;;
 }
 
@@ -779,7 +779,7 @@ section {
   margin-bottom: 0;
 }
 
-/* .services .icon-box:hover {
+.services .icon-box:hover {
   background: #252525;
   border-color: #252525;
   color: #fff;
@@ -800,7 +800,7 @@ section {
 
 .services .icon-box:hover h4 a, .services .icon-box:hover p {
   color: #fff;
-} */
+}
 
 /*--------------------------------------------------------------
 # Cta
