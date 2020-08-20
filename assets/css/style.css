@@ -27,17 +27,76 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*--------------------------------------------------------------
-# Back to top button
+# Fixed Icons
 --------------------------------------------------------------*/
-.back-to-top {
+
+.fixed {
   position: fixed;
   display: none;
   right: 15px;
-  bottom: 15px;
   z-index: 99999;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.back-to-top i {
+.fixed-contact{
+  position: fixed;
+  display: none;
+  left: 0;
+  top:0;
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  /* padding:20vw 20vh; */
+  background: #00000088;
+  z-index: 99999;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.php-email-form{
+  vertical-align: middle;
+  line-height: 1;
+  padding: 3rem;
+  margin-top:5vh;
+  width: 40vw;
+  min-width: 400px;
+  background: #ffffff;;
+}
+
+
+.back-to-top {
+  bottom: 15px; 
+}
+
+.fixed-call {
+  bottom: 135px;  
+}
+
+.fixed-mail {
+  bottom: 75px;
+}
+
+
+
+.fixed i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  background: #ffffff77;
+  color: #252525;
+  transition: all 0.4s;
+}
+
+.fixed i:hover {
+  background: #252525;
+  color: #fff;
+}
+
+
+/* 
+.fixed-mail {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -49,10 +108,10 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.4s;
 }
 
-.back-to-top i:hover {
+.fixed-mail i:hover {
   background: #e72323;
   color: #fff;
-}
+} */
 
 /*--------------------------------------------------------------
 # Preloader
@@ -720,9 +779,10 @@ section {
   margin-bottom: 0;
 }
 
-.services .icon-box:hover {
+/* .services .icon-box:hover {
   background: #252525;
   border-color: #252525;
+  color: #fff;
   padding: 70px 20px 90px 20px;
 }
 
@@ -740,7 +800,7 @@ section {
 
 .services .icon-box:hover h4 a, .services .icon-box:hover p {
   color: #fff;
-}
+} */
 
 /*--------------------------------------------------------------
 # Cta

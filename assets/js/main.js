@@ -139,9 +139,9 @@
   // Back to top button
   $(window).scroll(function() {
     if ($(this).scrollTop() > 100) {
-      $('.back-to-top').fadeIn('slow');
+      $('.fixed').fadeIn('slow');
     } else {
-      $('.back-to-top').fadeOut('slow');
+      $('.fixed').fadeOut('slow');
     }
   });
 
@@ -151,6 +151,17 @@
     }, 1500, 'easeInOutExpo');
     return false;
   });
+
+  $('.fixed-mail').click(function() {
+    console.log('Name');
+    $('.fixed-contact').fadeIn('slow');
+  });
+
+  $('#close-modal').click(function() {
+    console.log('Name');
+    $('.fixed-contact').fadeOut('slow');
+  });
+
 
   // Porfolio isotope and filter
   $(window).on('load', function() {
