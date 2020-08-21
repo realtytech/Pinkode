@@ -400,17 +400,18 @@ h1, h2, h3, h4, h5, h6 {
 
 .mobile-nav {
   position: fixed;
-  top: 55px;
-  right: 15px;
-  bottom: 15px;
-  left: 15px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
   z-index: 9999;
   overflow-y: auto;
-  background: #fff;
-  transition: ease-in-out 0.2s;
+  background: #e2e2e2;
+  /* color:#e2e2e2; */
+  transition: ease-in-out 0.4s;
   opacity: 0;
   visibility: hidden;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   padding: 10px 0;
 }
 
@@ -482,7 +483,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .mobile-nav-active .mobile-nav-toggle i {
-  color: #fff;
+  color: #252525;
+  z-index: 10000;
 }
 
 /*--------------------------------------------------------------
