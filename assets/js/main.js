@@ -207,6 +207,42 @@
 
 })(jQuery);
 
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./service-worker.js')
+      .then((reg) => {
+        console.log('Service worker registered.', reg);
+      });
+  });
+}
 
-/* SmtpJS.com - v3.0.0 */
-var Email = { send: function (a) { return new Promise(function (n, e) { a.nocache = Math.floor(1e6 * Math.random() + 1), a.Action = "Send"; var t = JSON.stringify(a); Email.ajaxPost("https://smtpjs.com/v3/smtpjs.aspx?", t, function (e) { n(e) }) }) }, ajaxPost: function (e, n, t) { var a = Email.createCORSRequest("POST", e); a.setRequestHeader("Content-type", "application/x-www-form-urlencoded"), a.onload = function () { var e = a.responseText; null != t && t(e) }, a.send(n) }, ajax: function (e, n) { var t = Email.createCORSRequest("GET", e); t.onload = function () { var e = t.responseText; null != n && n(e) }, t.send() }, createCORSRequest: function (e, n) { var t = new XMLHttpRequest; return "withCredentials" in t ? t.open(e, n, !0) : "undefined" != typeof XDomainRequest ? (t = new XDomainRequest).open(e, n) : t = null, t } };
+
+function callGas() {
+
+  document.getElementById("form-submit").disabled = true; 
+
+  var form = new FormData();
+  form.append("name", $('#name').val());
+  form.append("email", $('#email').val());
+  form.append("contact", $('#contactNum').val());
+  form.append("subject", $('#subject').val());
+  form.append("msg", $('#msg').val());
+  form.append("project", "home");
+
+  var settings = {
+    "url": "https://cors-anywhere.herokuapp.com/https://script.google.com/a/pinkode.in/macros/s/AKfycbxhNnS6GeN14f-7bKIB3kXsHuBXynJ0Word1SQ-IYPd4FkjHOM/exec",
+    "method": "POST",
+    "timeout": 0,
+    "processData": false,
+    "mimeType": "multipart/form-data",
+    "contentType": false,
+    "data": form,
+  };
+  console.log($('#contactNum').val());
+
+  $.ajax(settings).done(function (response) {
+    // console.log(response);
+    alert('Your message has been successfully received.');
+    $('.fixed-contact').fadeOut('slow');
+  });
+}
