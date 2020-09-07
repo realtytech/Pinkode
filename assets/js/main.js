@@ -230,7 +230,7 @@ function callGas() {
   form.append("project", "home");
 
   var settings = {
-    "url": "https://cors-anywhere.herokuapp.com/https://script.google.com/a/pinkode.in/macros/s/AKfycbxhNnS6GeN14f-7bKIB3kXsHuBXynJ0Word1SQ-IYPd4FkjHOM/exec",
+    "url": "https://cors-anywhere.herokuapp.com/https://script.google.com/macros/s/AKfycbzPdaNq083tkx6bkO51skH2LmzW8Yy3rRQgDLHdk6XOoehUR2Ms/exec",
     "method": "POST",
     "timeout": 0,
     "processData": false,
