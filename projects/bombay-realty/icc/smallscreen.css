@@ -1,0 +1,196 @@
+* {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+
+}
+
+body {
+    font-family: 'Montserrat';
+    font-size: 16px;
+}
+
+#hero-div {
+    height: 93vh;
+    width: 140vw;
+    background: url('./assets/images/hero-img.webp') no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+#br-logo {
+    position: absolute;
+    top: 3vh;
+    left: 3vh;
+
+}
+
+#br-logo img {
+    width: 15vw;
+    min-width: 130px;
+}
+
+#icc-logo {
+    position: absolute;
+    top: 3vh;
+    right: 10vw;
+
+}
+
+#icc-logo img {
+    width: 7vw;
+    min-width: 75px;
+}
+
+#mobile-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+    height: 7vh;
+    background-color: #ffffffee;
+    text-align: center;
+    z-index: 99999;
+
+}
+
+#mobile-nav h1 {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    margin: auto;
+    padding-top: 2vw;
+    font-size: 2.5em !important;
+    font-weight: 100;
+}
+
+#bottom-icons {
+    position: fixed !important;
+    bottom: 0 !important;
+    padding-bottom: 1vw !important;
+    z-index: 99999 !important;
+
+}
+
+#bottom-icons * {
+    margin: auto !important;
+    text-align: center !important;
+    font-size: 2vw;
+    color: #000;
+    padding: 1.5rem;
+
+}
+
+.fixed-icons {
+    width: 3vw !important;
+    padding: 1.5vw !important;
+}
+
+/* .mail-i {
+    background: url('/assets/images/mail-24px.svg') no-repeat center content-box;
+    display: inline-block;
+    margin:1.8vw;
+} */
+
+
+* {
+    box-sizing: border-box
+}
+
+.glyphicon {
+    overflow: hidden;
+
+}
+
+h1 {
+    overflow: hidden;
+}
+
+.btn-dark {
+    background-color: #111;
+    color: #fff;
+    margin-top: 4rem;
+    padding: 2rem;
+}
+
+
+
+.fa {
+    /* display: block; */
+    font-size: 6vw;
+    margin: auto;
+    padding:0 1em;
+    color: #111;
+    z-index: 99999;
+    height: 7vh;
+    line-height: 7vh;
+}
+
+.nav-icons {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    line-height: 1;
+}
+
+
+#desktop {
+    display: none;
+}
+
+#mobile {
+    display: block;
+}
+@media screen and (max-width: 400px) {
+    fa{
+        font-size: 0.75rem !important;
+        padding: 0 0.25em !important;
+    }
+  
+  }
+
+  .sidenav-mobile {
+    height: 0;
+    width: 100%;
+    /* display: none; */
+    position: fixed;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 0px;
+  }
+  
+  .sidenav-mobile a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size:  40px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav-mobile a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidenav-mobile .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  .glyphicon{
+      display: none;
+  }
+
+  .text-white {
+    position: absolute;
+    font-weight: 900;
+    bottom: 8vh;
+    left: 4vw;
+
+}

@@ -1,0 +1,80 @@
+
+
+  @media screen and (min-width: 1199px) {
+    #desktop{
+        display: block;
+    }
+    #mobile{
+        display: none;
+    }
+  }
+
+  #myTab{
+    overflow: hidden;
+  }
+
+  .btn-dark-modal {
+    background-color: #111;
+    color: #fff;
+}
+
+a{
+  overflow: hidden;
+}
+
+#sticky-form{
+  background-color: #ffffff88;
+  width: 25vw;
+  /* height: 30vh; */
+  position: absolute;
+  right: 10vw;
+  bottom: 15vh;
+}
+
+#sticky-form *{
+  font-family: 'Montserrat' !important;font-size: 22px;
+  
+}
+#sticky-form .btn{
+  width: 100% !important;
+}
+#lead-form{
+  margin-top: 1rem;
+}
+#lead-form *{
+  font-family: 'Montserrat' !important;font-size: 22px;
+  
+}
+#lead-form .btn{
+  width: 100% !important;
+}
+
+#lead-form .title{
+  font-size: 28px;
+  text-align: center;
+}
+
+#disclaimer{
+  font-size: small;
+}
+
+.text-white{
+  color: #fff;
+}
+
+select{
+  display: none;
+}
+
+
+.fixed-close button{
+  position: absolute;
+  margin: 1rem;
+  right: 0;
+  z-index: 9999;
+  /* overflow: hidden; */
+}
+
+.title{
+  display: hidden;
+}
