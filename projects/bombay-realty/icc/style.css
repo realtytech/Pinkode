@@ -56,6 +56,9 @@ a{
 
 #disclaimer{
   font-size: small;
+  display: inline-block;
+
+  margin-right: 5vw;
 }
 
 .text-white{

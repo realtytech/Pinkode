@@ -166,6 +166,9 @@ window.sell_do_form_successfully_submitted = function (data, event) {
     var form_id = data['sell_do[campaign][form_id]'];
 
     if (form_id == '5f60e8487c0dac76c315d298')
-        window.location.href = "./response.html";
+        window.location.href = "./response.html?id=0";
+    else if(form_id = '5f6eca597c0dac27292fb7e3'){
+        window.location.href = "./response.html?id=1";
+    }
 
 }
