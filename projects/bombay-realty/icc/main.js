@@ -111,45 +111,19 @@ form_body = `
 <script src='//trkr.scdn1.secure.raxcdn.com/t/forms/5f5f2764923d4a24845d1af7/5f60e8487c0dac76c315d298.js'
 data-form-id='5f60e8487c0dac76c315d298'></script></div>
 `
+brochure_form_body = `
+<script src='//trkr.scdn1.secure.raxcdn.com/t/forms/5f5f2764923d4a24845d1af7/5f6eca597c0dac27292fb7e3.js' data-form-id='5f6eca597c0dac27292fb7e3'></script>`;
 
 function showModal(type) {
-    // if (type == 'contact') {
-    //     // document.getElementById("ModalLabel").innerText = "Leave a Message";
-        $('#sellModal .modal-body').html(form_body);
-    //     $('#sellModal #form-submit').text('Send Message');
+    if (type == 'brochure') {
+        $('#sellModal .modal-body').html(brochure_form_body);
         $("#sellModal").modal("show");
         localStorage.removeItem('myTimestamp');
-    // } else if (type == 'visit') {
-    //     // document.getElementById("ModalLabel").innerText = "Book a Visit";
-    //     $('#sellModal .modal-body').html(visit_form_body);
-    //     $('#sellModal #form-submit').text('Book your site visit');
-    //     $("#sellModal").modal("show");
-    // } else if (type == 'brochure') {
-    //     // document.getElementById("ModalLabel").innerText = "Request for Brochure";
-    //     $('#sellModal .modal-body').html(visit_form_body);
-    //     $('#sellModal #form-submit').text('Get Brochure');
-    //     $("#sellModal").modal("show");
-
-    // } else {
-    //     // document.getElementById("ModalLabel").innerText = "Register your Interest";
-    //     $('#sellModal .modal-body').html(visit_form_body);
-    //     $('#sellModal #form-submit').text('Register');
-    //     $("#sellModal").modal("show");
-    // }
-    // x = $('.selldof_row label')
-    // label = 0
-    // for (i = 0; i < x.length; i++) {
-    //     if (x[i].innerText == 'Project') {
-    //         x[i].parentNode.parentNode.style.display = 'none';
-    //         console.log('Updated');
-    //         label = i;
-    //         console.log(i)
-    //     }
-    // }
-    // x[label].parentNode.parentNode.id = 'Project';
-    // x[label].parentNode.parentNode.style.display = 'none'
-    // $("#sellModal .modal-content").html(visit_form_body);
-
+    } else {
+        $('#sellModal .modal-body').html(form_body);
+        $("#sellModal").modal("show");
+        localStorage.removeItem('myTimestamp');
+    }
 }
 $(document).on('change', 'div', function () {
     // Does some stuff and logs the event to the console
@@ -163,15 +137,35 @@ $(document).on('change', 'div', function () {
 });
 
 
+window.onscroll = function (e) {
+    var myDaemon = '';
+    localStorage.setItem('myTimestamp', Date.now());
+    if (myDaemon) clearInterval(myDaemon);
+    myDaemon = setInterval(function () {
+        var TimeDiffinSeconds = (Date.now() - localStorage.myTimestamp) / 1000;
+        if (TimeDiffinSeconds > 10) {
+            showModal();
+            clearInterval(myDaemon);
+            localStorage.removeItem('myTimestamp');
+        }
+    }, 1000);
+}
 
-var myDaemon = '';
-localStorage.setItem('myTimestamp', Date.now());
-if(myDaemon) clearInterval(myDaemon);
- myDaemon = setInterval(function(){
-   var TimeDiffinSeconds = (Date.now() - localStorage.myTimestamp) / 1000;
-   if( TimeDiffinSeconds > 10){
-       showModal();
-     clearInterval(myDaemon);
-     localStorage.removeItem('myTimestamp');
-   }
- },1000);
+// var myDaemon = '';
+// localStorage.setItem('myTimestamp', Date.now());
+
+
+var _selldo = [];
+
+window.sell_do_form_rendered = function () {
+
+}
+
+window.sell_do_form_successfully_submitted = function (data, event) {
+
+    var form_id = data['sell_do[campaign][form_id]'];
+
+    if (form_id == '5f60e8487c0dac76c315d298')
+        window.location.href = "./response.html";
+
+}

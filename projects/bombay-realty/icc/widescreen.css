@@ -215,3 +215,15 @@ h1 {
         font-size: 44px;
     }
   }
+
+  #greetings{
+      position: absolute;
+      display: inline-block;
+      top: 250px;
+      right: 200px;
+      width: 300px;
+     
+  }
+  #greetings h1{
+    font-weight: 800;
+  }

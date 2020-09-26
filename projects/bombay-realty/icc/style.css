@@ -76,6 +76,11 @@ select{
 }
 
 .title{
-  display: hidden;
+  display: none !important;
+  visibility: hidden !important;
   text-align: center !important;
+}
+
+.disable{
+  color:#777 !important;
 }

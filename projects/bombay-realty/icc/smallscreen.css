@@ -194,3 +194,19 @@ h1 {
     left: 4vw;
 
 }
+
+.text-white {
+    position: absolute;
+    font-weight: 900;
+    bottom: 8vh;
+    left: 4vw;
+
+}
+#download{
+    position: absolute;
+    font-weight: 800;
+    top: 18vh;
+    left: 4vw;
+    width: 100px;
+}
+
