@@ -87,3 +87,7 @@ select{
 .disable{
   color:#777 !important;
 }
+
+.mapouter{
+  margin: auto;
+}

@@ -48,6 +48,7 @@ body {
     bottom: 0;
     width: 100vw;
     height: 7vh;
+    min-height: 50px;
     background-color: #ffffffee;
     text-align: center;
     z-index: 99999;
@@ -118,11 +119,13 @@ h1 {
     /* display: block; */
     font-size: 6vw;
     margin: auto;
-    padding:0 1em;
+    padding:0.05em 1em;
     color: #111;
     z-index: 99999;
     height: 7vh;
-    line-height: 7vh;
+    min-height: 50px;
+    line-height: 0.9;
+    overflow: hidden;
 }
 
 .nav-icons {
