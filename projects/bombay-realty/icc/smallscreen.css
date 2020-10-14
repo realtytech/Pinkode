@@ -48,7 +48,7 @@ body {
     bottom: 0;
     width: 100vw;
     height: 7vh;
-    min-height: 50px;
+    /* min-height: 50px; */
     background-color: #ffffffee;
     text-align: center;
     z-index: 99999;
@@ -117,14 +117,14 @@ h1 {
 
 .fa {
     /* display: block; */
-    font-size: 6vw;
+    font-size: 5vh;
     margin: auto;
     padding:0.05em 1em;
     color: #111;
     z-index: 99999;
     height: 7vh;
-    min-height: 50px;
-    line-height: 0.9;
+    /* min-height: 50px; */
+    line-height: 7vh;
     overflow: hidden;
 }
 
