@@ -207,14 +207,6 @@
 
 })(jQuery);
 
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./service-worker.js')
-      .then((reg) => {
-        console.log('Service worker registered.', reg);
-      });
-  });
-}
 
 
 function callGas() {
@@ -245,4 +237,30 @@ function callGas() {
     alert('Your message has been successfully received.');
     $('.fixed-contact').fadeOut('slow');
   });
+}
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/service-worker.js')
+      .then((reg) => {
+        console.log('Service worker registered.', reg);
+      });
+  });
+}
+
+window.addEventListener('load', e => {
+  // new PWAConfApp();
+  registerSW(); 
+});
+
+async function registerSW() { 
+  if ('serviceWorker' in navigator) { 
+    try {
+      await navigator.serviceWorker.register('../../service-worker.js'); 
+    } catch (e) {
+      alert('ServiceWorker registration failed. Sorry about that.'); 
+    }
+  } else {
+    document.querySelector('.alert').removeAttribute('hidden'); 
+  }
 }
