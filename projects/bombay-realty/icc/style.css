@@ -91,3 +91,7 @@ select{
 .mapouter{
   margin: auto;
 }
+
+a *{
+  text-decoration: none;
+}

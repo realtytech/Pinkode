@@ -101,7 +101,7 @@
                 <a>
                     <i class="fa fa-envelope" aria-hidden="true" onclick="showModal('contact')"></i>
                 </a>
-                <a href="tel:918068972088">
+                <a href="javascript:void(0)" onclick="window.location='tel:918068972088'">
                     <i class="fa fa-phone" aria-hidden="true"></i>
                 </a>
                 <!-- d -->
@@ -429,7 +429,7 @@
                 <a>
                     <i class="fa fa-envelope" aria-hidden="true" onclick="showModal('contact')"></i>
                 </a>
-                <a href="tel:918068972088">
+                <a href="javascript:void(0)" onclick="window.location='tel:918068972088'">
                     <i class="fa fa-phone" aria-hidden="true"></i>
                 </a>
                 <!-- d -->
@@ -441,8 +441,7 @@
             </div>
         </nav>
         <div id="mySidenav-mobile" class="sidenav-mobile">
-            <a onclick="closeNavMobile()" href="javascript:void(0)" class="closebtn"
-                onclick="closeNavMobile()">&times;</a>
+            <a onclick="closeNavMobile()" href="javascript:void(0)" class="closebtn">&times;</a>
             <a onclick="closeNavMobile()" href="#m-about-section">About</a>
             <a onclick="closeNavMobile()" href="#m-amenities-section">Amenities</a>
             <a onclick="closeNavMobile()" href="#m-apartments-section">Apartments</a>
@@ -497,7 +496,7 @@
                                 </div>
 
                                 <div class="item">
-                                    <img src="assets/images/iccOneR02.webp" alt="Chicago" style="width:100%;">
+                                    <img class="lazy" data-src="assets/images/iccOneR02.webp" alt="Chicago" style="width:100%;">
                                 </div>
 
                             </div>
@@ -563,10 +562,10 @@
                                 </div>
 
                                 <div class="item">
-                                    <img src="assets/images/iccOneR09.webp" alt="Chicago" style="width:100%;">
+                                    <img class="lazy" data-src="assets/images/iccOneR09.webp" alt="Chicago" style="width:100%;">
                                 </div>
                                 <div class="item">
-                                    <img src="assets/images/iccOneR10.webp" alt="Chicago" style="width:100%;">
+                                    <img class="lazy" data-src="assets/images/iccOneR10.webp" alt="Chicago" style="width:100%;">
                                 </div>
 
                             </div>
@@ -649,19 +648,19 @@
                                 </div>
 
                                 <div class="item">
-                                    <img src="assets/images/Optimized-Bombay realty 068.webp" alt="Chicago"
+                                    <img class="lazy" data-src="assets/images/Optimized-Bombay realty 068.webp" alt="Chicago"
                                         style="width:100%;">
                                 </div>
                                 <div class="item">
-                                    <img src="assets/images/Optimized-Bombay realty 107.webp" alt="Chicago"
+                                    <img class="lazy" data-src="assets/images/Optimized-Bombay realty 107.webp" alt="Chicago"
                                         style="width:100%;">
                                 </div>
                                 <div class="item">
-                                    <img src="assets/images/Optimized-Bombay realty 176.webp" alt="Chicago"
+                                    <img class="lazy" data-src="assets/images/Optimized-Bombay realty 176.webp" alt="Chicago"
                                         style="width:100%;">
                                 </div>
                                 <div class="item">
-                                    <img src="assets/images/Optimized-Bombay realty 290.webp" alt="Chicago"
+                                    <img class="lazy" data-src="assets/images/Optimized-Bombay realty 290.webp" alt="Chicago"
                                         style="width:100%;">
                                 </div>
 
@@ -691,7 +690,7 @@
                         <h1>CONNECTIVITY</h1>
                         <hr>
 
-                        <img src="./assets/images/ICC_ConnectivityMap.webp" alt="" srcset="" width="90%">
+                        <img class="lazy" data-src="./assets/images/ICC_ConnectivityMap.webp" alt="" srcset="" width="90%">
 
 
                     </div>
@@ -699,7 +698,7 @@
                         <h1>LOCATION</h1>
                         <hr>
                         <div class="p-4">
-                            <img src="./assets/images/maps.webp" alt="" srcset="" width="100%">
+                            <img class="lazy" data-src="./assets/images/maps.webp" alt="" srcset="" width="100%">
                            
 
                             <button type="button" class="btn-dark" onclick="showModal('visit')">
