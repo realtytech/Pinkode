@@ -10,10 +10,26 @@ body {
     font-size: 16px;
 }
 
-#hero-div {
-    height: 93vh;
-    width: 140vw;
-    background: url('./assets/images/hero-img.webp') no-repeat;
+@media(max-height: 850px){
+    #hero-div  {
+        background: url('./assets/images/hero-img-850.webp') no-repeat;
+     }
+ }
+@media(max-height: 700px){
+    #hero-div  {
+        background: url('./assets/images/hero-img-700.webp') no-repeat;
+    }
+ }
+
+
+ @media(min-height: 850px){
+    #hero-div  {
+        background: url('./assets/images/hero-img-mobile.webp') no-repeat;
+    }
+ }
+ #hero-div {
+    height: 100vh;
+    width: 100vw;
     background-size: cover;
     background-position: center;
     overflow: hidden;
@@ -23,7 +39,6 @@ body {
     position: absolute;
     top: 3vh;
     left: 3vh;
-
 }
 
 #br-logo img {
@@ -134,6 +149,7 @@ h1 {
     left: 0;
     width: 100vw;
     line-height: 1;
+    overflow: hidden;
 }
 
 
