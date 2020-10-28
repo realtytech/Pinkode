@@ -47,9 +47,9 @@
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="assets/vendor/bootstrap-3.4.1-dist/css/bootstrap.min.css">
 
-    <link defer rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
         integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"
-        media="none" onload="if(media!='all')media='all'">
+        media="none" onload="if(media!='all')media='all'"> -->
 
     <!-- Optional theme -->
 
@@ -77,11 +77,11 @@
         <div id="hero-div">
             <div id="hero-img">
                 <div id="br-logo">
-                    <img src="./assets/images/drive-download-20200912T093019Z-001/bombay-realty-vector-logo.png"
+                    <img src="./assets/images/drive-download-20200912T093019Z-001/bombay-realty-vector-logo.webp"
                         alt="Optimized-Bombay Realty logo">
                 </div>
                 <div class="text-center" id="icc-logo">
-                    <img src="./assets/images/drive-download-20200912T093019Z-001/icc-white.png"
+                    <img src="./assets/images/drive-download-20200912T093019Z-001/icc-white.webp"
                         alt="Island City Center">
                     <br>
                     <small>DADAR (E)</small>
@@ -89,7 +89,7 @@
             </div>
         </div>
         <div id="sticky-form">
-            <script defer src='//trkr.scdn1.secure.raxcdn.com/t/5f5f2764923d4a24845d1af7.js'></script>
+            <script src='//trkr.scdn1.secure.raxcdn.com/t/5f5f2764923d4a24845d1af7.js'></script>
             <script src='//trkr.scdn1.secure.raxcdn.com/t/forms/5f5f2764923d4a24845d1af7/5f60e8487c0dac76c315d298.js'
                 data-form-id='5f60e8487c0dac76c315d298'></script>
         </div>
@@ -99,12 +99,11 @@
             </h1>
             <div class="nav-icons">
                 <a>
-                    <i class="fa fa-envelope" aria-hidden="true" onclick="showModal('contact')"></i>
+                    <i class="fa-envelope" aria-hidden="true" onclick="showModal('contact')"></i>
                 </a>
-                <a href="tel:918068972088">
+                <a href="javascript:void(0)" onclick="window.location='tel:918068972088'">
                     <i class="fa fa-phone" aria-hidden="true"></i>
                 </a>
-                <!-- d -->
             </div>
             <div id="bottom-icons">
             </div>
@@ -412,11 +411,11 @@
         <div id="hero-div">
             <div id="hero-img">
                 <div id="br-logo">
-                    <img src="./assets/images/drive-download-20200912T093019Z-001/bombay-realty-vector-logo.png"
+                    <img src="./assets/images/drive-download-20200912T093019Z-001/bombay-realty-vector-logo.webp"
                         alt="Optimized-Bombay Realty logo">
                 </div>
                 <div class="text-center" id="icc-logo">
-                    <img src="./assets/images/drive-download-20200912T093019Z-001/icc-white.png"
+                    <img src="./assets/images/drive-download-20200912T093019Z-001/icc-white.webp"
                         alt="Island City Center">
                     <br>
                 </div>
@@ -429,7 +428,7 @@
                 <a>
                     <i class="fa fa-envelope" aria-hidden="true" onclick="showModal('contact')"></i>
                 </a>
-                <a href="tel:918068972088">
+                <a href="javascript:void(0)" onclick="window.location='tel:918068972088'">
                     <i class="fa fa-phone" aria-hidden="true"></i>
                 </a>
                 <!-- d -->
@@ -441,8 +440,7 @@
             </div>
         </nav>
         <div id="mySidenav-mobile" class="sidenav-mobile">
-            <a onclick="closeNavMobile()" href="javascript:void(0)" class="closebtn"
-                onclick="closeNavMobile()">&times;</a>
+            <a onclick="closeNavMobile()" href="javascript:void(0)" class="closebtn">&times;</a>
             <a onclick="closeNavMobile()" href="#m-about-section">About</a>
             <a onclick="closeNavMobile()" href="#m-amenities-section">Amenities</a>
             <a onclick="closeNavMobile()" href="#m-apartments-section">Apartments</a>
@@ -493,11 +491,11 @@
                             <!-- Wrapper for slides -->
                             <div class="carousel-inner">
                                 <div class="item active">
-                                    <img src="assets/images/iccOneR01.webp" alt="Los Angeles" style="width: 100%;">
+                                    <img class="lazy" data-src="assets/images/iccOneR01.webp" alt="Los Angeles" style="width: 100%;">
                                 </div>
 
                                 <div class="item">
-                                    <img src="assets/images/iccOneR02.webp" alt="Chicago" style="width:100%;">
+                                    <img class="lazy" data-src="assets/images/iccOneR02.webp" alt="Chicago" style="width:100%;">
                                 </div>
 
                             </div>
@@ -559,14 +557,14 @@
                             <!-- Wrapper for slides -->
                             <div class="carousel-inner">
                                 <div class="item active">
-                                    <img src="assets/images/iccOneR05.webp" alt="Los Angeles" style="width: 100%;">
+                                    <img class="lazy" data-src="assets/images/iccOneR05.webp" alt="Los Angeles" style="width: 100%;">
                                 </div>
 
                                 <div class="item">
-                                    <img src="assets/images/iccOneR09.webp" alt="Chicago" style="width:100%;">
+                                    <img class="lazy" data-src="assets/images/iccOneR09.webp" alt="Chicago" style="width:100%;">
                                 </div>
                                 <div class="item">
-                                    <img src="assets/images/iccOneR10.webp" alt="Chicago" style="width:100%;">
+                                    <img class="lazy" data-src="assets/images/iccOneR10.webp" alt="Chicago" style="width:100%;">
                                 </div>
 
                             </div>
@@ -649,19 +647,19 @@
                                 </div>
 
                                 <div class="item">
-                                    <img src="assets/images/Optimized-Bombay realty 068.webp" alt="Chicago"
+                                    <img class="lazy" data-src="assets/images/Optimized-Bombay realty 068.webp" alt="Chicago"
                                         style="width:100%;">
                                 </div>
                                 <div class="item">
-                                    <img src="assets/images/Optimized-Bombay realty 107.webp" alt="Chicago"
+                                    <img class="lazy" data-src="assets/images/Optimized-Bombay realty 107.webp" alt="Chicago"
                                         style="width:100%;">
                                 </div>
                                 <div class="item">
-                                    <img src="assets/images/Optimized-Bombay realty 176.webp" alt="Chicago"
+                                    <img class="lazy" data-src="assets/images/Optimized-Bombay realty 176.webp" alt="Chicago"
                                         style="width:100%;">
                                 </div>
                                 <div class="item">
-                                    <img src="assets/images/Optimized-Bombay realty 290.webp" alt="Chicago"
+                                    <img class="lazy" data-src="assets/images/Optimized-Bombay realty 290.webp" alt="Chicago"
                                         style="width:100%;">
                                 </div>
 
@@ -691,7 +689,7 @@
                         <h1>CONNECTIVITY</h1>
                         <hr>
 
-                        <img src="./assets/images/ICC_ConnectivityMap.webp" alt="" srcset="" width="90%">
+                        <img class="lazy" data-src="./assets/images/ICC_ConnectivityMap.webp" alt="" srcset="" width="90%">
 
 
                     </div>
@@ -699,27 +697,8 @@
                         <h1>LOCATION</h1>
                         <hr>
                         <div class="p-4">
-                            <div class="mapouter">
-                                <div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas"
-                                        src="https://maps.google.com/maps?q=island%20city%20center&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                                        frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
-                                        href="https://www.whatismyip-address.com/nordvpn-coupon/"></a></div>
-                                <style>
-                                    .mapouter {
-                                        position: relative;
-                                        text-align: right;
-                                        height: 500px;
-                                        width: 600px;
-                                    }
-
-                                    .gmap_canvas {
-                                        overflow: hidden;
-                                        background: none !important;
-                                        height: 500px;
-                                        width: 600px;
-                                    }
-                                </style>
-                            </div>
+                            <img class="lazy" data-src="./assets/images/maps.webp" alt="" srcset="" width="100%">
+                           
 
                             <button type="button" class="btn-dark" onclick="showModal('visit')">
                                 Book Site Visit

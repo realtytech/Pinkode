@@ -1,28 +1,27 @@
-
-
-  @media screen and (min-width: 1199px) {
-    #desktop{
-        display: block;
-    }
-    #mobile{
-        display: none;
-    }
+@media screen and (min-width: 1199px) {
+  #desktop {
+    display: block;
   }
 
-  #myTab{
-    overflow: hidden;
+  #mobile {
+    display: none;
   }
-
-  .btn-dark-modal {
-    background-color: #111;
-    color: #fff;
 }
 
-a{
+#myTab {
   overflow: hidden;
 }
 
-#sticky-form{
+.btn-dark-modal {
+  background-color: #111;
+  color: #fff;
+}
+
+a {
+  overflow: hidden;
+}
+
+#sticky-form {
   background-color: #ffffff88;
   width: 25vw;
   /* height: 30vh; */
@@ -31,46 +30,52 @@ a{
   bottom: 15vh;
 }
 
-#sticky-form *{
-  font-family: 'Montserrat' !important;font-size: 22px;
-  
+#sticky-form * {
+  font-family: 'Montserrat' !important;
+  font-size: 22px;
+
 }
-#sticky-form .btn{
-  width: 100% !important;
-}
-#lead-form{
-  margin-top: 1rem;
-}
-#lead-form *{
-  font-family: 'Montserrat' !important;font-size: 22px;
-  
-}
-#lead-form .btn{
+
+#sticky-form .btn {
   width: 100% !important;
 }
 
-#lead-form .title{
+#lead-form {
+  margin-top: 1rem;
+}
+
+#lead-form * {
+  font-family: 'Montserrat' !important;
+  font-size: 22px;
+
+}
+
+#lead-form .btn {
+  width: 100% !important;
+}
+
+#lead-form .title {
   font-size: 28px;
   text-align: center;
 }
 
-#disclaimer{
+#disclaimer {
   font-size: small;
   display: inline-block;
 
   margin-right: 5vw;
 }
 
-.text-white{
+.text-white {
   color: #fff;
 }
 
-select{
+select {
   display: none;
 }
 
 
-.fixed-close button{
+.fixed-close button {
   position: absolute;
   margin: 1rem;
   right: 0;
@@ -78,16 +83,63 @@ select{
   /* overflow: hidden; */
 }
 
-.title{
+.title {
   display: none !important;
   visibility: hidden !important;
   text-align: center !important;
 }
 
-.disable{
-  color:#777 !important;
+.disable {
+  color: #777 !important;
 }
 
-.mapouter{
+.mapouter {
   margin: auto;
 }
+
+a * {
+  text-decoration: none;
+}
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('./assets/fonts/fontawesome-webfont.eot?v=4.7.0');
+  src: url('./assets/fonts/fontawesome-webfont.woff2?v=4.7.0') format('woff2'),url('../fonts/fontawesome-webfont.ttf?v=4.7.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal
+}
+
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale
+}
+
+.fa-lg {
+  font-size: 1.33333333em;
+  line-height: .75em;
+  vertical-align: -15%
+}
+
+.fa-2x {
+  font-size: 2em
+}
+
+.fa-3x {
+  font-size: 3em
+}
+
+.fa-4x {
+  font-size: 4em
+}
+
+.fa-5x {
+  font-size: 5em
+}
+
+.fa-envelope:before{content:"\f0e0"}
+.fa-phone:before{content:"\f095"}
+.fa-bars:before{content:"\f0c9"}
