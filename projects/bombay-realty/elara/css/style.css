@@ -193,7 +193,7 @@ main .caption {
 footer{
 	background: #0C0C0C;
 	color: #7b7b7b;
-	padding: 25px 0;
+	padding: 1rem 0;
 	text-align: center;
 	font-family: Lato;
     font-size: 11px;
@@ -206,7 +206,7 @@ footer .fa{
 	color: #7b7b7b;
 }
 .slider-section{
-	margin-bottom: 4rem;
+	margin-bottom: 6rem;
 }
 .title{
 	text-align: center !important;
