@@ -100,7 +100,7 @@ main .banner-section{
 	padding:3rem 0;
 }
 main .banner-section img{
-	width:240px;
+	width:120px;
 }
 main .banner-section .form-section  .Thankyou p{
 	  font-family:FuturaLT-Book;
@@ -179,6 +179,15 @@ main .tc {
 	right: 10%;
 	color: #fff;
 	font-size: 10px;
+		font-family:FuturaLT-Book;
+}
+main .caption {
+	position: absolute;
+	bottom: 6%;
+	right: 10%;
+	color: #fff;
+	background-color: #0C0C0C55;
+	font-size: 20px;
 		font-family:FuturaLT-Book;
 }
 footer{

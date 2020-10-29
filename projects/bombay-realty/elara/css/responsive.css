@@ -70,6 +70,12 @@
 .slick-dots{
 		display: none !important;
 	}
+	main .caption{
+		position: relative;
+		left: 5%;
+		right: 5%;
+
+	} 
 
 }
 @media screen and (max-width: 800px){
@@ -124,7 +130,7 @@ main .banner-section .form-section h2{
 		font-size: 	23px;
 	}
 	main .banner-section img{
-		width: 	180px;
+		width: 	120px;
 	}
 	.slick-prev{
 		left: -6px !important;
