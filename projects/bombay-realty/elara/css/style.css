@@ -39,7 +39,7 @@ header img{
 	max-width: 85%;
 }
 main .banner-section{
-	background: url("../images/banner.jpg")no-repeat;
+	background: url("../images/banner.webp")no-repeat;
 	background-size:cover;
 	background-position:center;
 	position: 	relative;
