@@ -4,10 +4,40 @@
 
 
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-178894513-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-178894513-1');
+    </script>
+    <!-- Google Tag Manager -->
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j,
+                f);
+        })(window, document, 'script', 'dataLayer', 'GTM-WTXXMJF');
+    </script>
+    <!-- End Google Tag Manager -->
    <!-- Required meta tags -->
    <meta charset="UTF-8" />
    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-   <title>Bombay Realty - ICC</title>
+   <title>Island City Center - Bombay Realty 3/4 BHK Luxury Homes</title>
 
 
    <!-- Bootstrap CSS -->
@@ -44,11 +74,10 @@
 </head>
 
 <body>
-   <!-- Google Tag Manager (noscript) -->
-   <noscript>
-
-   </noscript>
-   <!-- End Google Tag Manager (noscript) -->
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WTXXMJF" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
    <header>
       <div class="container">
          <div class="logo-section">
@@ -65,14 +94,73 @@
          </div>
       </div>
    </header>
+   <div class="modal fade" id="sellModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+         <div class="modal-content">
+            <!-- <div class="modal-header row">
+                  <div class="col-md-10">
+                      <h3 class="modal-title" id="ModalLabel">
+                      </h3>
+
+                  </div>
+              </div> -->
+            <div class="fixed-close" style="overflow: hidden;">
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+               </button>
+
+            </div>
+            <div class="modal-body">
+               <form id="leadForm-popup">
+                  <h2 class="text-center">Get the best quote</h2>
+                  <div class="form-group mt-3">
+                     <input type="text" name="name" id="name-popup" placeholder="Your Name*" class="form-control"
+                        required />
+                  </div>
+                  <div class="form-group">
+                     <input type="email" name="email" id="email-popup" placeholder="Your Email*" class="form-control"
+                        required />
+                  </div>
+                  <div class="form-group">
+                     <input type="text" maxlength="10" minlength="10" onkeypress="return numbersonly(event)"
+                        name="mobile" id="mobile-popup" placeholder="Mobile*" class="form-control" required />
+                  </div>
+                  <!-- <div class="form-group">
+                  <input type="text" maxlength="6" minlength="6" onkeypress="return numbersonly(event)"
+                     name="otp" id="otp-popup" placeholder="OTP" class="form-control" style="display: none;"
+                     onchange="isValidOTP()"-popup />
+               </div> -->
+
+                  <div class="text-center">
+                     <!-- <a href="" class="" type="submit">Submit</a> -->
+                     <input type="submit" id="submit_button-popup" class="btn" value="Submit">
+                  </div>
+
+                  <div class="text-center">
+                     <input type="button" id="verify_otp_button-popup" class="btn" value="Verify"
+                        style="display: none; cursor: not-allowed;" onclick="verifyOtpAPI()" disabled>
+                  </div>
+               </form>
+            </div>
+
+         </div>
+      </div>
+   </div>
    <main>
+      <script>
+         var myDaemon = '';
+         localStorage.setItem('myTimestamp', Date.now());
+     </script>
       <section>
          <div class="banner-section">
             <div class="container">
                <div class="content-sec">
                   <div class="">
                      <h1 class="itl">Witness the larger than life<br>lifestyle and grandeur at</h1>
-                     <img width="60px" src="images/icc_logo.png" alt="">
+                     <p class="itl hashtag">#IslandCityCenter</p>
+
+
+                     <!-- <img width="60px" src="images/icc_logo.png" alt=""> -->
                      <p class="itl skyline-txt">
                      </p>
                      <p class="itl bottom-p">
@@ -89,16 +177,12 @@
                            Dadar (E)
 
                         </span>
-                     <p class="itl hashtag">#IslandCityCenter</p>
+
                      </p>
 
                   </div>
                   <div class="form-section">
-                     <!-- <script defer src='//trkr.scdn1.secure.raxcdn.com/t/5f5f2764923d4a24845d1af7.js'></script>
-                     <script src='//trkr.scdn1.secure.raxcdn.com/t/forms/5f5f2764923d4a24845d1af7/5f60e8487c0dac76c315d298.js'
-                         data-form-id='5f60e8487c0dac76c315d298'></script> -->
-
-                     <form id="leadForm" method="get" action="https://altavistachembur.co.in/">
+                     <form id="leadForm">
                         <h2 class="text-center">Get the best quote</h2>
                         <div class="form-group mt-3">
                            <input type="text" name="name" id="name" placeholder="Your Name*" class="form-control"
@@ -112,11 +196,11 @@
                            <input type="text" maxlength="10" minlength="10" onkeypress="return numbersonly(event)"
                               name="mobile" id="mobile" placeholder="Mobile*" class="form-control" required />
                         </div>
-                        <div class="form-group">
+                        <!-- <div class="form-group">
                            <input type="text" maxlength="6" minlength="6" onkeypress="return numbersonly(event)"
                               name="otp" id="otp" placeholder="OTP" class="form-control" style="display: none;"
                               onchange="isValidOTP()" />
-                        </div>
+                        </div> -->
 
                         <div class="text-center">
                            <!-- <a href="" class="" type="submit">Submit</a> -->
@@ -124,7 +208,6 @@
                         </div>
 
                         <div class="text-center">
-                           <!-- <a href="" class="" type="submit">Submit</a> -->
                            <input type="button" id="verify_otp_button" class="btn" value="Verify"
                               style="display: none; cursor: not-allowed;" onclick="verifyOtpAPI()" disabled>
                         </div>
@@ -137,17 +220,12 @@
                         </div>
                      </div>
                   </div>
-                  <div class="tc">
-                     <div class="container">
-                        <!-- <p>ACTUAL VIEW FROM THE 40TH FLOOR</p> -->
-                     </div>
-                  </div>
                   <div class="caption">
                      <div class="container">
                         <p>ACTUAL VIEW FROM THE 40TH FLOOR</p>
                      </div>
                   </div>
-                  
+
                </div>
             </div>
          </div>
@@ -242,6 +320,7 @@
          </div>
       </section>
    </main>
+
    <footer>
       <section>
          <div class="container">
@@ -254,20 +333,6 @@
                till 54 habitable floors. Island City Center. One ICC and Two ICC. RERA No:P51900008726
                https://maharera.mahaonline.gov.in. All Rights Reserved.
             </p>
-            <!-- <p>The project is developed by Spenta Enclave Private Limited and is financed by JM Financial Credit
-               Solutions Limited, JM Financial Products Limited and Motilal Oswal Real Estate Investment Advisors II
-               Private Limited MahaRERA Registration Numbers: Altavista Phase - 1 P51800001050 | Altavista Phase - 2
-               P51800000956 | Altavista Phase - 3 P51800021249 | Altavista Phase - 4 P51800026131 | Available at
-               website: http://maharera.mahaonline.gov.in</p>
-            <p>Disclaimer: The company reserves the right to make modifications, changes or alterations at their sole
-               discretion without any prior notice or reference. All illustrations and pictures are artists impression
-               only. T & C Apply(*)</p> -->
-            <!-- <p class="">Copyright © 2020 Copyright Spenta Corporation. All Rights Reserved.
-               <a href="https://www.facebook.com/SpentaCorporationPvtLtd/" title=""><i class="fa fa-facebook"></i></a> |
-               <a href="https://twitter.com/spenta_corp" title=""><i class="fa fa-twitter"></i></a> |
-               <a href="https://www.linkedin.com/company/spenta-corporation/" title=""><i
-                     class="fa fa-linkedin"></i></a>
-            </p> -->
          </div>
       </section>
    </footer>
@@ -277,383 +342,7 @@
    <script src="js/slick.min.js"></script>
    <script src="js/aos.js"></script>
    <script src="js/magnific-popup.js"></script>
-   </script>
-
-   <script>
-      $('.responsive').slick({
-         dots: true,
-         infinite: true,
-         speed: 300,
-         slidesToShow: 4,
-         slidesToScroll: 4,
-         arrows: true,
-         responsive: [
-            {
-               breakpoint: 1024,
-               settings: {
-                  slidesToShow: 3,
-                  slidesToScroll: 3,
-                  infinite: true,
-                  dots: true
-               }
-            },
-            {
-               breakpoint: 600,
-               settings: {
-                  slidesToShow: 2,
-                  slidesToScroll: 2
-               }
-            },
-            {
-               breakpoint: 480,
-               settings: {
-                  slidesToShow: 1,
-                  slidesToScroll: 1
-               }
-            }
-            // You can unslick at a given breakpoint now by adding:
-            // settings: "unslick"
-            // instead of a settings object
-         ]
-      });
-   </script>
-   <script>
-      $(document).ready(function () {
-         $('.popup-gallery').magnificPopup({
-            delegate: 'a',
-            type: 'image',
-            tLoading: 'Loading image #%curr%...',
-            mainClass: 'mfp-img-mobile',
-            gallery: {
-               enabled: true,
-               navigateByImgClick: true,
-               preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
-            },
-            image: {
-               tError: '<a href="%url%">The image #%curr%</a> could not be loaded.',
-               titleSrc: function (item) {
-                  return item.el.attr('title') + '<small></small>';
-               }
-            }
-         });
-      });
-   </script>
-
-   <script>
-      // document.getElementById('leadForm').remove();
-
-      // Allow numbers only in mobile field
-      function numbersonly(e) {
-         var unicode = e.charCode ? e.charCode : e.keyCode
-         if (unicode != 8) { //if the key isn't the backspace key (which we should allow)
-            if (unicode < 48 || unicode > 57) //if not a number
-               return false //disable key press
-         }
-         isValidOTP();
-      }
-
-      function queryParameter(name, url) {
-         if (!url) url = location.href;
-         name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
-         var regexS = "[\\?&]" + name + "=([^&#]*)";
-         var regex = new RegExp(regexS);
-         var results = regex.exec(url);
-         return results == null ? null : results[1];
-      }
-
-      $("#leadForm").submit(function (e) {
-
-         e.preventDefault();
-
-         // handle button click
-         $("#submit_button").prop('disabled', true);
-         $("#submit_button").prop("value", "Processing....");
-
-         // Query Params
-         var currentUrl = window.location.href;
-         var utm_source = queryParameter('utm_source', currentUrl);
-         var utm_campaign = queryParameter('utm_campaign', currentUrl)
-
-         var d = new Date();
-
-         // form Data
-         var name = $("#name").val();
-         var email = $("#email").val();
-         var mobile = $("#mobile").val();
-
-
-
-         var srd = selectSRD(utm_source, utm_campaign);
-         console.log("srd: " + srd);
-
-
-         $.ajax({
-            url: "https://app.sell.do/api/leads/create",
-            type: "post", //send it through get method
-            data: {
-               "sell_do[form][lead][name]": name,
-               "sell_do[campaign][srd]": srd,
-               "sell_do[form][lead][email]": email,
-               "sell_do[form][lead][phone]": mobile,
-               "api_key": 'ab8f266fa110d8278a7a8caf24ca53b3',
-               "form_id": "5f6c47507c0dac703df415e4"
-            },
-            success: function (response) {
-               createLeadSuccess(JSON.parse(response));
-            },
-            error: function (xhr) {
-               //Do Something to handle error
-               console.log("failure");
-               // window.location.href = "thankyou.html";
-            }
-         });
-
-
-      });
-
-
-      function createLeadSuccess(response) {
-
-         // If sell_do_lead_verified == false then call OTP ajax
-         // else if == true then Alert User with details already present
-
-         if (response.sell_do_lead_verified) {
-            if (response.sell_do_lead_verified == 'false') {
-
-               // Lead Not Verified
-
-               // Display OTP Field & make other fields read only
-               $('#name').prop('readonly', true);
-               $('#email').prop('readonly', true);
-               $('#mobile').prop('readonly', true);
-               $("#otp").css("display", "block");
-               $("#submit_button").css("display", "none");
-               $("#verify_otp_button").css("display", "inline-block");
-
-               localStorage.setItem("createLeadResponse", JSON.stringify(response));
-
-            } else {
-               // Lead already verified
-               alert("User with these details already present");
-               location.reload();
-            }
-         }
-
-      }
-
-      function isValidOTP() {
-         var otp = $("#otp").val();
-
-         if (otp.length > '3') {
-            $("#verify_otp_button").css("cursor", "pointer");
-            $("#verify_otp_button").prop('disabled', false);
-         } else {
-            $("#verify_otp_button").css("cursor", "not-allowed");
-            $("#verify_otp_button").prop('disabled', true);
-         }
-      }
-
-      function verifyOtpAPI() {
-         $("#verify_otp_button").prop('disabled', true);
-         $("#verify_otp_button").prop("value", "Processing....");
-
-
-         var createLeadResponse = JSON.parse(localStorage.getItem("createLeadResponse"));
-
-         var mobile = $('#mobile').val();
-         var otp = $("#otp").val();
-         var lead_id = createLeadResponse.sell_do_lead_id;
-
-         $.ajax({
-            url: "https://campaigns.citesting.in/spenta/verifyOTP.php",
-            type: "get", //send it through get method
-            data: {
-               "sell_do_input_verify": otp,
-               "api_key": "ab8f266fa110d8278a7a8caf24ca53b3",
-               "lead_id": lead_id,
-               "phone": "+91" + mobile,
-               "_": 'ab8f266fa110d8278a7a8caf24ca53b3'
-            },
-            success: function (response) {
-
-               if (response.toLowerCase().indexOf("false") >= 0) {
-                  // invalid OTP
-                  $("#otp").val('');
-                  $("#verify_otp_button").prop('disabled', false);
-                  $("#verify_otp_button").prop("value", "Verify");
-                  isValidOTP();
-
-
-                  alert("Invalid OTP");
-               }
-
-               if (response.toLowerCase().indexOf("true") >= 0) {
-                  // valid OTP
-                  // save in database & redirect
-
-                  storeLeadInDB();
-               }
-
-            },
-            error: function (xhr) {
-               //Do Something to handle error
-
-            }
-         });
-      }
-
-      function storeLeadInDB() {
-         var currentUrl = window.location.href;
-         var utm_source = queryParameter('utm_source', currentUrl);
-         var utm_medium = queryParameter('utm_medium', currentUrl)
-         var utm_campaign = queryParameter('utm_campaign', currentUrl)
-         var utm_adgroup = queryParameter('utm_adgroup', currentUrl)
-         var utm_keyword = queryParameter('utm_keyword', currentUrl)
-         var utm_adset = queryParameter('utm_adset', currentUrl)
-         var utm_ad = queryParameter('utm_ad', currentUrl)
-         var utm_device = queryParameter('utm_device', currentUrl)
-         var utm_site = queryParameter('utm_site', currentUrl)
-         var utm_placement = queryParameter('utm_placement', currentUrl)
-         var gclid = queryParameter('gclid', currentUrl)
-         var fbclid = queryParameter('fbclid', currentUrl)
-
-         var name = $('#name').val();
-         var email = $('#email').val();
-         var mobile = $('#mobile').val();
-
-         $.ajax({
-            url: "https://campaigns.citesting.in/spenta/store.php",
-            type: "get", //send it through get method
-            data: {
-               name,
-               email,
-               mobile,
-               utm_source,
-               utm_medium,
-               utm_campaign,
-               utm_adgroup,
-               utm_keyword,
-               utm_adset,
-               utm_ad,
-               utm_device,
-               utm_site,
-               utm_placement,
-               gclid,
-               fbclid,
-            },
-            success: function (response) {
-               //Do Something
-               console.log("success");
-               window.location.href = "thankyou.html";
-            },
-            error: function (xhr) {
-               //Do Something to handle error
-               console.log("failure");
-               window.location.href = "thankyou.html";
-            }
-         });
-      }
-
-      function selectSRD(utm_source, utm_campaign) {
-
-         var srd = '';
-
-         // Google srd
-         var google_discovery = '5f86a1414443ae16011a4a02';
-         var google_display = '5f86a1384443ae22e4278b9c';
-         var google_search = '5f86a1294443ae21c7278fde';
-         var google_default = '5f71a7717c0dac2729315170';
-
-         // Facebook srd
-         var facebook_conv = '5f71afa27c0dac2487b9b6bb';
-         var facebook_default = '5f71bfd77c0dac7b7bbfbb91';
-
-         // Direct srd
-         var direct_srd = '5f71bfd77c0dac7b7bbfbb91';
-
-         if (utm_source) {
-
-            if (utm_source.toLowerCase() == "google") {
-
-               if (utm_campaign) {
-                  if (utm_campaign.toLowerCase().indexOf("discovery") >= 0) {
-                     // discovery
-                     srd = google_discovery;
-                  } else if (utm_campaign.toLowerCase().indexOf("display") >= 0) {
-                     // display
-                     srd = google_display;
-                  } else {
-                     // search
-                     srd = google_search;
-                  }
-               } else {
-                  // standard google
-                  srd = google_default;
-               }
-
-            } else if (utm_source.toLowerCase() == 'facebook') {
-
-               if (utm_campaign) {
-                  if (utm_campaign.toLowerCase().indexOf("conv") >= 0) {
-                     // conv
-                     srd = facebook_conv;
-                  } else {
-                     // standard facebook
-                     srd = facebook_default;
-                  }
-               } else {
-                  // standard facebook
-                  srd = facebook_default;
-               }
-
-            } else {
-
-               // direct or others
-               srd = direct_srd;
-
-            }
-
-         } else {
-
-            // direct
-            srd = direct_srd;
-
-         }
-
-
-         return srd;
-      }
-
-      document.addEventListener("DOMContentLoaded", function () {
-         var lazyloadImages = document.querySelectorAll("img.lazy");
-         var lazyloadThrottleTimeout;
-
-         function lazyload() {
-            if (lazyloadThrottleTimeout) {
-               clearTimeout(lazyloadThrottleTimeout);
-            }
-
-            lazyloadThrottleTimeout = setTimeout(function () {
-               var scrollTop = window.pageYOffset;
-               lazyloadImages.forEach(function (img) {
-                  if (img.offsetTop < (window.innerHeight + scrollTop)) {
-                     img.src = img.dataset.src;
-                     img.classList.remove('lazy');
-                  }
-               });
-               if (lazyloadImages.length == 0) {
-                  document.removeEventListener("scroll", lazyload);
-                  window.removeEventListener("resize", lazyload);
-                  window.removeEventListener("orientationChange", lazyload);
-               }
-            }, 20);
-         }
-
-         document.addEventListener("scroll", lazyload);
-         window.addEventListener("resize", lazyload);
-         window.addEventListener("orientationChange", lazyload);
-      });
-   </script>
+   <script src="js/main.js"></script>
 
 </body>
 
