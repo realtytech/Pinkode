@@ -214,3 +214,7 @@ footer .fa{
 	text-align: center !important;
 	font-weight: 500 !important;
 }
+
+.modal{
+	top:40vh !important;
+}
