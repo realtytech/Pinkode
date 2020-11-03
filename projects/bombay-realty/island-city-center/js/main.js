@@ -168,6 +168,7 @@ $("#leadForm").submit(function (e) {
         },
         success: function (response) {
             console.log(JSON.parse(response));
+            storeLeadInDB()
             window.location.href = "response.html";
         },
         error: function (xhr) {
@@ -289,38 +290,72 @@ function storeLeadInDB() {
     var name = $('#name').val();
     var email = $('#email').val();
     var mobile = $('#mobile').val();
+    var project = 'Bombay Realty - ICC';
+    var timestamp = Date();
+    data = {
+        "formId":String(Math.floor(Date.now() / 1000)),
+        "name": name,
+        "email": email,
+        "mobile": mobile,
+        "project": project,
+        "lead_creation_date": timestamp,
+        "utm_source": utm_source,
+        "utm_medium": utm_medium,
+        "utm_campaign": utm_campaign,
+        "utm_adgroup": utm_adgroup,
+        "utm_keyword": utm_keyword,
+        "utm_adset": utm_adset,
+        "utm_ad": utm_ad,
+        "utm_device": utm_device,
+        "utm_site": utm_site,
+        "utm_placement": utm_placement,
+        "gclid": gclid,
+        "fbclid": fbclid
 
-    $.ajax({
-        url: "https://campaigns.citesting.in/spenta/store.php",
-        type: "get", //send it through get method
-        data: {
-            name,
-            email,
-            mobile,
-            utm_source,
-            utm_medium,
-            utm_campaign,
-            utm_adgroup,
-            utm_keyword,
-            utm_adset,
-            utm_ad,
-            utm_device,
-            utm_site,
-            utm_placement,
-            gclid,
-            fbclid,
-        },
-        success: function (response) {
-            //Do Something
-            console.log("success");
-            window.location.href = "thankyou.html";
-        },
-        error: function (xhr) {
-            //Do Something to handle error
-            console.log("failure");
-            window.location.href = "thankyou.html";
-        }
-    });
+    }
+    const formURL = 'https://dj2kxzt125.execute-api.ap-south-1.amazonaws.com/Prod/submitForm';
+
+    var xhr = new XMLHttpRequest();
+          xhr.open('POST', formURL, true);
+          xhr.setRequestHeader('Accept', 'application/json; charset=utf-8');
+          xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+
+          // Send the collected data as JSON
+          xhr.send(JSON.stringify(data));
+
+          xhr.onloadend = response => {
+            if (response.target.status === 200) {
+            //   form.reset();
+            console.error(JSON.parse(response));
+
+            //   submitResponse.innerHTML = 'Form submitted. Success!';
+            } else {
+            //   submitResponse.innerHTML = 'Error! Please try again.';
+              console.error(JSON.parse(response));
+            }
+          };
+
+    // $.ajax({
+    //     url: "https://dj2kxzt125.execute-api.ap-south-1.amazonaws.com/Prod/submitForm",
+    //     type: "post", //send it through get method
+    //     dataType: 'json', // Notice! JSONP <-- P (lowercase)
+    //     data: data,
+    //     beforeSend: function (xhr) {
+    //         xhr.setRequestHeader('Accept', 'application/json; charset=utf-8');
+    //         xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+    //     },
+    //     success: function (response) {
+    //         //Do Something
+    //         console.log("success");
+    //         // window.location.href = "thankyou.html";
+    //     },
+    //     error: function (xhr) {
+    //         //Do Something to handle error
+    //         console.log(xhr)
+    //         console.log("failure");
+    //         // window.location.href = "thankyou.html";
+    //     }
+    // });
 }
 
 function selectSRD(utm_source, utm_campaign) {
