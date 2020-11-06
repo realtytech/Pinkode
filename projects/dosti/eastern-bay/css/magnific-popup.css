@@ -250,7 +250,7 @@ img.mfp-img {
   max-width: 100%;
   height: auto !important;
   display: block;
-  max-height: unset!important;
+  max-height: 80vh!important;
   line-height: 0;
   box-sizing: border-box;
 /*  padding: 40px 0 40px;*/

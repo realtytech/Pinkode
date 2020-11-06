@@ -59,7 +59,7 @@ main .banner-section .itl{
 	/* font-weight: 400; */
 	/* font-style: italic; */
 /*	font-size: 25px;*/
-	color: #0c0c0c99;
+	color: #555555;
 }
 main .banner-section .skyline-txt{
 	font-family: gotham-bold;
@@ -70,9 +70,11 @@ main .banner-section .skyline-txt{
 main .banner-section .itl span{
 	font-family: gotham-bold;
 	font-style: 	normal;
+	text-shadow: 0 0 1px #222, 0 0 3px #eeeeee;
 }
 main .banner-section .hashtag{
 	color: white;
+	text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
 	font-family: gotham-bold;
 	font-size: 30px;
 	margin-top: -15px;
@@ -83,6 +85,18 @@ main .banner-section
 	font-size: 	20px;
 	line-height: 1.2;
 	margin-top: 0px;
+	color: #ffffff;
+	font-family: gotham-bold;
+	text-shadow: 0 0 2px #000077, 0 0 2px #5e5c5c;
+	/* text-shadow: 0 0 3px #FF0000aa, 0 0 5px #0000FFcc; */
+	
+}
+main .banner-section .bottom-p span{
+	font-family: gotham-bold;
+	font-style: 	normal;
+	color: white;
+	text-shadow: 0 0 3px #770000, 0 0 5px #000077;
+	
 }
 main .banner-section .content-sec{
 	display: 	flex;
@@ -179,6 +193,7 @@ main .responsive .gallery{
 main .responsive img{
 		width: 100%;
 		object-fit: cover;
+		max-height: 15vh;
 		/* margin: 0 auto; */
 }
 
@@ -205,8 +220,8 @@ main .caption {
 	bottom: 6%;
 	right: 10%;
 	color: #fff;
-	background-color: #0C0C0C55;
-	font-size: 20px;
+	/* background-color: #0C0C0C55; */
+	font-size: 12px;
 		font-family:FuturaLT-Book;
 	
 }
