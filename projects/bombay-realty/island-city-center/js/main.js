@@ -169,7 +169,7 @@ $("#leadForm").submit(function (e) {
         success: function (response) {
             console.log(JSON.parse(response));
             storeLeadInDB()
-            window.location.href = "response.html";
+            // window.location.href = "response.html";
         },
         error: function (xhr) {
             //Do Something to handle error
