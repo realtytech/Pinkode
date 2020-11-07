@@ -37,6 +37,7 @@ header .logo-section{
 }
 header img{
 	max-width: 85%;
+	max-height: 13vh;
 }
 main .banner-section{
 	background: url("../images/banner-1920.jpg") no-repeat;
