@@ -197,7 +197,7 @@ main .responsive img{
 		/* margin: 0 auto; */
 }
 
-@media(max-height: 850px){
+@media(max-height: 900px){
     main .responsive .gallery{
 		margin: .3rem;
 		width: 20vw;
@@ -205,6 +205,17 @@ main .responsive img{
 		object-fit: cover;
 		
 	}
+	main .responsive img{
+		width: 100%;
+		object-fit: cover;
+		max-height: 30vh;
+		/* margin: 0 auto; */
+}
+main .banner-section{
+
+	background-position-y: 0;
+	
+}
  }
 
 main .tc {
