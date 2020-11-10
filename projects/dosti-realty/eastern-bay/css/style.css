@@ -115,3 +115,20 @@ h1 span{
 	color: #ffce7b;
 	background-color: #7b7b7b99;
 }
+
+#fixed-download{
+	position: fixed;
+	top: 40vh;
+	right: -200px;
+	width: 200px;
+	height: 40px;
+	line-height: 20px;
+	transform-origin: 0 0;
+  transform: rotate(90deg);
+  background-color: #ffce7bee;
+	color: #0C0C0C;
+	z-index: 999;
+	cursor: pointer;
+
+
+}
