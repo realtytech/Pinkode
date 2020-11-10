@@ -73,7 +73,7 @@ $("#leadForm-popup").submit(function (e) {
 
     // var srd = selectSRD(utm_source, utm_campaign);
     var srd = queryParameter('srd', currentUrl);
-
+    if (!srd) srd = '5faa0bce4443ae474efa311d';
 
     $.ajax({
         url: "https://app.sell.do/api/leads/create",
@@ -128,7 +128,7 @@ $("#leadForm").submit(function (e) {
 
     // var srd = selectSRD(utm_source, utm_campaign);
     var srd = queryParameter('srd', currentUrl);
-
+    if (!srd) srd = '5faa0bce4443ae474efa311d';
 
     $.ajax({
         url: "https://app.sell.do/api/leads/create",
@@ -180,6 +180,8 @@ $("#leadFormMobile").submit(function (e) {
 
     // var srd = selectSRD(utm_source, utm_campaign);
     var srd = queryParameter('srd', currentUrl);
+    if (!srd) srd = '5faa0bce4443ae474efa311d';
+    
 
 
     $.ajax({
@@ -317,7 +319,7 @@ function storeLeadInDB() {
     var name = $('#name').val();
     var email = $('#email').val();
     var mobile = $('#mobile').val();
-    var project = 'Bombay Realty - ICC';
+    var project = 'Dosti Realty - Eastern Bay';
     var timestamp = Date();
     data = {
         "formId": String(Math.floor(Date.now() / 1000)),
