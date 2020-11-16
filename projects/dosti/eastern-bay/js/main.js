@@ -114,6 +114,7 @@ $("#leadForm-popup").submit(function (e) {
         },
         success: function (response) {
             console.log(JSON.parse(response));
+            storeLeadInDB(name,email,mobile)
             window.location.href = "response.html";
         },
         error: function (xhr) {
@@ -164,11 +165,11 @@ $("#leadForm").submit(function (e) {
             "sell_do[form][lead][email]": email,
             "sell_do[form][lead][phone]": mobile,
             "api_key": 'c64d03d6e3f7962538b248e1415aa6a2',
-            "form_id": "5f60e8487c0dac76c315d298"
+            "form_id": "5fa62a37c825615ac5916737"
         },
         success: function (response) {
             console.log(JSON.parse(response));
-            storeLeadInDB()
+            storeLeadInDB(name,email,mobile)
             window.location.href = "response.html";
         },
         error: function (xhr) {
@@ -272,7 +273,7 @@ function verifyOtpAPI() {
     });
 }
 
-function storeLeadInDB() {
+function storeLeadInDB(name,email,mobile) {
     var currentUrl = window.location.href;
     var utm_source = queryParameter('utm_source', currentUrl);
     var utm_medium = queryParameter('utm_medium', currentUrl)
@@ -287,10 +288,10 @@ function storeLeadInDB() {
     var gclid = queryParameter('gclid', currentUrl)
     var fbclid = queryParameter('fbclid', currentUrl)
 
-    var name = $('#name').val();
-    var email = $('#email').val();
-    var mobile = $('#mobile').val();
-    var project = 'Bombay Realty - ICC';
+    // var name = $('#name').val();
+    // var email = $('#email').val();
+    // var mobile = $('#mobile').val();
+    var project = 'Dosti Realty - Eastern Bay';
     var timestamp = Date();
     data = {
         "formId": String(Math.floor(Date.now() / 1000)),
