@@ -114,7 +114,10 @@ $("#leadForm-popup").submit(function (e) {
         },
         success: function (response) {
             console.log(JSON.parse(response));
-            storeLeadInDB(name,email,mobile)
+            var name = $("#name-popup").val();
+            var email = $("#email-popup").val();
+            var mobile = $("#mobile-popup").val();
+            storeLeadInDB(name, email, mobile)
             window.location.href = "response.html";
         },
         error: function (xhr) {
@@ -169,7 +172,7 @@ $("#leadForm").submit(function (e) {
         },
         success: function (response) {
             console.log(JSON.parse(response));
-            storeLeadInDB(name,email,mobile)
+            storeLeadInDB(name, email, mobile);
             window.location.href = "response.html";
         },
         error: function (xhr) {
@@ -273,7 +276,7 @@ function verifyOtpAPI() {
     });
 }
 
-function storeLeadInDB(name,email,mobile) {
+function storeLeadInDB(name, email, mobile,response) {
     var currentUrl = window.location.href;
     var utm_source = queryParameter('utm_source', currentUrl);
     var utm_medium = queryParameter('utm_medium', currentUrl)
@@ -311,7 +314,8 @@ function storeLeadInDB(name,email,mobile) {
         "utm_site": utm_site,
         "utm_placement": utm_placement,
         "gclid": gclid,
-        "fbclid": fbclid
+        "fbclid": fbclid,
+        "response":response
 
     }
     const formURL = 'https://dj2kxzt125.execute-api.ap-south-1.amazonaws.com/Prod/submitForm';

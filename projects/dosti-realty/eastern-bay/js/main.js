@@ -88,7 +88,7 @@ $("#leadForm-popup").submit(function (e) {
         },
         success: function (response) {
             console.log(JSON.parse(response));
-            storeLeadInDB();
+            storeLeadInDB(name,email,mobile,response);
             window.location.href = "response.html";
         },
         error: function (xhr) {
@@ -143,7 +143,7 @@ $("#leadForm").submit(function (e) {
         },
         success: function (response) {
             console.log(JSON.parse(response));
-            storeLeadInDB();
+            storeLeadInDB(name,email,mobile,response);
             window.location.href = "response.html";
         },
         error: function (xhr) {
@@ -197,7 +197,7 @@ $("#leadFormMobile").submit(function (e) {
         },
         success: function (response) {
             console.log(JSON.parse(response));
-            storeLeadInDB();
+            storeLeadInDB(name,email,mobile,response);
             window.location.href = "response.html";
         },
         error: function (xhr) {
@@ -290,7 +290,7 @@ function verifyOtpAPI() {
                 // valid OTP
                 // save in database & redirect
 
-                storeLeadInDB();
+                storeLeadInDB(name,email,mobile,response);
             }
 
         },
@@ -301,7 +301,7 @@ function verifyOtpAPI() {
     });
 }
 
-function storeLeadInDB() {
+function storeLeadInDB(name, email, mobile,response) {
     var currentUrl = window.location.href;
     var utm_source = queryParameter('utm_source', currentUrl);
     var utm_medium = queryParameter('utm_medium', currentUrl)
@@ -316,9 +316,9 @@ function storeLeadInDB() {
     var gclid = queryParameter('gclid', currentUrl)
     var fbclid = queryParameter('fbclid', currentUrl)
 
-    var name = $('#name').val();
-    var email = $('#email').val();
-    var mobile = $('#mobile').val();
+    // var name = $('#name').val();
+    // var email = $('#email').val();
+    // var mobile = $('#mobile').val();
     var project = 'Dosti Realty - Eastern Bay';
     var timestamp = Date();
     data = {
@@ -339,7 +339,8 @@ function storeLeadInDB() {
         "utm_site": utm_site,
         "utm_placement": utm_placement,
         "gclid": gclid,
-        "fbclid": fbclid
+        "fbclid": fbclid,
+        "response":response
 
     }
     const formURL = 'https://dj2kxzt125.execute-api.ap-south-1.amazonaws.com/Prod/submitForm';
@@ -386,7 +387,6 @@ function storeLeadInDB() {
     //     }
     // });
 }
-
 function selectSRD(utm_source, utm_campaign) {
 
     var srd = '';
