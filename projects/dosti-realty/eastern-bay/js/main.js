@@ -88,7 +88,7 @@ $("#leadForm-popup").submit(function (e) {
         },
         success: function (response) {
             console.log(JSON.parse(response));
-            storeLeadInDB(name,email,mobile,response);
+            storeLeadInDB(name,email,mobile,JSON.stringify(response));
             window.location.href = "response.html";
         },
         error: function (xhr) {
@@ -143,7 +143,7 @@ $("#leadForm").submit(function (e) {
         },
         success: function (response) {
             console.log(JSON.parse(response));
-            storeLeadInDB(name,email,mobile,response);
+            storeLeadInDB(name,email,mobile,JSON.stringify(response));
             window.location.href = "response.html";
         },
         error: function (xhr) {
@@ -197,7 +197,7 @@ $("#leadFormMobile").submit(function (e) {
         },
         success: function (response) {
             console.log(JSON.parse(response));
-            storeLeadInDB(name,email,mobile,response);
+            storeLeadInDB(name,email,mobile,JSON.stringify(response));
             window.location.href = "response.html";
         },
         error: function (xhr) {
