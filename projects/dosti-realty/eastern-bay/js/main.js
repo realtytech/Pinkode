@@ -1,34 +1,34 @@
 /* Class the members of each slideshow group with different CSS classes */
 var slideIndex = 1;
-var slideIndex1= 1;
+var slideIndex1 = 1;
 showSlides();
 showSlides1();
 function showSlides1() {
-  var i;
-  var slides1 = document.getElementsByClassName("mySlides1");
-  for (i = 0; i < slides1.length; i++) {
-    slides1[i].style.display = "none";
-  }
-  slideIndex1++;
-  console.log(slideIndex1)
-  if (slideIndex1 > slides1.length) {slideIndex1 = 1}
-  slides1[slideIndex1-1].style.display = "block";
-  setTimeout(showSlides1, 10000); // Change image every 2 seconds
-} 
+    var i;
+    var slides1 = document.getElementsByClassName("mySlides1");
+    for (i = 0; i < slides1.length; i++) {
+        slides1[i].style.display = "none";
+    }
+    slideIndex1++;
+    console.log(slideIndex1)
+    if (slideIndex1 > slides1.length) { slideIndex1 = 1 }
+    slides1[slideIndex1 - 1].style.display = "block";
+    setTimeout(showSlides1, 10000); // Change image every 2 seconds
+}
 
 
 function showSlides() {
     var i;
     var slides = document.getElementsByClassName("mySlides");
     for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
+        slides[i].style.display = "none";
     }
     slideIndex++;
-    if (slideIndex > slides.length) {slideIndex = 1}
-    slides[slideIndex-1].style.display = "block";
+    if (slideIndex > slides.length) { slideIndex = 1 }
+    slides[slideIndex - 1].style.display = "block";
     setTimeout(showSlides, 10000); // Change image every 2 seconds
-  } 
-  
+}
+
 
 // Allow numbers only in mobile field
 function numbersonly(e) {
@@ -37,7 +37,15 @@ function numbersonly(e) {
         if (unicode < 48 || unicode > 57) //if not a number
             return false //disable key press
     }
-    isValidOTP();
+    // isValidOTP();
+}
+
+function ValidateEmail(mail) {
+    if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(mail)) {
+        return (true)
+    }
+    // alert("You have entered an invalid email address!")
+    return (false)
 }
 
 function queryParameter(name, url) {
@@ -68,7 +76,31 @@ $("#leadForm-popup").submit(function (e) {
     var name = $("#name-popup").val();
     var email = $("#email-popup").val();
     var mobile = $("#mobile-popup").val();
+    if (name == "") {
+        alert('Please enter your name');
+        return;
+    }
 
+    if (email == "") {
+        alert('Please enter your email id');
+        return;
+    } else {
+        if (!ValidateEmail(email)) {
+            alert('Please enter a valid email id');
+            return;
+        }
+
+    }
+    if (mobile == "") {
+        alert('Please enter your valid mobile number');
+        return;
+    } else {
+        const regex = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+        if (!regex.test(mobile)) {
+            alert('Please enter your valid 10 digit mobile number');
+            return;
+        }
+    }
 
 
     // var srd = selectSRD(utm_source, utm_campaign);
@@ -88,7 +120,7 @@ $("#leadForm-popup").submit(function (e) {
         },
         success: function (response) {
             console.log(JSON.parse(response));
-            storeLeadInDB(name,email,mobile,JSON.stringify(response));
+            storeLeadInDB(name, email, mobile, JSON.stringify(response));
             window.location.href = "response.html";
         },
         error: function (xhr) {
@@ -123,7 +155,31 @@ $("#leadForm").submit(function (e) {
     var name = $("#name").val();
     var email = $("#email").val();
     var mobile = $("#mobile").val();
+    if (name == "") {
+        alert('Please enter your name');
+        return;
+    }
 
+    if (email == "") {
+        alert('Please enter your email id');
+        return;
+    } else {
+        if (!ValidateEmail(email)) {
+            alert('Please enter a valid email id');
+            return;
+        }
+
+    }
+    if (mobile == "") {
+        alert('Please enter your valid mobile number');
+        return;
+    } else {
+        const regex = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+        if (!regex.test(mobile)) {
+            alert('Please enter your valid 10 digit mobile number');
+            return;
+        }
+    }
 
 
     // var srd = selectSRD(utm_source, utm_campaign);
@@ -143,7 +199,7 @@ $("#leadForm").submit(function (e) {
         },
         success: function (response) {
             console.log(JSON.parse(response));
-            storeLeadInDB(name,email,mobile,JSON.stringify(response));
+            storeLeadInDB(name, email, mobile, JSON.stringify(response));
             window.location.href = "response.html";
         },
         error: function (xhr) {
@@ -172,16 +228,40 @@ $("#leadFormMobile").submit(function (e) {
     var d = new Date();
 
     // form Data
-    var name = $("#name").val();
-    var email = $("#email").val();
-    var mobile = $("#mobile").val();
+    var name = $("#m-name").val();
+    var email = $("#m-email").val();
+    var mobile = $("#m-mobile").val();
+    if (name == "") {
+        alert('Please enter your name');
+        return;
+    }
 
+    if (email == "") {
+        alert('Please enter your email id');
+        return;
+    } else {
+        if (!ValidateEmail(email)) {
+            alert('Please enter a valid email id');
+            return;
+        }
+
+    }
+    if (mobile == "") {
+        alert('Please enter your valid mobile number');
+        return;
+    } else {
+        const regex = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+        if (!regex.test(mobile)) {
+            alert('Please enter your valid 10 digit mobile number');
+            return;
+        }
+    }
 
 
     // var srd = selectSRD(utm_source, utm_campaign);
     var srd = queryParameter('srd', currentUrl);
     if (!srd) srd = '5faa0bce4443ae474efa311d';
-    
+
 
 
     $.ajax({
@@ -197,7 +277,7 @@ $("#leadFormMobile").submit(function (e) {
         },
         success: function (response) {
             console.log(JSON.parse(response));
-            storeLeadInDB(name,email,mobile,JSON.stringify(response));
+            storeLeadInDB(name, email, mobile, JSON.stringify(response));
             window.location.href = "response.html";
         },
         error: function (xhr) {
@@ -290,7 +370,7 @@ function verifyOtpAPI() {
                 // valid OTP
                 // save in database & redirect
 
-                storeLeadInDB(name,email,mobile,response);
+                storeLeadInDB(name, email, mobile, response);
             }
 
         },
@@ -301,7 +381,7 @@ function verifyOtpAPI() {
     });
 }
 
-function storeLeadInDB(name, email, mobile,response) {
+function storeLeadInDB(name, email, mobile, response) {
     var currentUrl = window.location.href;
     var utm_source = queryParameter('utm_source', currentUrl);
     var utm_medium = queryParameter('utm_medium', currentUrl)
@@ -340,7 +420,7 @@ function storeLeadInDB(name, email, mobile,response) {
         "utm_placement": utm_placement,
         "gclid": gclid,
         "fbclid": fbclid,
-        "response":response
+        "response": response
 
     }
     const formURL = 'https://dj2kxzt125.execute-api.ap-south-1.amazonaws.com/Prod/submitForm';
