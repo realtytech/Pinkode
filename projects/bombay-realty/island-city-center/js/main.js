@@ -291,7 +291,7 @@ function storeLeadInDB(name, email, mobile, response, formName) {
     // var name = $('#name').val();
     // var email = $('#email').val();
     // var mobile = $('#mobile').val();
-    var project = 'Spenta - CountDownX';
+    var project = 'Bombay Realty - ICC';
     var timestamp = Date();
     data = {
         "formId": String(Math.floor(Date.now() / 1000)),
