@@ -114,7 +114,8 @@ $("#leadForm-popup").submit(function (e) {
         },
         success: function (response) {
             console.log(JSON.parse(response));
-            window.location.href = "response.html";
+            storeLeadInDB(name,email,mobile,JSON.stringify(response),'POPUP-FORM')
+            setTimeout(function redirect_response(){window.location.href = "response.html";}, 1000)
         },
         error: function (xhr) {
             //Do Something to handle error
@@ -168,8 +169,8 @@ $("#leadForm").submit(function (e) {
         },
         success: function (response) {
             console.log(JSON.parse(response));
-            storeLeadInDB()
-            // window.location.href = "response.html";
+            storeLeadInDB(name,email,mobile,JSON.stringify(response),'STATIC-FORM')
+            setTimeout(function redirect_response(){window.location.href = "response.html";}, 1000)
         },
         error: function (xhr) {
             //Do Something to handle error
@@ -272,7 +273,7 @@ function verifyOtpAPI() {
     });
 }
 
-function storeLeadInDB() {
+function storeLeadInDB(name, email, mobile, response, formName) {
     var currentUrl = window.location.href;
     var utm_source = queryParameter('utm_source', currentUrl);
     var utm_medium = queryParameter('utm_medium', currentUrl)
@@ -287,13 +288,13 @@ function storeLeadInDB() {
     var gclid = queryParameter('gclid', currentUrl)
     var fbclid = queryParameter('fbclid', currentUrl)
 
-    var name = $('#name').val();
-    var email = $('#email').val();
-    var mobile = $('#mobile').val();
-    var project = 'Bombay Realty - ICC';
+    // var name = $('#name').val();
+    // var email = $('#email').val();
+    // var mobile = $('#mobile').val();
+    var project = 'Spenta - CountDownX';
     var timestamp = Date();
     data = {
-        "formId":String(Math.floor(Date.now() / 1000)),
+        "formId": String(Math.floor(Date.now() / 1000)),
         "name": name,
         "email": email,
         "mobile": mobile,
@@ -310,30 +311,32 @@ function storeLeadInDB() {
         "utm_site": utm_site,
         "utm_placement": utm_placement,
         "gclid": gclid,
-        "fbclid": fbclid
+        "fbclid": fbclid,
+        "response": response,
+        "formName":formName
 
     }
     const formURL = 'https://dj2kxzt125.execute-api.ap-south-1.amazonaws.com/Prod/submitForm';
 
     var xhr = new XMLHttpRequest();
-          xhr.open('POST', formURL, true);
-          xhr.setRequestHeader('Accept', 'application/json; charset=utf-8');
-          xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+    xhr.open('POST', formURL, true);
+    xhr.setRequestHeader('Accept', 'application/json; charset=utf-8');
+    xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
 
-          // Send the collected data as JSON
-          xhr.send(JSON.stringify(data));
+    // Send the collected data as JSON
+    xhr.send(JSON.stringify(data));
 
-          xhr.onloadend = response => {
-            if (response.target.status === 200) {
+    xhr.onloadend = response => {
+        if (response.target.status === 200) {
             //   form.reset();
-            console.error(JSON.parse(response));
+            console.error(response);
 
             //   submitResponse.innerHTML = 'Form submitted. Success!';
-            } else {
+        } else {
             //   submitResponse.innerHTML = 'Error! Please try again.';
-              console.error(JSON.parse(response));
-            }
-          };
+            console.error(JSON.parse(response));
+        }
+    };
 
     // $.ajax({
     //     url: "https://dj2kxzt125.execute-api.ap-south-1.amazonaws.com/Prod/submitForm",
