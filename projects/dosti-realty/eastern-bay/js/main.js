@@ -64,6 +64,7 @@ $("#leadForm-popup").submit(function (e) {
     // handle button click
     $("#submit_button-popup").prop('disabled', true);
     $("#submit_button-popup").prop("value", "Processing....");
+    var formName = "Popup-Form";
 
     // Query Params
     var currentUrl = window.location.href;
@@ -121,7 +122,7 @@ $("#leadForm-popup").submit(function (e) {
         success: function (response) {
             console.log(JSON.parse(response));
             storeLeadInDB(name, email, mobile, JSON.stringify(response));
-            window.location.href = "response.html";
+            setTimeout(function redirect_response(){window.location.href = "response.html";}, 1000)
         },
         error: function (xhr) {
             //Do Something to handle error
@@ -143,6 +144,8 @@ $("#leadForm").submit(function (e) {
     // handle button click
     $("#submit_button").prop('disabled', true);
     $("#submit_button").prop("value", "Processing....");
+
+    var formName = "Desktop-Form";
 
     // Query Params
     var currentUrl = window.location.href;
@@ -199,8 +202,8 @@ $("#leadForm").submit(function (e) {
         },
         success: function (response) {
             console.log(JSON.parse(response));
-            storeLeadInDB(name, email, mobile, JSON.stringify(response));
-            window.location.href = "response.html";
+            storeLeadInDB(name, email, mobile, JSON.stringify(response),formName);
+            setTimeout(function redirect_response(){window.location.href = "response.html";}, 1000)
         },
         error: function (xhr) {
             //Do Something to handle error
@@ -219,7 +222,7 @@ $("#leadFormMobile").submit(function (e) {
     // handle button click
     $("#submit_button").prop('disabled', true);
     $("#submit_button").prop("value", "Processing....");
-
+    var formName = "Mobile-Form";
     // Query Params
     var currentUrl = window.location.href;
     // var utm_source = queryParameter('utm_source', currentUrl);
@@ -278,7 +281,7 @@ $("#leadFormMobile").submit(function (e) {
         success: function (response) {
             console.log(JSON.parse(response));
             storeLeadInDB(name, email, mobile, JSON.stringify(response));
-            window.location.href = "response.html";
+            setTimeout(function redirect_response(){window.location.href = "response.html";}, 1000)
         },
         error: function (xhr) {
             //Do Something to handle error
@@ -381,7 +384,7 @@ function verifyOtpAPI() {
     });
 }
 
-function storeLeadInDB(name, email, mobile, response) {
+function storeLeadInDB(name, email, mobile, response,formName) {
     var currentUrl = window.location.href;
     var utm_source = queryParameter('utm_source', currentUrl);
     var utm_medium = queryParameter('utm_medium', currentUrl)
@@ -420,7 +423,8 @@ function storeLeadInDB(name, email, mobile, response) {
         "utm_placement": utm_placement,
         "gclid": gclid,
         "fbclid": fbclid,
-        "response": response
+        "response": response,
+        "formName":formName
 
     }
     const formURL = 'https://dj2kxzt125.execute-api.ap-south-1.amazonaws.com/Prod/submitForm';
