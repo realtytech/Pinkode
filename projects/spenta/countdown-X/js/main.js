@@ -70,28 +70,28 @@ $("#leadForm-popup").submit(function (e) {
     var srd = queryParameter('srd', currentUrl);
     if (!srd) srd = '5fbe0ec34443ae3d255b9aba';
 
-    // $.ajax({
-    //     url: "https://app.sell.do/api/leads/create",
-    //     type: "post", //send it through get method
-    //     data: {
-    //         "sell_do[form][lead][name]": name,
-    //         "sell_do[campaign][srd]": srd,
-    //         "sell_do[form][lead][email]": email,
-    //         "sell_do[form][lead][phone]": mobile,
-    //         "api_key": 'c64d03d6e3f7962538b248e1415aa6a2',
-    //         "form_id": "5fa62a37c825615ac5916737"
-    //     },
-    //     success: function (response) {
-    //         console.log(JSON.parse(response));
-    //         storeLeadInDB(name, email, mobile, JSON.stringify(response));
-    //         window.location.href = "response.html";
-    //     },
-    //     error: function (xhr) {
-    //         //Do Something to handle error
-    //         console.log("failure");
-    //         // window.location.href = "thankyou.html";
-    //     }
-    // });
+    $.ajax({
+        url: "https://app.sell.do/api/leads/create",
+        type: "post", //send it through get method
+        data: {
+            "sell_do[form][lead][name]": name,
+            "sell_do[campaign][srd]": srd,
+            "sell_do[form][lead][email]": email,
+            "sell_do[form][lead][phone]": mobile,
+            "api_key": 'c64d03d6e3f7962538b248e1415aa6a2',
+            "form_id": "5fa62a37c825615ac5916737"
+        },
+        success: function (response) {
+            console.log(JSON.parse(response));
+            storeLeadInDB(name, email, mobile, JSON.stringify(response));
+            setTimeout(function redirect_response(){window.location.href = "response.html";}, 1000)
+        },
+        error: function (xhr) {
+            //Do Something to handle error
+            console.log("failure");
+            // window.location.href = "thankyou.html";
+        }
+    });
 
 
 });
@@ -151,28 +151,29 @@ $("#leadForm").submit(function (e) {
     var srd = queryParameter('srd', currentUrl);
     if (!srd) srd = '5fbe0ec34443ae3d255b9aba';
 
-    // $.ajax({
-    //     url: "https://app.sell.do/api/leads/create",
-    //     type: "post", //send it through get method
-    //     data: {
-    //         "sell_do[form][lead][name]": name,
-    //         "sell_do[campaign][srd]": srd,
-    //         "sell_do[form][lead][email]": email,
-    //         "sell_do[form][lead][phone]": mobile,
-    //         "api_key": 'c64d03d6e3f7962538b248e1415aa6a2',
-    //         "form_id": "5fa62a37c825615ac5916737"
-    //     },
-    //     success: function (response) {
-    //         console.log(JSON.parse(response));
-    //         storeLeadInDB(name, email, mobile, JSON.stringify(response));
-    //         window.location.href = "response.html";
-    //     },
-    //     error: function (xhr) {
-    //         //Do Something to handle error
-    //         console.log("failure");
-    //         // window.location.href = "thankyou.html";
-    //     }
-    // });
+    $.ajax({
+        url: "https://app.sell.do/api/leads/create",
+        type: "post", //send it through get method
+        data: {
+            "sell_do[form][lead][name]": name,
+            "sell_do[campaign][srd]": srd,
+            "sell_do[form][lead][email]": email,
+            "sell_do[form][lead][phone]": mobile,
+            "api_key": 'c64d03d6e3f7962538b248e1415aa6a2',
+            "form_id": "5fa62a37c825615ac5916737"
+        },
+        success: function (response) {
+            console.log(JSON.parse(response));
+            storeLeadInDB(name, email, mobile, JSON.stringify(response));
+            
+            setTimeout(function redirect_response(){window.location.href = "response.html";}, 1000)
+        },
+        error: function (xhr) {
+            //Do Something to handle error
+            console.log("failure");
+            // window.location.href = "thankyou.html";
+        }
+    });
 
 
 });
@@ -245,28 +246,29 @@ $("#leadFormMobile").submit(function (e) {
 
 
 
-    // $.ajax({
-    //     url: "https://app.sell.do/api/leads/create",
-    //     type: "post", //send it through get method
-    //     data: {
-    //         "sell_do[form][lead][name]": name,
-    //         "sell_do[campaign][srd]": srd,
-    //         "sell_do[form][lead][email]": email,
-    //         "sell_do[form][lead][phone]": mobile,
-    //         "api_key": 'c64d03d6e3f7962538b248e1415aa6a2',
-    //         "form_id": "5fa62a37c825615ac5916737"
-    //     },
-    //     success: function (response) {
-    //         console.log(JSON.parse(response));
-    //         storeLeadInDB(name, email, mobile, JSON.stringify(response));
-    //         window.location.href = "response.html";
-    //     },
-    //     error: function (xhr) {
-    //         //Do Something to handle error
-    //         console.log("failure");
-    //         // window.location.href = "thankyou.html";
-    //     }
-    // });
+    $.ajax({
+        url: "https://app.sell.do/api/leads/create",
+        type: "post", //send it through get method
+        data: {
+            "sell_do[form][lead][name]": name,
+            "sell_do[campaign][srd]": srd,
+            "sell_do[form][lead][email]": email,
+            "sell_do[form][lead][phone]": mobile,
+            "api_key": 'c64d03d6e3f7962538b248e1415aa6a2',
+            "form_id": "5fa62a37c825615ac5916737"
+        },
+        success: function (response) {
+            console.log(JSON.parse(response));
+            storeLeadInDB(name, email, mobile, JSON.stringify(response));
+            setTimeout(function redirect_response(){window.location.href = "response.html";}, 1000)
+            
+        },
+        error: function (xhr) {
+            //Do Something to handle error
+            console.log("failure");
+            // window.location.href = "thankyou.html";
+        }
+    });
 
 
 });
@@ -417,7 +419,7 @@ function storeLeadInDB(name, email, mobile, response) {
     xhr.onloadend = response => {
         if (response.target.status === 200) {
             //   form.reset();
-            console.error(JSON.parse(response));
+            console.error(response);
 
             //   submitResponse.innerHTML = 'Form submitted. Success!';
         } else {
