@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i|Montserrat:400,700|Crimson+Text:400,400i,600,600i,700,700i|Roboto+Slab:100,300,400,700');
+
+@font-face {
+  font-family:gotham-black-webfont;
+  src: url(../fonts/gotham-black-webfont.ttf);
+}
+@font-face {
+  font-family:FuturaLT-Book;
+  src: url(../fonts/FuturaLT-Book.ttf);
+}
+@font-face {
+  font-family:gotham-book;
+  src: url(../fonts/gotham-book-webfont.ttf);
+}
+@font-face {
+  font-family:gotham-bold;
+  src: url(../fonts/gotham-bold-webfont.ttf);
+}
+@font-face {
+  font-family:gotham-medium;
+  src: url(../fonts/gotham-medium-webfont.ttf);
+}
+*{
+	overflow-x: hidden;
+}
+
+body{
+		font-family: gotham-black-webfont;
+		background-color: #000;
+}
+header{
+	background: #0C0C0C;
+	padding: .5rem 0;
+}
+header .logo-section{
+	display: flex;
+	justify-content: space-between;align-items: center;
+}
+header img{
+	max-width: 85%;
+	max-height: 13vh;
+}
+
+main .btn{
+	background: #ffce7b;
+	padding: .3rem 1rem;
+	text-align: center;
+	color: 	#000;
+	
+	text-transform: uppercase;
+	font-weight: normal;
+	margin: .8rem 0;
+  font-family:gotham-book;
+  font-size: 20pt;
+}
+main .responsive .gallery{
+	margin: .3rem;
+	width: 20vw;
+	max-height: 15vh;
+	object-fit: cover;
+	
+}
+main .responsive img{
+		width: 100%;
+		object-fit: cover;
+		max-height: 15vh;
+		/* margin: 0 auto; */
+}
+
+
+footer{
+	/* background: #0C0C0C; */
+	color: #7b7b7b;
+	padding: 1rem 0;
+	text-align: center;
+	font-family: Lato;
+    font-size: 11px;
+	font-weight: 500;
+	
+	
+	width: 90vw;
+}
+footer .fa{
+	color: #7b7b7b;
+}
+
+.modal{
+	top:40vh !important;
+}
+
+#banner-image{
+	height: 100vh;
+	width: 100vw !important;
+	right: 0;
+	object-fit: cover;
+
+}
+h1{
+	color: #eeeeee;
+	font-family: gotham-medium;
+}
+h1 span{
+	color: #ffce7b;
+	font-weight: 900 !important;
+	
+}
+.p-10{
+	padding: 3rem;
+}
+.desc-text{
+	font-size: 15pt;
+	font-family: gotham-book;
+	
+}
+
+.text{
+	color: #ffce7b;
+	background-color: #7b7b7b99;
+}
+
+#fixed-download{
+	position: fixed;
+	top: 40vh;
+	right: -200px;
+	width: 200px;
+	height: 40px;
+	line-height: 20px;
+	transform-origin: 0 0;
+  transform: rotate(90deg);
+  background-color: #ffce7bee;
+	color: #0C0C0C;
+	z-index: 999;
+	cursor: pointer;
+
+
+}
+
+#banner-text{
+	position: absolute;
+    top: 80vh;
+    
+    width: 100vw;
+}
+
+
+.container {
+	position: relative;
+	width: 100%;
+	/* margin-right: 2vw; */
+	
+  }
+  
+  .image {
+	opacity: 1;
+	display: block;
+	width: 100%;
+	height: auto;
+	transition: .5s ease;
+	backface-visibility: hidden;
+  }
+  
+  .middle {
+	transition: .5s ease;
+	opacity: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	text-align: center;
+  }
+  
+  .container:hover .image {
+	opacity: 0.3;
+  }
+  
+  .container:hover .middle {
+	opacity: 1;
+  }
+  
+  .text-hover {
+	background-color: #4CAF50;
+	color: white;
+	font-size: 16px;
+	padding: 16px 32px;
+  }

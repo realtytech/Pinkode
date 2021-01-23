@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html>
+
+
+
+<head>
+   <!-- Global site tag (gtag.js) - Google Analytics -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-178894513-1"></script>
+   <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+         dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'UA-178894513-1');
+   </script>
+   <!-- Google Tag Manager -->
+   <script>
+      (function (w, d, s, l, i) {
+         w[l] = w[l] || [];
+         w[l].push({
+            'gtm.start': new Date().getTime(),
+            event: 'gtm.js'
+         });
+         var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != 'dataLayer' ? '&l=' + l : '';
+         j.async = true;
+         j.src =
+            'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+         f.parentNode.insertBefore(j,
+            f);
+      })(window, document, 'script', 'dataLayer', 'GTM-WTXXMJF');
+   </script>
+   <!-- End Google Tag Manager -->
+   <!-- Required meta tags -->
+   <meta charset="UTF-8" />
+   <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <title>South Mumbai - Luxury Apartments</title>
+
+
+   <!-- Bootstrap CSS -->
+
+   <link rel="stylesheet" href="css/bootstrap.min.css">
+   <link rel="stylesheet" href="css/style.css">
+
+   <link rel="stylesheet" media="screen and (min-width: 1200px)" href="widescreen.css">
+   <link rel="stylesheet" media="screen and (max-width: 1199px)" href="smallscreen.css">
+   <link rel="stylesheet" href="css/animate.html">
+   <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&amp;display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="css/udu2cxn.css">
+   <!-- Google Tag Manager -->
+
+   <!-- End Google Tag Manager -->
+   <script src="https://use.fontawesome.com/aab7723bd3.js"></script>
+
+
+   <style>
+
+   </style>
+</head>
+
+<body>
+
+   <!-- Google Tag Manager (noscript) -->
+   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WTXXMJF" height="0" width="0"
+         style="display:none;visibility:hidden"></iframe></noscript>
+
+
+   <!-- End Google Tag Manager (noscript) -->
+   <div class="modal fade" id="sellModal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+         <div class="modal-content">
+            <div class="fixed-close" style="overflow: hidden;">
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+               </button>
+
+            </div>
+            <div class="modal-body">
+               <form id="leadForm-popup">
+                  <h2 class="text-center">GET THE DEAL NOW</h2>
+                  <div class="form-group mt-3">
+                     <input type="text" name="name" id="name-popup" placeholder="Your Name*" class="form-control"
+                        required />
+                  </div>
+                  <div class="form-group">
+                     <input type="email" name="email" id="email-popup" placeholder="Your Email*" class="form-control"
+                        required />
+                  </div>
+                  <div class="form-group">
+                     <input type="text" maxlength="10" minlength="10" onkeypress="return numbersonly(event)"
+                        name="mobile" id="mobile-popup" placeholder="Mobile*" class="form-control" required />
+                  </div>
+
+                  <div class="text-center">
+                     <input type="submit" id="submit_button-popup" class="btn" value="Submit">
+                  </div>
+
+                  <div class="text-center">
+                     <input type="button" id="verify_otp_button-popup" class="btn" value="Verify"
+                        style="display: none; cursor: not-allowed;" onclick="verifyOtpAPI()" disabled>
+                  </div>
+               </form>
+            </div>
+
+         </div>
+      </div>
+   </div>
+   <div class="desktop-only" onscroll="getContainer()">
+      <!-- <span id="fixed-download" class="text">
+         Download Brochure
+      </span> -->
+      <!-- <header>
+         <div class="container">
+            <div class="logo-section">
+               <div class="l-logo">
+                  <a>
+                     <img src="images/Dosti Logo.png" width="140px" alt="logo" title="Dosti Realty Logo">
+                  </a>
+               </div>
+               <div class="r-logo text-right">
+                  <a> <img src="images/NEW WADALA.png" alt="logo" title="Eastern Bay Logo">
+                  </a>
+               </div>
+            </div>
+         </div>
+      </header> -->
+      <div id="banner-scroll" onscroll="getContainer()">
+         <img id="banner-image" src="./images/banner.png" alt="" srcset="">
+         <div id="banner-text" class="text-center">
+            <h1>
+               Welcome <br> <span>
+                  to a range of Premium Residences <br>
+               </span>
+               at all budgets from 4 Cr to 11 Cr+
+            </h1>
+            <img src="./images/Rectangle 4 copy.png" alt="" srcset="">
+
+         </div>
+      </div>
+
+      <main>
+         <script>
+            var myDaemon = '';
+            localStorage.setItem('myTimestamp', Date.now());
+            window.onscroll = getContainer;
+            function getContainer(e) {
+               console.log('scroll');
+            };
+         </script>
+         <div class="container-fluid">
+            <br>
+            <br>
+            <div class="text-center">
+               <h1>
+                  Choices to live <span>
+                     The SoBo Life
+                  </span>
+
+               </h1>
+               <img src="./images/Rectangle 4 copy.png" alt="" srcset="">
+<br><br>
+            </div>
+            <div class="row">
+               <div class="col-md-6">
+                  <div class="container">
+                     <img src="./images/Lodha Park_16.jpg" alt="Avatar" class="image" style="width:100%">
+                     <div class="text">Lodha Park</div>
+                     <div class="middle">
+                        <div class="text-hover">John Doe</div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <div class="container">
+                     <img src="./images/icc-16.png" alt="Avatar" class="image" style="width:100%">
+                     <div class="text">Island City Center</div>
+                     <div class="middle">
+                        <div class="text-hover">John Doe</div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <div class="container">
+                     <img src="./images/Vivarea.jpg" alt="Avatar" class="image" style="width:100%">
+                     <div class="text">Raheja Vivarea</div>
+                     <div class="middle">
+                        <div class="text-hover">John Doe</div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <div class="container">
+                     <img src="./images/rustomjee_crown.webp" alt="Avatar" class="image" style="width:100%">
+                     <div class="text">Rustomjee Crown</div>
+                     <div class="middle">
+                        <div class="text-hover">John Doe</div>
+                     </div>
+                  </div>
+               </div>
+
+               <!-- <div class="col-md-6 text-white desc-text p-10">
+                  Avail the pre-Launch offer for Eastern Bay PHASE 1, by Dosti Realty at New Wadala, a neighborhood with
+                  flourishing potential. The project will be spread across 5 Acres consisting of 5 towers. A 44 storey
+                  tower
+                  with 2 & 3 BHK majestic apartments. Move into these apartments and experience your life being elevated
+                  with
+                  its finest features. There's something for everyone - vast play area for kids, multi-purpose sports
+                  court
+                  for sports enthusiasts, indoor gym, 24/7 surveillance, water backup, walking track, and many more
+                  upcoming
+                  amenities. <br>
+                  <br>
+                  <br>
+
+                  In addition, Wadala East lies on one of the Seven Islands of Bombay that were linked together to form
+                  the
+                  modern-day Mumbai. Many renowned educational institutes like Don Bosco High School, St. Joseph's High
+                  School, Dr. Ambedkar College of Commerce & Economics is situated near Wadala. Hence, brace yourself to
+                  explore the next landmark in Wadala East!
+               </div>
+               <div class="col-md-6 p-10">
+                  <div id="main-img"></div>
+               </div>
+            </div> -->
+
+
+               <div class="col-md-12 text-white">
+
+                  <div class="form-section p-10">
+                     <form id="leadForm" class="p-10">
+                        <h2 class="text-center">CHOOSE THE SOBO LIFE NOW</h2>
+                        <div class="form-group mt-3">
+                           <input type="text" name="name" id="name" placeholder="Your Name*" class="form-control"
+                              required />
+                        </div>
+                        <div class="form-group">
+                           <input type="email" name="email" id="email" placeholder="Your Email*" class="form-control"
+                              required />
+                        </div>
+                        <div class="form-group">
+                           <input type="text" maxlength="10" minlength="10" onkeypress="return numbersonly(event)"
+                              name="mobile" id="mobile" placeholder="Mobile*" class="form-control" required />
+                        </div>
+                        <!-- <div class="form-group">
+                           <input type="text" maxlength="6" minlength="6" onkeypress="return numbersonly(event)"
+                              name="otp" id="otp" placeholder="OTP" class="form-control" style="display: none;"
+                              onchange="isValidOTP()" />
+                        </div> -->
+
+                        <div class="text-center">
+                           <!-- <a href="" class="" type="submit">Submit</a> -->
+                           <input type="submit" id="submit_button" class="btn" value="Submit">
+                        </div>
+
+                        <div class="text-center">
+                           <input type="button" id="verify_otp_button" class="btn" value="Verify"
+                              style="display: none; cursor: not-allowed;" onclick="verifyOtpAPI()" disabled>
+                        </div>
+                     </form>
+                     <div class="Thankyou" style="display: none;">
+                        <h2 class="th2">Thank you for your enquiry</h2>
+                        <p>Our representative will get in touch with you shortly</p>
+                        <div class="text-center">
+                           <a href="#" class=" btn" type="button">Know More</a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            
+
+            <div class="text-center">
+               <img src="./images/Rectangle 4 copy.png" alt="" srcset="">
+               <footer>
+                  <div class="container">
+                     <p>
+                        Disclaimer:
+                        The content is for information purposes only and does not constitute an offer to avail of any
+                        service.
+                        Images for representation purpose only. This is not the official website. This website is
+                        maintained by
+                        authorized marketing partner. We may also share data, information with rera registered sub
+                        brokers/companies/projects for further processing. Dosti Eastern Bay - Phase 1 project is
+                        registered
+                        under RERA No. P51900025142 and is available on website - https://maharera.mahaonline.gov.in
+                        under
+                        registered projects. All Rights Reserved.
+                     </p>
+
+                  </div>
+               </footer>
+
+
+            </div>
+
+         </div>
+
+
+      </main>
+   </div>
+
+   <div class="mobile-only">
+      <header>
+         <div class="container">
+            <div class="logo-section">
+               <div class="l-logo">
+                  <a>
+                     <img src="images/Dosti Logo.png" width="140px" alt="logo" title="Dosti Realty Logo">
+                  </a>
+               </div>
+               <div class="r-logo text-right">
+                  <a> <img src="images/NEW WADALA.png" alt="logo" title="Eastern Bay Logo">
+                  </a>
+               </div>
+            </div>
+         </div>
+      </header>
+      <div>
+         <img id="banner-image" src="./images/banner-mobile.webp" alt="" srcset="">
+      </div>
+
+      <main>
+         <script>
+            var myDaemon = '';
+            localStorage.setItem('myTimestamp', Date.now());
+         </script>
+         <div class="container-fluid">
+            <div class="row">
+               <div class="col-xl-6 text-white">
+
+                  <div class="form-section ">
+                     <form id="leadFormMobile" class="">
+                        <h2 class="text-center">GET THE DEAL NOW</h2>
+                        <div class="form-group mt-3">
+                           <input type="text" name="name" id="m-name" placeholder="Your Name*" class="form-control"
+                              required />
+                        </div>
+                        <div class="form-group">
+                           <input type="email" name="email" id="m-email" placeholder="Your Email*" class="form-control"
+                              required />
+                        </div>
+                        <div class="form-group">
+                           <input type="text" maxlength="10" minlength="10" onkeypress="return numbersonly(event)"
+                              name="mobile" id="m-mobile" placeholder="Mobile*" class="form-control" required />
+                        </div>
+                        <!-- <div class="form-group">
+                           <input type="text" maxlength="6" minlength="6" onkeypress="return numbersonly(event)"
+                              name="otp" id="otp" placeholder="OTP" class="form-control" style="display: none;"
+                              onchange="isValidOTP()" />
+                        </div> -->
+
+                        <div class="text-center">
+                           <!-- <a href="" class="" type="submit">Submit</a> -->
+                           <input type="submit" id="submit_button" class="btn" value="Submit">
+                        </div>
+
+                        <div class="text-center">
+                           <input type="button" id="verify_otp_button" class="btn" value="Verify"
+                              style="display: none; cursor: not-allowed;" onclick="verifyOtpAPI()" disabled>
+                        </div>
+                     </form>
+                     <div class="Thankyou" style="display: none;">
+                        <h2 class="th2">Thank you for your enquiry</h2>
+                        <p>Our representative will get in touch with you shortly</p>
+                        <div class="text-center">
+                           <a href="#" class=" btn" type="button">Know More</a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-6 pt-4 ">
+                  <div class="text-center mb-4">
+                     <h1>
+                        Welcome to <span>
+                           Dosti Eastern Bay
+                        </span>
+                     </h1>
+                     <img src="./images/Rectangle 4 copy.png" alt="" srcset="">
+
+                  </div>
+                  <div id="main-img">
+
+                  </div>
+               </div>
+               <div class="col-xl-6 text-white desc-text mt-4 pt-4">
+                  Avail the pre-Launch offer for Eastern Bay PHASE 1, by Dosti Realty at New Wadala, a neighborhood with
+                  flourishing potential. The project will be spread across 5 Acres consisting of 5 towers. A 44 storey
+                  tower
+                  with 2 & 3 BHK majestic apartments. Move into these apartments and experience your life being elevated
+                  with
+                  its finest features. There's something for everyone - vast play area for kids, multi-purpose sports
+                  court
+                  for sports enthusiasts, indoor gym, 24/7 surveillance, water backup, walking track, and many more
+                  upcoming
+                  amenities. <br>
+                  <hr>
+
+                  In addition, Wadala East lies on one of the Seven Islands of Bombay that were linked together to form
+                  the
+                  modern-day Mumbai. Many renowned educational institutes like Don Bosco High School, St. Joseph's High
+                  School, Dr. Ambedkar College of Commerce & Economics is situated near Wadala. Hence, brace yourself to
+                  explore the next landmark in Wadala East!
+               </div>
+               <div class="col-xl-6 pt-4">
+                  <div class="text-center">
+                     <h1>
+                        Project<span>
+                           Glimpses
+                        </span>
+                     </h1>
+                     <img src="./images/Rectangle 4 copy.png" alt="" srcset="">
+
+                  </div>
+                  <hr>
+
+                  <!-- Slideshow container -->
+                  <div class="slideshow-container">
+
+                     <!-- Full-width images with number and caption text -->
+                     <!-- Full-width images with number and caption text -->
+                     <div class="mySlides fade">
+                        <img src="./images/carousel/PHOTO-2020-10-28-20-26-23.webp" style="width:100%">
+                        <div class="text">Bird Eye View</div>
+                     </div>
+
+                     <div class="mySlides fade">
+                        <img src="./images/carousel/PHOTO-2020-10-28-20-26-24.webp" style="width:100%">
+                        <div class="text">Multiple Swimming Pools</div>
+                     </div>
+
+                     <div class="mySlides fade">
+                        <!-- <div class="numbertext">3 / 3</div> -->
+                        <img src="./images/carousel/PHOTO-2020-10-28-20-26-25_1.webp" style="width:100%">
+                        <div class="text">Sea Facing View</div>
+                     </div>
+                     <div class="mySlides fade">
+                        <img src="./images/carousel/PHOTO-2020-10-28-20-26-25.webp" style="width:100%">
+                        <div class="text">Grand Lobby</div>
+                     </div>
+                     <!-- Next and previous buttons -->
+                     <!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a> -->
+                     <!-- <a class="next" onclick="plusSlides(1)">&#10095;</a> -->
+                  </div>
+                  <br>
+
+                  <!-- The dots/circles -->
+                  <!-- <div style="text-align:center">
+                     <span class="dot" onclick="currentSlide(1)"></span>
+                     <span class="dot" onclick="currentSlide(2)"></span>
+                     <span class="dot" onclick="currentSlide(3)"></span>
+                  </div> -->
+               </div>
+            </div>
+            <div class="row">
+
+
+            </div>
+
+            <div class="text-center">
+               <img src="./images/Rectangle 4 copy.png" alt="" srcset="">
+               <footer>
+                  <div class="container">
+                     <p>
+                        Disclaimer:
+                        The content is for information purposes only and does not constitute an offer to avail of any
+                        service.
+                        Images for representation purpose only. This is not the official website. This website is
+                        maintained by
+                        authorized marketing partner. We may also share data, information with rera registered sub
+                        brokers/companies/projects for further processing. Dosti Eastern Bay - Phase 1 project is
+                        registered
+                        under RERA No. P51900025142 and is available on website - https://maharera.mahaonline.gov.in
+                        under
+                        registered projects. All Rights Reserved.
+                     </p>
+
+                  </div>
+               </footer>
+
+
+            </div>
+
+         </div>
+
+
+      </main>
+   </div>
+
+
+   <script src="js/jquery-3.4.1.min.js"></script>
+   <script src="js/popper.min.js"></script>
+   <script src="js/bootstrap.min.js"></script>
+   <script src="js/aos.js"></script>
+   <script src="js/main.js"></script>
+
+</body>
+
+
+</html>
