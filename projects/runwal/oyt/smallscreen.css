@@ -177,3 +177,5 @@ h2{
 	object-fit: cover;
 
 }
+
+#banner-image{object-fit: contain;}

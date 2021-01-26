@@ -152,6 +152,9 @@ h1 span{
 
 }
 
+.mySlides1, .mySlides{
+	text-align: center;
+}
 
 .mySlides1 img{
 	position: relative;
