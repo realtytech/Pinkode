@@ -47,8 +47,8 @@
    <link rel="stylesheet" href="css/bootstrap.min.css">
    <link rel="stylesheet" href="css/style.css">
 
-   <link rel="stylesheet" media="screen and (min-width: 1200px)" href="widescreen.css">
-   <link rel="stylesheet" media="screen and (max-width: 1199px)" href="smallscreen.css">
+   <link rel="stylesheet" media="screen and (min-width: 800px)" href="widescreen.css">
+   <link rel="stylesheet" media="screen and (max-width: 799px)" href="smallscreen.css">
    <link rel="stylesheet" href="css/animate.html">
    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&amp;display=swap" rel="stylesheet">
    <link rel="stylesheet" href="css/udu2cxn.css">
@@ -94,6 +94,17 @@
                   <div class="form-group">
                      <input type="text" maxlength="10" minlength="10" onkeypress="return numbersonly(event)"
                         name="mobile" id="mobile-popup" placeholder="Mobile*" class="form-control" required />
+                  </div>
+                  <div class="form-group">
+                     <select name="project" id="project-popup" class="form-control">
+                        <option disabled selected value> Chooe your project of Interest</option>
+
+                        <option value="park">Lodha Park</option>
+                        <option value="icc">Bombay Realty - Island City Center</option>
+                        <option value="vivarea">K Raheja Corp - Vivarea</option>
+                        <option value="crown">Rustomjee Crown</option>
+                     </select>
+
                   </div>
 
                   <div class="text-center">
@@ -163,47 +174,183 @@
 
                </h1>
                <img src="./images/Rectangle 4 copy.png" alt="" srcset="">
-<br><br>
+               <br><br>
             </div>
             <div class="row">
-               <div class="col-md-6">
+               <div class="col-xl-6">
                   <div class="container">
                      <img src="./images/Lodha Park_16.jpg" alt="Avatar" class="image" style="width:100%">
                      <div class="text">Lodha Park</div>
-                     <div class="middle">
-                        <div class="text-hover">John Doe</div>
+                     <div class="middle text-hover">
+                        <div class="row">
+                           <div class="col-md-12 text-center">
+                              <img src="./images/media-kit-lodha-logo-grey.png" alt="" width="30%;">
+                              <span>|</span>
+                              <img src="./images/LODHA_PARK_LOGO_2019_without_tagline.svg" style="filter: invert(1)"
+                                 alt="" width="30%">
+                              <!-- <hr class="text-white"> -->
+                           </div>
+                           <div class="col-md-7 text-left p-3">
+                              <h1>
+
+                                 <span>
+                                    2, 3, & 4 BHK
+
+                                 </span> Apartments <br>
+                                 in <span>
+                                    Worli
+                                 </span>
+                                 Starting from <span>
+                                    4.5 Cr
+                                 </span>
+                              </h1>
+                           </div>
+                           <div class="col-md-5 text-left p-3">
+                              <h1>
+                                 Private Garden <br>
+                                 Clubhouse <br>
+                                 Gym <br>
+                                 Indoor Playground <br>
+                                 Concierge Service <br>
+                              </h1>
+
+
+                           </div>
+                        </div>
+                        <div class="text-hover clickable" onclick="showModal('project','1')">Book Interest Now</div>
                      </div>
                   </div>
                </div>
-               <div class="col-md-6">
+               <div class="col-xl-6">
                   <div class="container">
                      <img src="./images/icc-16.png" alt="Avatar" class="image" style="width:100%">
                      <div class="text">Island City Center</div>
-                     <div class="middle">
-                        <div class="text-hover">John Doe</div>
+                     <div class="middle text-hover">
+                        <div class="row">
+                           <div class="col-md-12 text-center">
+                              <img src="./images/bombay-realty-vector-logo.png" alt="" width="30%;">
+                              <span>|</span>
+                              <img src="./images/icc-white.png" alt="" width="15%">
+                              <hr class="text-white">
+                           </div>
+                           <div class="col-md-7 text-left p-3">
+                              <h1>
+
+                                 <span>
+                                    3, & 4 BHK
+
+                                 </span> Apartments <br>
+                                 in <span>
+                                    Dadar
+                                 </span>
+                                 Starting from <span>
+                                    6.4 Cr
+                                 </span>
+                              </h1>
+                           </div>
+                           <div class="col-md-5 text-left p-3">
+                              <h1>
+                                 Premium Apartments <br>
+                                 Ready to Move In <br>
+                                 Limited Availability <br>
+                              </h1>
+
+
+                           </div>
+                        </div>
+                        <div class="text-hover clickable" onclick="showModal('project','2')">Book Interest Now</div>
                      </div>
                   </div>
                </div>
-               <div class="col-md-6">
+               <div class="col-xl-6">
                   <div class="container">
                      <img src="./images/Vivarea.jpg" alt="Avatar" class="image" style="width:100%">
                      <div class="text">Raheja Vivarea</div>
-                     <div class="middle">
-                        <div class="text-hover">John Doe</div>
+                     <div class="middle text-hover">
+                        <div class="row">
+                           <div class="col-md-12 text-center">
+                              <img src="./images/k-raheja-white-logo.png" alt="" width="10%;">
+                              <span>|</span>
+                              <img src="./images/vivirea-logo-white.png" style="filter: invert(0)" alt="" width="20%">
+                           </div>
+                           <div class="col-md-5 text-left p-3">
+                              <h1>
+
+                                 <span>
+                                    3, & 4 BHK
+
+                                 </span> Apartments <br>
+                                 in <span>
+                                    Mahalaxmi
+                                 </span>
+                                 Starting from <span>
+                                    12 Cr
+                                 </span>
+                              </h1>
+                           </div>
+                           <div class="col-md-7 text-left p-3">
+                              <h1>
+                                 Landscape garden <br> Swimming pool <br> Multipurpose court <br> Skating rank <br>
+                                 Party lawn and much more. <br>
+
+
+                              </h1>
+
+
+                           </div>
+                        </div>
+                        <div class="text-hover clickable" onclick="showModal('project','3')">Book Interest Now</div>
                      </div>
                   </div>
                </div>
-               <div class="col-md-6">
+               <div class="col-xl-6">
                   <div class="container">
                      <img src="./images/rustomjee_crown.webp" alt="Avatar" class="image" style="width:100%">
                      <div class="text">Rustomjee Crown</div>
-                     <div class="middle">
-                        <div class="text-hover">John Doe</div>
+                     <div class="middle text-hover">
+                        <div class="row">
+                           <div class="col-md-12 text-center">
+                              <img src="./images/rustomjee-logo.jpg" alt="" width="30%;"
+                                 style="filter: invert(1)  brightness(2) contrast(0.6)">
+                              <span>|</span>
+                              <img src="./images/crown.jpg" style="filter: invert(0)  brightness(2) contrast(0.6)"
+                                 alt="" width="30%">
+                              <!-- <hr class="text-white"> -->
+                           </div>
+                           <div class="col-md-7 text-left p-3">
+                              <h1>
+
+                                 <span>
+                                    3, 4 & 5 BHK
+
+                                 </span> Apartments <br>
+                                 in <span>
+                                    Prabhadevi
+                                 </span>
+                                 Starting from <span>
+                                    7.5 Cr
+                                 </span>
+                              </h1>
+                           </div>
+                           <div class="col-md-5 text-left p-3">
+                              <h1>
+                                 Prime Location <br>
+                                 View of the Sea Link <br>
+                                 Over 60 Luxury Lifestyle Amenities <br>
+
+
+                              </h1>
+
+
+
+                           </div>
+                        </div>
+                        <div class="text-hover clickable" onclick="showModal('project','4')">Book Interest Now</div>
                      </div>
                   </div>
                </div>
 
-               <!-- <div class="col-md-6 text-white desc-text p-10">
+               <!-- <div class="col-xl-6 text-white desc-text p-10">
                   Avail the pre-Launch offer for Eastern Bay PHASE 1, by Dosti Realty at New Wadala, a neighborhood with
                   flourishing potential. The project will be spread across 5 Acres consisting of 5 towers. A 44 storey
                   tower
@@ -223,7 +370,7 @@
                   School, Dr. Ambedkar College of Commerce & Economics is situated near Wadala. Hence, brace yourself to
                   explore the next landmark in Wadala East!
                </div>
-               <div class="col-md-6 p-10">
+               <div class="col-xl-6 p-10">
                   <div id="main-img"></div>
                </div>
             </div> -->
@@ -246,6 +393,20 @@
                            <input type="text" maxlength="10" minlength="10" onkeypress="return numbersonly(event)"
                               name="mobile" id="mobile" placeholder="Mobile*" class="form-control" required />
                         </div>
+                        <div class="form-group">
+                           <select name="project" id="project" class="form-control">
+                              <option disabled selected value> Chooe your project of Interest</option>
+                              <option value="park">Lodha Park</option>
+                              <option value="icc">Bombay Realty - Island City Center</option>
+                              <option value="vivarea">K Raheja Corp - Vivarea</option>
+                              <option value="crown">Rustomjee Crown</option>
+                           </select>
+
+                        </div>
+                        <!-- <div class="form-group">
+                           <input type="text" maxlength="10" minlength="10" onkeypress="return numbersonly(event)"
+                              name="mobile" id="mobile" placeholder="Mobile*" class="form-control" required />
+                        </div> -->
                         <!-- <div class="form-group">
                            <input type="text" maxlength="6" minlength="6" onkeypress="return numbersonly(event)"
                               name="otp" id="otp" placeholder="OTP" class="form-control" style="display: none;"
@@ -271,56 +432,46 @@
                      </div>
                   </div>
                </div>
-            
 
-            <div class="text-center full-width" >
-               <img src="./images/Rectangle 4 copy.png" alt="" srcset="">
-               <footer class="full-width">
-                  <div class="container">
-                     <p>
-                        Disclaimer:
-                        The content is for information purposes only and does not constitute an offer to avail of any
-                        service.
-                        Images for representation purpose only. This is not the official website. This website is
-                        maintained by
-                        authorized marketing partner. We may also share data, information with rera registered sub
-                        brokers/companies/projects for further processing. Dosti Eastern Bay - Phase 1 project is
-                        registered
-                        under RERA No. P51900025142 and is available on website - https://maharera.mahaonline.gov.in
-                        under
-                        registered projects. All Rights Reserved.
-                     </p>
 
-                  </div>
-               </footer>
+               <div class="text-center full-width">
+                  <img src="./images/Rectangle 4 copy.png" alt="" srcset="">
+                  <footer class="full-width">
+                     <div class="container">
+                        <p>
+                           Disclaimer:
+                           The content is for information purposes only and does not constitute an offer to avail of any
+                           service.
+                           Images for representation purpose only. This is not the official website. We may also share
+                           data, information with rera registered sub
+                           brokers/companies/projects for further processing. All Rights Reserved.
+                        </p>
 
+                     </div>
+                  </footer>
+
+
+               </div>
 
             </div>
-
-         </div>
 
 
       </main>
    </div>
 
    <div class="mobile-only">
-      <header>
-         <div class="container">
-            <div class="logo-section">
-               <div class="l-logo">
-                  <a>
-                     <img src="images/Dosti Logo.png" width="140px" alt="logo" title="Dosti Realty Logo">
-                  </a>
-               </div>
-               <div class="r-logo text-right">
-                  <a> <img src="images/NEW WADALA.png" alt="logo" title="Eastern Bay Logo">
-                  </a>
-               </div>
-            </div>
+      <div id="banner-scroll" onscroll="getContainer()">
+         <img id="banner-image" src="./images/banner.png" alt="" srcset="">
+         <div id="banner-text" class="text-center">
+            <h1>
+               Welcome <br> <span>
+                  to a range of Premium Residences <br>
+               </span>
+               at all budgets from <br> 4 Cr to 11 Cr+
+            </h1>
+            <div class="m-4 top-border"></div>
+
          </div>
-      </header>
-      <div>
-         <img id="banner-image" src="./images/banner-mobile.webp" alt="" srcset="">
       </div>
 
       <main>
@@ -331,22 +482,220 @@
          <div class="container-fluid">
             <div class="row">
                <div class="col-xl-6 text-white">
+                  <div class="text-center">
+                     <h1>
+                        Choices to live <br> <span>
+                           The SoBo Life
+                        </span>
 
-                  <div class="form-section ">
-                     <form id="leadFormMobile" class="">
-                        <h2 class="text-center">GET THE DEAL NOW</h2>
+                     </h1>
+
+                  </div>
+
+
+               </div>
+               <div class="col-xl-6 p-0 m-0 ">
+                  <div class="container-fluid">
+                     <div class="middle text-hover">
+                        <img src="./images/Lodha Park_16.jpg" alt="Avatar" class="image" style="width:100%">
+                        <!-- <div class="text">Lodha Park</div> -->
+                        <div class="row">
+                           <div class="col-md-12 text-center mt-3">
+                              <img src="./images/media-kit-lodha-logo-grey.png" alt="" width="30%;">
+                              <span>|</span>
+                              <img src="./images/LODHA_PARK_LOGO_2019_without_tagline.svg" style="filter: invert(1)"
+                                 alt="" width="30%">
+                              <!-- <hr class="text-white"> -->
+                           </div>
+                           <div class="col-md-6 text-center p-2">
+                              <h1>
+
+                                 <span>
+                                    2, 3, & 4 BHK
+
+                                 </span> Apartments <br>
+                                 in <span>
+                                    Worli
+                                 </span>
+                                 Starting from <span>
+                                    4.5 Cr
+                                 </span>
+                              </h1>
+                           </div>
+                           <div class="col-md-5 text-center p-3">
+                              <h1>
+                                 Indoor Playground <br>
+                                 Concierge Service <br>
+                                 Private Garden <br>
+                                 Clubhouse <br>
+                                 Gym <br>
+                              </h1>
+
+
+                           </div>
+                        </div>
+                        <div class="text-hover clickable" onclick="showModal('project','1')">Book Interest Now</div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-6 p-0 m-0 mt-3 ">
+                  <div class="container-fluid">
+                     <div class="middle text-hover">
+                        <img src="./images/icc-16.png" alt="Avatar" class="image" style="width:100%">
+                        <!-- <div class="text">Lodha Park</div> -->
+                        <div class="row">
+                           <div class="col-md-12 text-center mt-3">
+                              <img src="./images/bombay-realty-vector-logo.png" alt="" width="30%;">
+                              <span>|</span>
+                              <img src="./images/icc-white.png" alt="" width="15%">
+                              <hr class="text-white">
+                           </div>
+                           <div class="col-md-6 text-center p-2">
+                              <h1>
+
+                                 <span>
+                                    3 & 4 BHK
+
+                                 </span> Apartments <br>
+                                 in <span>
+                                    Dadar
+                                 </span>
+                                 Starting from <span>
+                                    6.4 Cr
+                                 </span>
+                              </h1>
+                           </div>
+                           <div class="col-md-5 text-center p-3">
+                              <h1>
+                                 Premium Apartments <br>
+                                 Ready to Move In <br>
+                                 Limited Availability <br>
+                              </h1>
+
+
+                           </div>
+                        </div>
+                        <div class="text-hover clickable" onclick="showModal('project','2')">Book Interest Now</div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-6 p-0 m-0 mt-3">
+                  <div class="container-fluid">
+                     <div class="middle text-hover">
+                        <img src="./images/Vivarea.jpg" alt="Avatar" class="image" style="width:100%">
+                        <!-- <div class="text">Lodha Park</div> -->
+                        <div class="row">
+                           <div class="col-md-12 text-center mt-3">
+                              <img src="./images/k-raheja-white-logo.png" alt="" width="15%;">
+                              <span>|</span>
+                              <img src="./images/vivirea-logo-white.png" style="filter: invert(0)" alt="" width="25%">
+                              <!-- <hr class="text-white"> -->
+                           </div>
+                           <div class="col-md-6 text-center p-2">
+                              <h1>
+
+                                 <span>
+                                    3 & 4 BHK
+
+                                 </span> Apartments <br>
+                                 in <span>
+                                    Mahalaxmi
+                                 </span>
+                                 Starting <br> from <span>
+                                    12 Cr
+                                 </span>
+                              </h1>
+                           </div>
+                           <div class="col-md-5 text-center p-3">
+                              <h1>
+                                 Landscape garden <br> Swimming pool <br> Multipurpose court <br> Skating rank <br>
+                                 Party lawn and much more. <br>
+
+
+                              </h1>
+
+
+                           </div>
+                        </div>
+                        <div class="text-hover clickable" onclick="showModal('project','3')">Book Interest Now</div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-6 p-0 m-0 mt-3 ">
+                  <div class="container-fluid">
+                     <div class="middle text-hover">
+                        <img src="./images/rustomjee_crown.webp" alt="Avatar" class="image" style="width:100%">
+                        <!-- <div class="text">Lodha Park</div> -->
+                        <div class="row">
+                           <div class="col-md-12 text-center mt-3">
+                              <img src="./images/rustomjee-logo.jpg" alt="" width="30%;"
+                                 style="filter: invert(1)  brightness(2) contrast(0.6)">
+                              <span>|</span>
+                              <img src="./images/crown.jpg" style="filter: invert(0)  brightness(2) contrast(0.6)"
+                                 alt="" width="30%">
+                              <!-- <hr class="text-white"> -->
+                           </div>
+                           <div class="col-md-6 text-center p-4">
+                              <h1>
+
+                                 <span>
+                                    3, 4 & 5 BHK
+
+                                 </span> Apartments <br>
+                                 in <span>
+                                    Prabhadevi
+                                 </span>
+                                 Starting from <span>
+                                    7.5 Cr
+                                 </span>
+                              </h1>
+                           </div>
+                           <div class="col-md-5 text-center p-3">
+                              <h1>
+                                 Prime Location <br>
+                                 View of the Sea Link <br>
+                                 Over 60 Luxury Lifestyle Amenities <br>
+
+
+                              </h1>
+
+
+                           </div>
+                        </div>
+                        <div class="text-hover clickable" onclick="showModal('project','4')">Book Interest Now</div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-6 text-white desc-text mt-4 pt-4">
+                  <div class="form-section p-3">
+                     <form id="leadForm" class="p-3">
+                        <h2 class="text-center">CHOOSE THE SOBO LIFE NOW</h2>
                         <div class="form-group mt-3">
-                           <input type="text" name="name" id="m-name" placeholder="Your Name*" class="form-control"
+                           <input type="text" name="name" id="name" placeholder="Your Name*" class="form-control"
                               required />
                         </div>
                         <div class="form-group">
-                           <input type="email" name="email" id="m-email" placeholder="Your Email*" class="form-control"
+                           <input type="email" name="email" id="email" placeholder="Your Email*" class="form-control"
                               required />
                         </div>
                         <div class="form-group">
                            <input type="text" maxlength="10" minlength="10" onkeypress="return numbersonly(event)"
-                              name="mobile" id="m-mobile" placeholder="Mobile*" class="form-control" required />
+                              name="mobile" id="mobile" placeholder="Mobile*" class="form-control" required />
                         </div>
+                        <div class="form-group">
+                           <select name="project" id="project" class="form-control">
+                              <option disabled selected value> Chooe your project of Interest</option>
+                              <option value="park">Lodha Park</option>
+                              <option value="icc">Bombay Realty - Island City Center</option>
+                              <option value="vivarea">K Raheja Corp - Vivarea</option>
+                              <option value="crown">Rustomjee Crown</option>
+                           </select>
+
+                        </div>
+                        <!-- <div class="form-group">
+                           <input type="text" maxlength="10" minlength="10" onkeypress="return numbersonly(event)"
+                              name="mobile" id="mobile" placeholder="Mobile*" class="form-control" required />
+                        </div> -->
                         <!-- <div class="form-group">
                            <input type="text" maxlength="6" minlength="6" onkeypress="return numbersonly(event)"
                               name="otp" id="otp" placeholder="OTP" class="form-control" style="display: none;"
@@ -372,119 +721,27 @@
                      </div>
                   </div>
                </div>
-               <div class="col-xl-6 pt-4 ">
-                  <div class="text-center mb-4">
-                     <h1>
-                        Welcome to <span>
-                           Dosti Eastern Bay
-                        </span>
-                     </h1>
-                     <img src="./images/Rectangle 4 copy.png" alt="" srcset="">
 
-                  </div>
-                  <div id="main-img">
-
-                  </div>
-               </div>
-               <div class="col-xl-6 text-white desc-text mt-4 pt-4">
-                  Avail the pre-Launch offer for Eastern Bay PHASE 1, by Dosti Realty at New Wadala, a neighborhood with
-                  flourishing potential. The project will be spread across 5 Acres consisting of 5 towers. A 44 storey
-                  tower
-                  with 2 & 3 BHK majestic apartments. Move into these apartments and experience your life being elevated
-                  with
-                  its finest features. There's something for everyone - vast play area for kids, multi-purpose sports
-                  court
-                  for sports enthusiasts, indoor gym, 24/7 surveillance, water backup, walking track, and many more
-                  upcoming
-                  amenities. <br>
-                  <hr>
-
-                  In addition, Wadala East lies on one of the Seven Islands of Bombay that were linked together to form
-                  the
-                  modern-day Mumbai. Many renowned educational institutes like Don Bosco High School, St. Joseph's High
-                  School, Dr. Ambedkar College of Commerce & Economics is situated near Wadala. Hence, brace yourself to
-                  explore the next landmark in Wadala East!
-               </div>
-               <div class="col-xl-6 pt-4">
-                  <div class="text-center">
-                     <h1>
-                        Project<span>
-                           Glimpses
-                        </span>
-                     </h1>
-                     <img src="./images/Rectangle 4 copy.png" alt="" srcset="">
-
-                  </div>
-                  <hr>
-
-                  <!-- Slideshow container -->
-                  <div class="slideshow-container">
-
-                     <!-- Full-width images with number and caption text -->
-                     <!-- Full-width images with number and caption text -->
-                     <div class="mySlides fade">
-                        <img src="./images/carousel/PHOTO-2020-10-28-20-26-23.webp" style="width:100%">
-                        <div class="text">Bird Eye View</div>
-                     </div>
-
-                     <div class="mySlides fade">
-                        <img src="./images/carousel/PHOTO-2020-10-28-20-26-24.webp" style="width:100%">
-                        <div class="text">Multiple Swimming Pools</div>
-                     </div>
-
-                     <div class="mySlides fade">
-                        <!-- <div class="numbertext">3 / 3</div> -->
-                        <img src="./images/carousel/PHOTO-2020-10-28-20-26-25_1.webp" style="width:100%">
-                        <div class="text">Sea Facing View</div>
-                     </div>
-                     <div class="mySlides fade">
-                        <img src="./images/carousel/PHOTO-2020-10-28-20-26-25.webp" style="width:100%">
-                        <div class="text">Grand Lobby</div>
-                     </div>
-                     <!-- Next and previous buttons -->
-                     <!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a> -->
-                     <!-- <a class="next" onclick="plusSlides(1)">&#10095;</a> -->
-                  </div>
-                  <br>
-
-                  <!-- The dots/circles -->
-                  <!-- <div style="text-align:center">
-                     <span class="dot" onclick="currentSlide(1)"></span>
-                     <span class="dot" onclick="currentSlide(2)"></span>
-                     <span class="dot" onclick="currentSlide(3)"></span>
-                  </div> -->
-               </div>
+               
             </div>
-            <div class="row">
-
-
-            </div>
-
             <div class="text-center">
-               <img src="./images/Rectangle 4 copy.png" alt="" srcset="">
-               <footer>
-                  <div class="container">
+               <div class="container-fluid top-border">
+
+                  <footer>
                      <p>
                         Disclaimer:
                         The content is for information purposes only and does not constitute an offer to avail of any
                         service.
-                        Images for representation purpose only. This is not the official website. This website is
-                        maintained by
-                        authorized marketing partner. We may also share data, information with rera registered sub
-                        brokers/companies/projects for further processing. Dosti Eastern Bay - Phase 1 project is
-                        registered
-                        under RERA No. P51900025142 and is available on website - https://maharera.mahaonline.gov.in
-                        under
-                        registered projects. All Rights Reserved.
+                        Images for representation purpose only. This is not the official website. We may also share
+                        data, information with rera registered sub
+                        brokers/companies/projects for further processing. All Rights Reserved.
                      </p>
 
-                  </div>
-               </footer>
+                  </footer>
+               </div>
 
 
             </div>
-
-         </div>
 
 
       </main>

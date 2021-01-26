@@ -567,10 +567,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-function showModal(type) {
-    if (type == 'brochure') {
-        $('#sellModal .modal-body').html(brochure_form_body);
+
+function showModal(type,project) {
+    if (type == 'project') {
+        
         $("#sellModal").modal("show");
+        $('#project-popup').prop('selectedIndex', project);
         localStorage.removeItem('myTimestamp');
     } else {
         // $('#sellModal .modal-body').html(document.getElementsByClassName('form-section')[0].innerHTML);
@@ -606,6 +608,16 @@ window.onscroll = function (e) {
 var banner = document.getElementById('banner-scroll');
 banner.onmouseover = function(e) {
     setTimeout(() => { $( 'html, body' ).stop().animate({scrollTop:$('.desktop-only .container-fluid').offset().top}, '1500'); }, 2000);
+
+
+    
+
+    // $(window).scrollTop($('.desktop-only .container-fluid').offset().top);
+    banner.onmouseover = function(){return;}
+};
+
+document.onload = function(e) {
+    setTimeout(() => { $( 'html, body' ).stop().animate({scrollTop:$('.desktop-only .container-fluid').offset().top}, '1500'); }, 5000);
 
 
     

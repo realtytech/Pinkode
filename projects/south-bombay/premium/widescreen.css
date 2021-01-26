@@ -102,7 +102,7 @@ header img{
 	/* height: 4rem; */
 }
 
-.form-section input[type=text], .form-section input[type=email]  {
+.form-section input[type=text], .form-section input[type=email], .form-section select  {
 
 	background-color: #000;
 	color: #7b7b7b;
@@ -133,3 +133,80 @@ header img{
 	font-family: gotham-book;
 	
 }
+
+
+#banner-text{
+	position: absolute;
+    top: 80vh;
+    
+    width: 100vw;
+}
+
+
+.container {
+	position: relative;
+	width: 100%;
+	padding-right: 0;
+	/* margin-right: 2vw; */
+	
+  }
+  
+  .image {
+	opacity: 1;
+	display: block;
+	width: 100%;
+	height: auto;
+	transition: .5s ease;
+	backface-visibility: hidden;
+  }
+  
+  .middle {
+	  width: 100%;
+	transition: .5s ease;
+	opacity: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	text-align: center;
+  }
+  
+  .container:hover .image {
+	opacity: 0.1;
+	z-index: -1;
+  }
+  
+  .container:hover .middle {
+	opacity: 1;
+	z-index: 99;
+  }
+
+  .container:hover .text {
+	opacity: 0;
+  }
+  
+  .text-hover {
+	/* background-color: #4CAF50; */
+	font:FuturaLT-Book;
+	background-color: #333;
+	color: #eee;
+	/* color: #345 !important; */
+	font-size: 1.5rem !important;
+	padding: 16px 32px;
+	font-weight: 10;
+  }
+
+  .text-hover h1 {
+	font-size: 1.5rem !important;
+
+
+  }
+
+  .text-hover.clickable{
+	  cursor: pointer;
+	  /* background-color: #4CAF50; */
+	  background-color: #ffce7b;
+	  color: #444;
+	  
+  }
