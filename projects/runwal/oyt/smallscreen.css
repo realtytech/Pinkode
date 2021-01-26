@@ -1,231 +1,179 @@
-* {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-
+.mobile-only{
+    display: block;
 }
 
-body {
-    font-family: 'Montserrat';
-    font-size: 16px;
-}
-
-@media(max-height: 850px){
-    #hero-div  {
-        background: url('./assets/images/hero-img-850.webp') no-repeat;
-     }
- }
-@media(max-height: 700px){
-    #hero-div  {
-        background: url('./assets/images/hero-img-700.webp') no-repeat;
-    }
- }
-
-
- @media(min-height: 850px){
-    #hero-div  {
-        background: url('./assets/images/hero-img-mobile.webp') no-repeat;
-    }
- }
- #hero-div {
-    height: 100vh;
-    width: 100vw;
-    background-size: cover;
-    background-position: center;
-    overflow: hidden;
-}
-
-#br-logo {
-    position: absolute;
-    top: 3vh;
-    left: 3vh;
-}
-
-#br-logo img {
-    width: 15vw;
-    min-width: 130px;
-}
-
-#icc-logo {
-    position: absolute;
-    top: 3vh;
-    right: 10vw;
-
-}
-
-#icc-logo img {
-    width: 7vw;
-    min-width: 75px;
-}
-
-#mobile-nav {
-    position: fixed;
-    bottom: 0;
-    width: 100vw;
-    height: 7vh;
-    /* min-height: 50px; */
-    background-color: #ffffffee;
-    text-align: center;
-    z-index: 999999;
-
-}
-
-#mobile-nav h1 {
-    writing-mode: vertical-rl;
-    text-orientation: upright;
-    margin: auto;
-    padding-top: 2vw;
-    font-size: 2.5em !important;
-    font-weight: 100;
-}
-
-#bottom-icons {
-    position: fixed !important;
-    bottom: 0 !important;
-    padding-bottom: 1vw !important;
-    z-index: 99999 !important;
-
-}
-
-#bottom-icons * {
-    margin: auto !important;
-    text-align: center !important;
-    font-size: 2vw;
-    color: #000;
-    padding: 1.5rem;
-
-}
-
-.fixed-icons {
-    width: 3vw !important;
-    padding: 1.5vw !important;
-}
-
-/* .mail-i {
-    background: url('/assets/images/mail-24px.svg') no-repeat center content-box;
-    display: inline-block;
-    margin:1.8vw;
-} */
-
-
-* {
-    box-sizing: border-box
-}
-
-.glyphicon {
-    overflow: hidden;
-
-}
-
-h1 {
-    overflow: hidden;
-}
-
-.btn-dark {
-    background-color: #111;
-    color: #fff;
-    margin-top: 4rem;
-    padding: 2rem;
-}
-
-
-
-.fa {
-    /* display: block; */
-    font-size: 5vh;
-    margin: auto;
-    padding:0.05em 1em;
-    color: #111;
-    z-index: 99999;
-    height: 7vh;
-    /* min-height: 50px; */
-    line-height: 7vh;
-    overflow: hidden;
-}
-
-.nav-icons {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100vw;
-    line-height: 1;
-    overflow: hidden;
-}
-
-
-#desktop {
+.desktop-only{
     display: none;
 }
 
-#mobile {
-    display: block;
+header img{
+	max-width: 75%;
+	max-height: 13vh;
 }
-@media screen and (max-width: 400px) {
-    fa{
-        font-size: 0.75rem !important;
-        padding: 0 0.25em !important;
-    }
-  
-  }
-
-  .sidenav-mobile {
-    height: 0;
+#main-img {
     width: 100%;
-    /* display: none; */
-    position: fixed;
-    z-index: 1;
-    bottom: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 0px;
-  }
-  
-  .sidenav-mobile a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size:  40px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-  }
-  
-  .sidenav-mobile a:hover {
-    color: #f1f1f1;
-  }
-  
-  .sidenav-mobile .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-  }
-  .glyphicon{
-      display: none;
-  }
+    min-height: 60vh;
+	max-height: 80vh;
+	background-image: url('./images/road\ cam.webp') ;
+    background-size:cover;
+}
 
-  .text-white {
-    position: absolute;
-    font-weight: 900;
-    bottom: 8vh;
-    left: 4vw;
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  width: 100%;
+  max-height: 70vh;
+  overflow-y: hidden;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+  /* height: 70vh; */
+  width: 100%;
+  object-fit: cover;
+
+}
+.mySlides *{
+	object-fit: cover;
+	transition: width 0.5s ease ;
 
 }
 
-.text-white {
-    position: absolute;
-    font-weight: 900;
-    bottom: 8vh;
-    left: 4vw;
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.5s ease-out;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 10s;
+  animation-name: fade;
+  animation-duration: 10s !important;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .8}
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .8}
+  to {opacity: 1}
+}
+
+.form-section .form-group{
+	padding: 0.7rem;
+	/* height: 4rem; */
+}
+
+.form-section input[type=text], .form-section input[type=email]  {
+
+	background-color: #000;
+	color: #7b7b7b;
+	line-height: 2;
+	border:none;
+	border-radius: 0;
+	
+	border-bottom: #eeeeee 1px solid;
+	outline: none;
+}
+.form-section input[type=text]:valid, .form-section input[type=email]:valid,input:-internal-autofill-selected {
+	
+	background-color: #000 !important;
+	color: #7b7b7b;
+	line-height: 2;
+	border:none;
+	border-radius: 0;
+	outline: none;
+	border-bottom: #ffce7b 1px solid;
+}
+
+.form-section #leadForm h2{
+	border-top: #ffce7b 1px solid;
+	padding-top: 1rem;
+}
+
+h1{
+    font-size: 20pt !important;
+}
+h2{
+    font-size: 18pt !important;
 
 }
-#download{
-    position: absolute;
-    font-weight: 800;
-    top: 18vh;
-    left: 4vw;
-    width: 100px;
+.desc-text{
+	font-size: 12pt;
+	font-family: gotham-book;
+	
 }
 
+.mySlides img{
+	position: relative;
+	/* max-width: 70%; */
+	max-height: 50vh;
+	margin:auto;
+	object-fit: cover;
+
+}

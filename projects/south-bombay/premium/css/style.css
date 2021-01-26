@@ -146,6 +146,7 @@ h1 span{
 .container {
 	position: relative;
 	width: 100%;
+	padding-right: 0;
 	/* margin-right: 2vw; */
 	
   }
@@ -171,11 +172,15 @@ h1 span{
   }
   
   .container:hover .image {
-	opacity: 0.3;
+	opacity: 0.2;
   }
   
   .container:hover .middle {
 	opacity: 1;
+  }
+
+  .container:hover .text {
+	opacity: 0;
   }
   
   .text-hover {

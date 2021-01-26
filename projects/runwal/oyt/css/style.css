@@ -21,168 +21,44 @@
   src: url(../fonts/gotham-medium-webfont.ttf);
 }
 *{
-	/* overflow-x: hidden; */
+	overflow-x: hidden;
 }
 
 body{
 		font-family: gotham-black-webfont;
+		background-image: url('../images/Background.png');
 }
 header{
 	background: #0C0C0C;
-	padding: .5rem 0;
+	padding: 0rem 0;
 }
 header .logo-section{
 	display: flex;
+	
 	justify-content: space-between;align-items: center;
 }
 header img{
 	max-width: 85%;
 	max-height: 13vh;
 }
-main .banner-section{
-	background: url("../images/banner-1920.jpg") no-repeat;
-	background-size:cover;
-	background-position-y: -10vh;
-	background-position-x: 0;
-	position: 	relative;
+
+header .container{
+	position: absolute;
+	width: 100vw;
+	padding:1rem 15vw;
 }
 
-
-main .banner-section h1.itl{
-	font-family: gotham-bold;
-	font-weight: bold;
-	font-style: normal;
-	text-transform: uppercase;
-}
-main .banner-section .itl{
-	/* font-family: abril-fatface,serif; */
-	font-family: gotham-book;
-	/* font-weight: 400; */
-	/* font-style: italic; */
-/*	font-size: 25px;*/
-	color: #555555;
-}
-main .banner-section .skyline-txt{
-	font-family: gotham-bold;
-	font-style: normal;
-	font-size: 20px;
-	margin-bottom: 0px;
-}
-main .banner-section .itl span{
-	font-family: gotham-bold;
-	font-style: 	normal;
-	text-shadow: 0 0 1px #222, 0 0 3px #eeeeee;
-}
-main .banner-section .hashtag{
-	color: white;
-	text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
-	font-family: gotham-bold;
-	font-size: 30px;
-	margin-top: -15px;
-}
-
-main .banner-section
-.bottom-p{
-	font-size: 	20px;
-	line-height: 1.2;
-	margin-top: 0px;
-	color: #ffffff;
-	font-family: gotham-bold;
-	text-shadow: 0 0 2px #000077, 0 0 2px #5e5c5c;
-	/* text-shadow: 0 0 3px #FF0000aa, 0 0 5px #0000FFcc; */
-	
-}
-main .banner-section .bottom-p span{
-	font-family: gotham-bold;
-	font-style: 	normal;
-	color: white;
-	text-shadow: 0 0 3px #770000, 0 0 5px #000077;
-	
-}
-main .banner-section .content-sec{
-	display: 	flex;
-	justify-content: 	space-between;
-	align-items:flex-start;
-
-}
-main .banner-section  h1{
-	font-size: 	25px;
-}
-
-main .banner-section p{
-	margin-top: 	1rem;
-}
-main .banner-section{
-	padding:3rem 0;
-	min-height: 60vh;
-}
-main .banner-section img{
-	width:120px;
-}
-main .banner-section .form-section  .Thankyou p{
-	  font-family:FuturaLT-Book;
-	  	font-weight: 	bold;
-	  	text-align: 	center;
-}
-
-main .banner-section .form-section  .Thankyou .th2{
-	text-transform: capitalize;
-	text-align:center;
-}
-main .banner-section .form-section {
-	background: #ffffff9e;
-	padding: 1rem 2.7rem;
-	width: 	32%;
-	z-index: 1;
-}
-main .banner-section .form-section h2{
-		font-size: 20px;
-		color: 	#000;
-		font-weight:bold;
-		text-transform: uppercase;
-}
-main .banner-section .form-section input{
-  font-family:FuturaLT-Book;
-}
-
-main .banner-section .form-section .form-control{
-	border:none	;
-}
-main .actual{
-		position: 	absolute;
-		bottom: 0;
-		left:  0;
-		width: 	100%;
-}
-main .actual p{
-		background: #fff;
-		border-radius: 0 5px 0 0;
-		font-size: 	13px;
-		display: 	inline;
-		padding: 2px 10px;
-		font-family:FuturaLT-Book;
-}
-
-/* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-/* Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
-}
 main .btn{
-	background: #165AA3;
+	background: #ffce7b;
 	padding: .3rem 1rem;
 	text-align: center;
-	color: 	#fff;
+	color: 	#000;
+	
 	text-transform: uppercase;
 	font-weight: normal;
 	margin: .8rem 0;
-  font-family:gotham-black-webfont;
+  font-family:gotham-book;
+  font-size: 20pt;
 }
 main .responsive .gallery{
 	margin: .3rem;
@@ -198,68 +74,97 @@ main .responsive img{
 		/* margin: 0 auto; */
 }
 
-@media(max-height: 900px){
-    main .responsive .gallery{
-		margin: .3rem;
-		width: 20vw;
-		max-height: 30vh;
-		object-fit: cover;
-		
-	}
-	main .responsive img{
-		width: 100%;
-		object-fit: cover;
-		max-height: 30vh;
-		/* margin: 0 auto; */
-}
-main .banner-section{
 
-	background-position-y: 0;
-	
-}
- }
-
-main .tc {
-	position: absolute;
-	bottom: 6%;
-	right: 10%;
-	color: #fff;
-	font-size: 10px;
-		font-family:FuturaLT-Book;
-}
-main .caption {
-	position: absolute;
-	bottom: 6%;
-	right: 10%;
-	color: #fff;
-	/* background-color: #0C0C0C55; */
-	font-size: 12px;
-		font-family:FuturaLT-Book;
-	
-}
 footer{
-	background: #0C0C0C;
+	/* background: #0C0C0C; */
 	color: #7b7b7b;
 	padding: 1rem 0;
 	text-align: center;
 	font-family: Lato;
     font-size: 11px;
 	font-weight: 500;
-	position: fixed;
-	bottom: 0;
-	width: 100vw;
+	width: 100vw !important;
+	
+	
+	width: 90vw;
 }
 footer .fa{
 	color: #7b7b7b;
 }
-.slider-section{
-	margin-bottom: 6rem;
-}
-.title{
-	text-align: center !important;
-	font-weight: 500 !important;
-}
 
 .modal{
 	top:40vh !important;
+}
+
+#banner-image{
+	object-fit: cover;
+	object-position: bottom;
+
+	width: 100vw !important;
+	max-height: 90vh;
+	right: 0;
+
+}
+.r-logo{
+	position: absolute;
+	right:0;
+	padding-right: 10px;
+
+
+}
+h1{
+	color: #eeeeee;
+	font-family: gotham-medium;
+}
+h1 span{
+	color: #ffce7b;
+	font-weight: 900 !important;
+	
+}
+.p-10{
+	padding: 3rem;
+}
+.desc-text{
+	font-size: 15pt;
+	font-family: gotham-book;
+	
+}
+
+.text{
+	color: #ffce7b;
+	background-color: #7b7b7b99;
+}
+
+#fixed-download{
+	position: fixed;
+	top: 40vh;
+	right: -200px;
+	width: 200px;
+	height: 40px;
+	line-height: 20px;
+	transform-origin: 0 0;
+  transform: rotate(90deg);
+  background-color: #ffce7bee;
+	color: #0C0C0C;
+	z-index: 999;
+	cursor: pointer;
+
+
+}
+
+
+.mySlides1 img{
+	position: relative;
+	/* max-width: 70%; */
+	max-height: 50vh;
+	margin:auto;
+	object-fit: cover;
+
+}
+
+
+
+hr{
+	padding-bottom:10px ;
+	border-bottom:  #ffce7bee 1px solid;
 }
