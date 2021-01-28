@@ -138,3 +138,7 @@ h1 span{
 .top-border{
 	border-top: #ffce7b 1px solid;
 }
+
+footer{
+	display: inline-block;
+}
