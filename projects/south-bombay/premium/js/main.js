@@ -440,9 +440,16 @@ function storeLeadInDB(name, email, mobile, response,formName) {
     //     }
     // });
 }
-function selectSRD(utm_source, utm_campaign) {
+function selectSRD(utm_source, utm_campaign,project) {
 
     var srd = '';
+
+    var google_srd = {
+        "park":"60114aaec825613e5e6c040b",
+        "icc": "60114ac6c82561218b838325",
+        "vivarea": "60114adfc825612a493e5989",
+        "crown":"60114bedc82561251b6cbb77"
+    }
 
     // Google srd
     var google_discovery = '5f86a1414443ae16011a4a02';
@@ -459,10 +466,11 @@ function selectSRD(utm_source, utm_campaign) {
 
     if (utm_source) {
 
-        if (utm_source.toLowerCase() == "google") {
+        if (utm_source.toLowerCase() == "googletext") {
 
             if (utm_campaign) {
-                if (utm_campaign.toLowerCase().indexOf("discovery") >= 0) {
+                if (utm_campaign.toLowerCase().indexOf("SOBOtxt1b") >= 0) {
+
                     // discovery
                     srd = google_discovery;
                 } else if (utm_campaign.toLowerCase().indexOf("display") >= 0) {
