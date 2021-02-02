@@ -101,15 +101,7 @@ footer .fa{
 	top:40vh !important;
 }
 
-#banner-image{
-	object-fit: cover;
-	object-position: bottom;
 
-	width: 100vw !important;
-	height: 100vh!important;;
-	right: 0;
-
-}
 .r-logo{
 	position: absolute;
 	right:0;
@@ -158,11 +150,11 @@ h1 span{
 
 }
 
-.mySlides1, .mySlides, .mySlides2{
+.mySlides1, .mySlides, .mySlides2, .mySlides3{
 	text-align: center;
 }
 
-.mySlides1 img, .mySlides2 img{
+.mySlides1 img, .mySlides2 img, .mySlides3 img{
 	position: relative;
 	max-width: 100%;
 	/* max-height: 50vh; */

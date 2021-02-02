@@ -4,6 +4,8 @@ var slideIndex1 = 1;
 showSlides();
 showSlides1();
 showSlides2();
+// showSlides4();
+showSlides3();
 function showSlides1() {
     var i;
     var slides1 = document.getElementsByClassName("mySlides1");
@@ -18,6 +20,20 @@ function showSlides1() {
     setTimeout(showSlides1, 10000); // Change image every 2 seconds
 }
 
+function showSlides4() {
+    var i;
+    var slides1 = document.getElementsByClassName("mySlides3");
+    for (i = 0; i < slides1.length; i++) {
+        slides1[i].style.display = "none";
+    }
+    slideIndex1++;
+    console.log(slideIndex1)
+    if (slideIndex1 > slides1.length) { slideIndex1 = 1 }
+    slides1[slideIndex1 - 1].style.display = "block";
+    slides1[slideIndex1 - 1].style.objectFit = "scale-down";
+    setTimeout(showSlides4, 10000); // Change image every 2 seconds
+}
+
 function showSlides2() {
     var i;
     var slides1 = document.getElementsByClassName("mySlides2");
@@ -30,6 +46,18 @@ function showSlides2() {
     slides1[slideIndex1 - 1].style.display = "block";
     slides1[slideIndex1 - 1].style.objectFit = "scale-down";
     setTimeout(showSlides2, 10000); // Change image every 2 seconds
+}
+
+function showSlides3() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides3");
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1 }
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(showSlides3, 10000); // Change image every 2 seconds
 }
 
 function showSlides() {
