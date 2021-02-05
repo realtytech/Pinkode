@@ -16,7 +16,12 @@ function ValidateEmail(mail) {
     // alert("You have entered an invalid email address!")
     return (false)
 }
-
+var organic_srds = {
+    "icc":"6012943da6bbc90bcb739a40",
+    "crown":"60129457a6bbc90394be333f",
+    "vivarea":"6012948ea6bbc905e8df5c8e",
+    "park":"601294a4a6bbc90394be339e"
+}
 function queryParameter(name, url) {
     if (!url) url = location.href;
     name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
@@ -74,9 +79,13 @@ $("#leadForm-popup").submit(function (e) {
     }
 
 
-    var srd = selectSRD(utm_source, utm_campaign);
-    var srd = queryParameter('srd', currentUrl);
-    if (!srd) srd = '5faa0bce4443ae474efa311d';
+    var srd = selectSRD(queryParameter('utm_source', currentUrl), queryParameter('utm_medium', currentUrl),project);    // var srd = queryParameter('srd', currentUrl);
+    if (!srd){
+        
+        srd = organic_srds[project];
+
+
+    } 
 
     $.ajax({
         url: "https://app.sell.do/api/leads/create",
@@ -91,7 +100,7 @@ $("#leadForm-popup").submit(function (e) {
         },
         success: function (response) {
             console.log(JSON.parse(response));
-            storeLeadInDB(name, email, mobile, JSON.stringify(response));
+            storeLeadInDB(name, email, mobile, JSON.stringify(response),"Lead Form - Popup",project);
             setTimeout(function redirect_response() { window.location.href = "response.html"; }, 1000)
         },
         error: function (xhr) {
@@ -119,8 +128,8 @@ $("#leadForm").submit(function (e) {
 
     // Query Params
     var currentUrl = window.location.href;
-    // var utm_source = queryParameter('utm_source', currentUrl);
-    // var utm_campaign = queryParameter('utm_campaign', currentUrl)
+    
+    
 
     var d = new Date();
 
@@ -156,9 +165,13 @@ $("#leadForm").submit(function (e) {
     }
 
 
-    var srd = selectSRD(queryParameter('souce', currentUrl), queryParameter('sub_source', currentUrl),project);
-    var srd = queryParameter('srd', currentUrl);
-    if (!srd) srd = '5faa0bce4443ae474efa311d';
+    var srd = selectSRD(queryParameter('utm_source', currentUrl), queryParameter('utm_medium', currentUrl),project);
+    if (!srd){
+        
+        srd = organic_srds[project];
+
+
+    } 
 
     $.ajax({
         url: "https://app.sell.do/api/leads/create",
@@ -173,7 +186,7 @@ $("#leadForm").submit(function (e) {
         },
         success: function (response) {
             console.log(JSON.parse(response));
-            storeLeadInDB(name, email, mobile, JSON.stringify(response), formName);
+            storeLeadInDB(name, email, mobile, JSON.stringify(response), formName,project);
             setTimeout(function redirect_response() { window.location.href = "response.html"; }, 1000)
         },
         error: function (xhr) {
@@ -196,8 +209,10 @@ $("#leadFormMobile").submit(function (e) {
     var formName = "Mobile-Form";
     // Query Params
     var currentUrl = window.location.href;
-    // var utm_source = queryParameter('utm_source', currentUrl);
-    // var utm_campaign = queryParameter('utm_campaign', currentUrl)
+    var utm_source = queryParameter('utm_source', currentUrl);
+    var utm_campaign = queryParameter('utm_campaign', currentUrl);
+    
+    
 
     var d = new Date();
 
@@ -232,9 +247,14 @@ $("#leadFormMobile").submit(function (e) {
     }
 
 
-    // var srd = selectSRD(utm_source, utm_campaign);
-    var srd = queryParameter('srd', currentUrl);
-    if (!srd) srd = '5faa0bce4443ae474efa311d';
+    // var srd = queryParameter('srd', currentUrl);
+    var srd = selectSRD(queryParameter('utm_source', currentUrl), queryParameter('utm_medium', currentUrl),project);
+    if (!srd){
+        
+        srd = organic_srds[project];
+
+
+    } 
 
 
 
@@ -251,7 +271,7 @@ $("#leadFormMobile").submit(function (e) {
         },
         success: function (response) {
             console.log(JSON.parse(response));
-            storeLeadInDB(name, email, mobile, JSON.stringify(response));
+            storeLeadInDB(name, email, mobile, JSON.stringify(response),formName,project);
             setTimeout(function redirect_response() { window.location.href = "response.html"; }, 1000)
         },
         error: function (xhr) {
@@ -355,7 +375,7 @@ function verifyOtpAPI() {
     });
 }
 
-function storeLeadInDB(name, email, mobile, response, formName) {
+function storeLeadInDB(name, email, mobile, response, formName, project) {
     var currentUrl = window.location.href;
     var utm_source = queryParameter('utm_source', currentUrl);
     var utm_medium = queryParameter('utm_medium', currentUrl)
@@ -373,7 +393,7 @@ function storeLeadInDB(name, email, mobile, response, formName) {
     // var name = $('#name').val();
     // var email = $('#email').val();
     // var mobile = $('#mobile').val();
-    var project = 'Dosti Realty - Eastern Bay';
+    var project = project;
     var timestamp = Date();
     data = {
         "formId": String(Math.floor(Date.now() / 1000)),

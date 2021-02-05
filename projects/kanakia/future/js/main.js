@@ -149,7 +149,7 @@ $("#leadForm-popup").submit(function (e) {
 
     // var srd = selectSRD(utm_source, utm_campaign);
     var srd = queryParameter('srd', currentUrl);
-    if (!srd) srd = '5faa0bce4443ae474efa311d';
+    if (!srd) srd = '601bfbfb4443ae240a6bbb68';
 
     $.ajax({
         url: "https://app.sell.do/api/leads/create",
@@ -445,7 +445,7 @@ function storeLeadInDB(name, email, mobile, response,formName) {
     // var name = $('#name').val();
     // var email = $('#email').val();
     // var mobile = $('#mobile').val();
-    var project = 'Dosti Realty - Eastern Bay';
+    var project = 'Kanakia Future City';
     var timestamp = Date();
     data = {
         "formId": String(Math.floor(Date.now() / 1000)),
