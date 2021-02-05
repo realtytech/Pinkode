@@ -220,6 +220,7 @@ $("#leadFormMobile").submit(function (e) {
     var name = $("#m-name").val();
     var email = $("#m-email").val();
     var mobile = $("#m-mobile").val();
+    var project = $('#m-project').val();
     if (name == "") {
         alert('Please enter your name');
         return;
