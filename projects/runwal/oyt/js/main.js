@@ -3,6 +3,7 @@ var slideIndex = 1;
 var slideIndex1 = 1;
 showSlides();
 showSlides1();
+do
 function showSlides1() {
     var i;
     var slides1 = document.getElementsByClassName("mySlides1");
