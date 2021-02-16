@@ -76,7 +76,7 @@ header img{
   font-size: 15px;
   padding: 8px 12px;
   position: absolute;
-  bottom: 8px;
+  bottom: 38px;
   width: 100%;
   text-align: center;
 }
@@ -203,4 +203,12 @@ h2{
 
 .future-section{
   min-height: 30vh;
+}
+
+.sticky{
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  height: 5vh;
+
 }
