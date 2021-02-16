@@ -131,7 +131,7 @@ header img{
 
 .form-section input[type=text], .form-section input[type=email]  {
 
-	background-color: #000;
+	background-color: #fff;
 	color: #7b7b7b;
 	line-height: 2;
 	border:none;
@@ -142,7 +142,7 @@ header img{
 }
 .form-section input[type=text]:valid, .form-section input[type=email]:valid,input:-internal-autofill-selected {
 	
-	background-color: #000 !important;
+	background-color: #fff !important;
 	color: #7b7b7b;
 	line-height: 2;
 	border:none;
@@ -178,7 +178,7 @@ h2{
 
 }
 
-#banner-image{object-fit: cover; max-height: 100vh !important;
+#banner-image{object-fit: contain; max-height: 100vh !important;
   width: 100vw !important;
   object-position: top;
 }
@@ -187,8 +187,8 @@ h2{
   .p-10{
     padding: 0;
   }
-  #banner-image{object-fit: contain;
-  max-height: 100vh !important;
+  #banner-image{object-fit: cover;
+  max-height: 50vh !important;
   width: 100vw !important;
   
   }
@@ -197,7 +197,7 @@ h2{
 
 @media (max-width:700px){
   .kanakiaLogo{
-    width: 90%;
+    width: 60%;
   }
 }
 
@@ -209,6 +209,40 @@ h2{
   position: fixed;
   bottom: 0;
   width: 100vw;
-  height: 5vh;
+  /* height: 10vh; */
+  z-index: 999;
+  background-color: #EA2A7D;
+  color: #f2f2f2 !important;
+  padding: 5px 0;
 
+
+}
+
+
+
+header img{  
+  object-position: top;
+  
+  max-height: 40vh;
+}
+
+.header{
+  padding: 1rem 0.75rem 0 0.75rem;
+  
+  
+
+}
+.header h1{
+  font-size: 20px  !important;
+}
+
+.divider{
+  display: block;
+  font-size: 3rem;
+  padding: -10px;
+  margin: -10px;
+}
+
+header{
+  background: linear-gradient(0deg, black, transparent)
 }
