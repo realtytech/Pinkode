@@ -1,11 +1,11 @@
 /* Class the members of each slideshow group with different CSS classes */
 var slideIndex = 1;
 var slideIndex1 = 1;
-showSlides();
+// showSlides();
 showSlides1();
 showSlides2();
 // showSlides4();
-showSlides3();
+// showSlides3();
 function showSlides1() {
     var i;
     var slides1 = document.getElementsByClassName("mySlides1");

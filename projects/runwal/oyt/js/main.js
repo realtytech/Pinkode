@@ -1,9 +1,9 @@
-/* Class the members of each slideshow group with different CSS classes */
+/* Class the members of each slideshow group with different CSS classes
 var slideIndex = 1;
 var slideIndex1 = 1;
 showSlides();
 showSlides1();
-do
+
 function showSlides1() {
     var i;
     var slides1 = document.getElementsByClassName("mySlides1");
@@ -30,7 +30,7 @@ function showSlides() {
     slides[slideIndex - 1].style.display = "block";
     setTimeout(showSlides, 10000); // Change image every 2 seconds
 }
-
+ */
 
 // Allow numbers only in mobile field
 function numbersonly(e) {
