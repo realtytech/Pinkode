@@ -95,10 +95,12 @@ $("#leadForm-popup").submit(function (e) {
     var email = $("#email-popup").val();
     var mobile = $("#mobile-popup").val();
 
+    var project = "Bombay Realty - Island City Center";
 
 
-    // var srd = selectSRD(utm_source, utm_campaign);
-    var srd = queryParameter('srd', currentUrl);
+
+    var srd = selectSRD(queryParameter('utm_source', currentUrl), queryParameter('utm_medium', currentUrl),project); 
+    
 
 
     $.ajax({
@@ -153,7 +155,11 @@ $("#leadForm").submit(function (e) {
 
 
     // var srd = selectSRD(utm_source, utm_campaign);
-    var srd = queryParameter('srd', currentUrl);
+    var project = "Bombay Realty - Island City Center";
+
+
+
+    var srd = selectSRD(queryParameter('utm_source', currentUrl), queryParameter('utm_medium', currentUrl),project); 
 
 
     $.ajax({
@@ -361,75 +367,7 @@ function storeLeadInDB(name, email, mobile, response, formName) {
     // });
 }
 
-function selectSRD(utm_source, utm_campaign) {
 
-    var srd = '';
-
-    // Google srd
-    var google_discovery = '5f86a1414443ae16011a4a02';
-    var google_display = '5f86a1384443ae22e4278b9c';
-    var google_search = '5f86a1294443ae21c7278fde';
-    var google_default = '5f71a7717c0dac2729315170';
-
-    // Facebook srd
-    var facebook_conv = '5f71afa27c0dac2487b9b6bb';
-    var facebook_default = '5f71bfd77c0dac7b7bbfbb91';
-
-    // Direct srd
-    var direct_srd = '5f71bfd77c0dac7b7bbfbb91';
-
-    if (utm_source) {
-
-        if (utm_source.toLowerCase() == "google") {
-
-            if (utm_campaign) {
-                if (utm_campaign.toLowerCase().indexOf("discovery") >= 0) {
-                    // discovery
-                    srd = google_discovery;
-                } else if (utm_campaign.toLowerCase().indexOf("display") >= 0) {
-                    // display
-                    srd = google_display;
-                } else {
-                    // search
-                    srd = google_search;
-                }
-            } else {
-                // standard google
-                srd = google_default;
-            }
-
-        } else if (utm_source.toLowerCase() == 'facebook') {
-
-            if (utm_campaign) {
-                if (utm_campaign.toLowerCase().indexOf("conv") >= 0) {
-                    // conv
-                    srd = facebook_conv;
-                } else {
-                    // standard facebook
-                    srd = facebook_default;
-                }
-            } else {
-                // standard facebook
-                srd = facebook_default;
-            }
-
-        } else {
-
-            // direct or others
-            srd = direct_srd;
-
-        }
-
-    } else {
-
-        // direct
-        srd = direct_srd;
-
-    }
-
-
-    return srd;
-}
 
 // Lazy Loading images
 
@@ -523,3 +461,98 @@ window.onscroll = function (e) {
     }, 1000);
 }
 
+
+function selectSRD(source, sub_source, project) {
+    var project_srd = {
+
+        "Bombay Realty - Island City Center": "6012943da6bbc90bcb739a40",
+        "Rustomjee Crown": "60129457a6bbc90394be333f",
+        "K Raheja Corp - Vivarea": "6012948ea6bbc905e8df5c8e",
+        "Lodha Park": "601294a4a6bbc90394be339e"
+    }
+
+    
+    if (!source){
+        return project_srd[project];
+    }
+
+        var srd = {
+            "Bombay Realty - Island City Center": {
+
+                "google_search": {
+                    "brand": "601288584443ae7167c9d85e",
+                    "Offer_Specific": "601288684443ae6a4756e94f",
+                    "generic": "601288764443ae7167c9d875",
+                    "Competition": "601288834443ae6a4756e966"
+                },
+                "google_discovery": {
+                    "custom_intent": "601288924443ae77a6f25bd1",
+                    "in_market": "601288a24443ae66de17fb92",
+                    "Remarketing": "601288ad4443ae384113e0e7"
+                },
+                "Facebook": {
+                    "Lead_Gen_Property_Interest": "601288c74443ae6681180070",
+                    "Lead_Gen_Competitor": "601288db4443ae6bf1416c92"
+                }
+            },
+            "Rustomjee Crown": {
+
+                "google_search": {
+                    "brand": "601288eb4443ae7167c9d8c8",
+                    "Offer_Specific": "601288f74443ae66de17fbd1",
+                    "generic": "601289044443ae6a4756e9b9",
+                    "Competition": "601289104443ae4b0cab5958"
+                },
+                "google_discovery": {
+                    "custom_intent": "601289fe4443ae4b0cab59e5",
+                    "in_market": "60128a104443ae73d497829d",
+                    "Remarketing": "60128a1f4443ae4b0cab59f5"
+                },
+                "Facebook": {
+                    "Lead_Gen_Property_Interest": "60128a354443ae668118016f",
+                    "Lead_Gen_Competitor": "60128a434443ae6bf1416d44"
+                }
+            },
+
+            "K Raheja Corp - Vivarea": {
+
+                "google_search": {
+                    "brand": "60128a744443ae66de17fcbf",
+                    "Offer_Specific": "60128a854443ae66811801a4",
+                    "generic": "60128a944443ae66811801a9",
+                    "Competition": "60128aa94443ae6a4756eaa6"
+                },
+                "google_discovery": {
+                    "custom_intent": "60128ab74443ae3fb9451593",
+                    "in_market": "60128ac54443ae384113e245",
+                    "Remarketing": "60128ad24443ae384113e257"
+                },
+                "Facebook": {
+                    "Lead_Gen_Property_Interest": "60128adf4443ae4b0cab5a6b",
+                    "Lead_Gen_Competitor": "60128af04443ae66811801f1"
+                }
+            },
+
+            "Lodha Park": {
+
+                "google_search": {
+                    "brand": "60128b064443ae384113e276",
+                    "Offer_Specific": "60128b174443ae3fb94515ec",
+                    "generic": "60128b284443ae7167c9d9c8",
+                    "Competition": "60128b3f4443ae73d4978325"
+                },
+                "google_discovery": {
+                    "custom_intent": "60128b514443ae66de17fd3d",
+                    "in_market": "60128c884443ae3fb94516e9",
+                    "Remarketing": "60128c9b4443ae384113e386"
+                },
+                "Facebook": {
+                    "Lead_Gen_Property_Interest": "60128cac4443ae66de17fe08",
+                    "Lead_Gen_Competitor": "60128cbe4443ae6bf1416e89"
+                }
+            }
+        }
+
+    return srd[project][source][sub_source];
+
+}
