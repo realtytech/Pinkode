@@ -10,39 +10,6 @@
 
 
 
-/* Class the members of each slideshow group with different CSS classes
-var slideIndex = 1;
-var slideIndex1 = 1;
-showSlides();
-showSlides1();
-
-function showSlides1() {
-    var i;
-    var slides1 = document.getElementsByClassName("mySlides1");
-    for (i = 0; i < slides1.length; i++) {
-        slides1[i].style.display = "none";
-    }
-    slideIndex1++;
-    console.log(slideIndex1)
-    if (slideIndex1 > slides1.length) { slideIndex1 = 1 }
-    slides1[slideIndex1 - 1].style.display = "block";
-    slides1[slideIndex1 - 1].style.objectFit = "scale-down";
-    setTimeout(showSlides1, 10000); // Change image every 2 seconds
-}
-
-
-function showSlides() {
-    var i;
-    var slides = document.getElementsByClassName("mySlides");
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    slideIndex++;
-    if (slideIndex > slides.length) { slideIndex = 1 }
-    slides[slideIndex - 1].style.display = "block";
-    setTimeout(showSlides, 10000); // Change image every 2 seconds
-}
- */
 
 // Allow numbers only in mobile field
 function numbersonly(e) {
@@ -82,8 +49,7 @@ $("#leadForm-popup").submit(function (e) {
 
     // Query Params
     var currentUrl = window.location.href;
-    // var utm_source = queryParameter('utm_source', currentUrl);
-    // var utm_campaign = queryParameter('utm_campaign', currentUrl)
+   rl)
 
     var d = new Date();
 
@@ -308,95 +274,8 @@ $("#leadFormMobile").submit(function (e) {
 });
 
 
-function createLeadSuccess(response) {
-
-    // If sell_do_lead_verified == false then call OTP ajax
-    // else if == true then Alert User with details already present
-
-    if (response.sell_do_lead_verified) {
-        if (response.sell_do_lead_verified == 'false') {
-
-            // Lead Not Verified
-
-            // Display OTP Field & make other fields read only
-            $('#name').prop('readonly', true);
-            $('#email').prop('readonly', true);
-            $('#mobile').prop('readonly', true);
-            $("#otp").css("display", "block");
-            $("#submit_button").css("display", "none");
-            $("#verify_otp_button").css("display", "inline-block");
-
-            localStorage.setItem("createLeadResponse", JSON.stringify(response));
-
-        } else {
-            // Lead already verified
-            alert("User with these details already present");
-            location.reload();
-        }
-    }
-
-}
-
-function isValidOTP() {
-    var otp = $("#otp").val();
-
-    if (otp.length > '3') {
-        $("#verify_otp_button").css("cursor", "pointer");
-        $("#verify_otp_button").prop('disabled', false);
-    } else {
-        $("#verify_otp_button").css("cursor", "not-allowed");
-        $("#verify_otp_button").prop('disabled', true);
-    }
-}
-
-function verifyOtpAPI() {
-    $("#verify_otp_button").prop('disabled', true);
-    $("#verify_otp_button").prop("value", "Processing....");
 
 
-    var createLeadResponse = JSON.parse(localStorage.getItem("createLeadResponse"));
-
-    var mobile = $('#mobile').val();
-    var otp = $("#otp").val();
-    var lead_id = createLeadResponse.sell_do_lead_id;
-
-    $.ajax({
-        url: "https://campaigns.citesting.in/spenta/verifyOTP.php",
-        type: "get", //send it through get method
-        data: {
-            "sell_do_input_verify": otp,
-            "api_key": "ab8f266fa110d8278a7a8caf24ca53b3",
-            "lead_id": lead_id,
-            "phone": "+91" + mobile,
-            "_": 'ab8f266fa110d8278a7a8caf24ca53b3'
-        },
-        success: function (response) {
-
-            if (response.toLowerCase().indexOf("false") >= 0) {
-                // invalid OTP
-                $("#otp").val('');
-                $("#verify_otp_button").prop('disabled', false);
-                $("#verify_otp_button").prop("value", "Verify");
-                isValidOTP();
-
-
-                alert("Invalid OTP");
-            }
-
-            if (response.toLowerCase().indexOf("true") >= 0) {
-                // valid OTP
-                // save in database & redirect
-
-                storeLeadInDB(name, email, mobile, response);
-            }
-
-        },
-        error: function (xhr) {
-            //Do Something to handle error
-
-        }
-    });
-}
 
 function storeLeadInDB(name, email, mobile, response,formName) {
     var currentUrl = window.location.href;
@@ -413,10 +292,8 @@ function storeLeadInDB(name, email, mobile, response,formName) {
     var gclid = queryParameter('gclid', currentUrl)
     var fbclid = queryParameter('fbclid', currentUrl)
 
-    // var name = $('#name').val();
-    // var email = $('#email').val();
-    // var mobile = $('#mobile').val();
-    var project = 'Runwal OYT';
+
+    var project = 'Raunak Centrum';
     var timestamp = Date();
     data = {
         "formId": String(Math.floor(Date.now() / 1000)),
@@ -463,96 +340,6 @@ function storeLeadInDB(name, email, mobile, response,formName) {
         }
     };
 
-    // $.ajax({
-    //     url: "https://dj2kxzt125.execute-api.ap-south-1.amazonaws.com/Prod/submitForm",
-    //     type: "post", //send it through get method
-    //     dataType: 'json', // Notice! JSONP <-- P (lowercase)
-    //     data: data,
-    //     beforeSend: function (xhr) {
-    //         xhr.setRequestHeader('Accept', 'application/json; charset=utf-8');
-    //         xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-    //     },
-    //     success: function (response) {
-    //         //Do Something
-    //         console.log("success");
-    //         // window.location.href = "thankyou.html";
-    //     },
-    //     error: function (xhr) {
-    //         //Do Something to handle error
-    //         console.log(xhr)
-    //         console.log("failure");
-    //         // window.location.href = "thankyou.html";
-    //     }
-    // });
-}
-function selectSRD(utm_source, utm_campaign) {
-
-    var srd = '';
-
-    // Google srd
-    var google_discovery = '5f86a1414443ae16011a4a02';
-    var google_display = '5f86a1384443ae22e4278b9c';
-    var google_search = '5f86a1294443ae21c7278fde';
-    var google_default = '5f71a7717c0dac2729315170';
-
-    // Facebook srd
-    var facebook_conv = '5f71afa27c0dac2487b9b6bb';
-    var facebook_default = '5f71bfd77c0dac7b7bbfbb91';
-
-    // Direct srd
-    var direct_srd = '5f71bfd77c0dac7b7bbfbb91';
-
-    if (utm_source) {
-
-        if (utm_source.toLowerCase() == "google") {
-
-            if (utm_campaign) {
-                if (utm_campaign.toLowerCase().indexOf("discovery") >= 0) {
-                    // discovery
-                    srd = google_discovery;
-                } else if (utm_campaign.toLowerCase().indexOf("display") >= 0) {
-                    // display
-                    srd = google_display;
-                } else {
-                    // search
-                    srd = google_search;
-                }
-            } else {
-                // standard google
-                srd = google_default;
-            }
-
-        } else if (utm_source.toLowerCase() == 'facebook') {
-
-            if (utm_campaign) {
-                if (utm_campaign.toLowerCase().indexOf("conv") >= 0) {
-                    // conv
-                    srd = facebook_conv;
-                } else {
-                    // standard facebook
-                    srd = facebook_default;
-                }
-            } else {
-                // standard facebook
-                srd = facebook_default;
-            }
-
-        } else {
-
-            // direct or others
-            srd = direct_srd;
-
-        }
-
-    } else {
-
-        // direct
-        srd = direct_srd;
-
-    }
-
-
-    return srd;
 }
 
 // Lazy Loading images
