@@ -49,7 +49,6 @@ $("#leadForm-popup").submit(function (e) {
 
     // Query Params
     var currentUrl = window.location.href;
-   rl)
 
     var d = new Date();
 
