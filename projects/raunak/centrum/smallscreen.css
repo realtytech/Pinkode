@@ -179,3 +179,16 @@ h2{
 }
 
 #banner-image{object-fit: contain;}
+
+.sticky{
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  /* height: 10vh; */
+  z-index: 999;
+  background: linear-gradient(0deg, #fcce07, #fcf299);
+  color: #f2f2f2 !important;
+  padding: 5px 0;
+
+
+}
