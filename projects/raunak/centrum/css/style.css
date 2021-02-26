@@ -10,16 +10,16 @@
 
 
 
-@import url('https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i|Montserrat:400,700|Crimson+Text:400,400i,600,600i,700,700i|Roboto+Slab:100,300,400,700');
+/* @import url('https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i|Montserrat:400,700|Crimson+Text:400,400i,600,600i,700,700i|Roboto+Slab:100,300,400,700'); */
 
 @font-face {
   font-family:gotham-black-webfont;
   src: url(../fonts/gotham-black-webfont.ttf);
 }
-@font-face {
+/* @font-face {
   font-family:FuturaLT-Book;
   src: url(../fonts/FuturaLT-Book.ttf);
-}
+} */
 @font-face {
   font-family:gotham-book;
   src: url(../fonts/gotham-book-webfont.ttf);
@@ -28,10 +28,10 @@
   font-family:gotham-bold;
   src: url(../fonts/gotham-bold-webfont.ttf);
 }
-@font-face {
+/* @font-face {
   font-family:gotham-medium;
   src: url(../fonts/gotham-medium-webfont.ttf);
-}
+} */
 *{
 	overflow-x: hidden;
 	color: #19427d;
@@ -127,7 +127,7 @@ footer .fa{
 }
 h1{
 	/* color: #eeeeee; */
-	font-family: gotham-medium;
+	font-family: gotham-bold;
 }
 h1 span{
 	color: #fcce07;
