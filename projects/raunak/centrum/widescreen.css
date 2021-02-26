@@ -105,7 +105,7 @@ header img{
 
 .form-section input[type=text], .form-section input[type=email]  {
 
-	background-color: #000;
+	/* background-color: #000; */
 	color: #7b7b7b;
 	line-height: 2;
 	border:none;
@@ -116,7 +116,7 @@ header img{
 }
 .form-section input[type=text]:valid, .form-section input[type=email]:valid,input:-internal-autofill-selected {
 	
-	background-color: #000 !important;
+	/* background-color: #000 !important; */
 	color: #7b7b7b;
 	line-height: 2;
 	border:none;
