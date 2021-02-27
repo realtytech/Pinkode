@@ -302,7 +302,7 @@ h2{
     width: 100%;
     max-width: 90vw;
     height: 600px;
-    max-height: 80vw;
+    max-height: 65vw;
     position: relative;
   }
   .carousel__item {
@@ -320,6 +320,7 @@ h2{
     width: 100%;
     max-width: 90vw;
     vertical-align: middle;
+    object-fit: fill;
   }
   .carousel__prev > label, .carousel__next > label {
     border: 1px solid #fff;
@@ -383,10 +384,10 @@ h2{
   }
   .carousel__nav {
     position: absolute;
-    bottom: 3%;
+    bottom: 25%;
     left: 0;
     text-align: center;
-    width: 100%;
+    width: 90%;
     z-index: 3;
   }
   .carousel__nav > label {
