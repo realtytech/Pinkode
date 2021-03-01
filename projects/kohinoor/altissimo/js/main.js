@@ -292,7 +292,7 @@ function storeLeadInDB(name, email, mobile, response,formName) {
     var fbclid = queryParameter('fbclid', currentUrl)
 
 
-    var project = 'Godrej Chandivali';
+    var project = 'Kohinoor Altissimo';
     var timestamp = Date();
     data = {
         "formId": String(Math.floor(Date.now() / 1000)),
