@@ -567,5 +567,9 @@ hr{
   
   .text-desc{
 	  font-family: gotham-book;
-	  font-size: larger;
+	  font-size: large;
+  }
+
+  ul,ol,li{
+    list-style-type: disc;
   }
