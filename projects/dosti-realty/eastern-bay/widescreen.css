@@ -133,3 +133,7 @@ header img{
 	font-family: gotham-book;
 	
 }
+#banner-image{
+  max-height: 92vh;
+	object-fit: fill;
+}
