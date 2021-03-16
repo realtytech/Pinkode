@@ -110,8 +110,8 @@ footer .fa{
 }
 
 #banner-image{
-	object-fit: cover;
-	object-position: bottom;
+	object-fit:fill;
+	object-position: top;
 
 	width: 100vw !important;
 	max-height: 100vh;
@@ -130,16 +130,18 @@ footer .fa{
 	position: absolute;
 	right:0;
 	padding:2vh 10px;
-	width: 26.5vw;
-	margin-right: 5vw;
+	width: 28.5vw;
+	/* margin-right: 5vw; */
+	/* margin-top: -10vh; */
 	height: 10vh;
 	bottom: 10vh;
-	/* background-color: #ba8b00; */
+	background-color: #ba8b00;
 	border: white 1px solid;
 	color: white;
 	font-size: 2vw;
 	text-align: center;
-	line-height: 1.0;
+	line-height: 1.5;
+	overflow: hidden;
 	cursor: pointer;
 }
 h1{
