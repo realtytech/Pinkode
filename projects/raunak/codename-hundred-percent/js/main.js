@@ -508,16 +508,16 @@ function display_m(i){
 
 }
 display(0);
-display_m(0);
+// display_m(0);
 var value = 0;
 setInterval(function(){
     if(value == 0){
         display(0);
-        display_m(0);
+        // display_m(0);
         value = 1;
     }else{
         display(1);
-        display_m(1);
+        // display_m(1);
         value = 0;
     }
 }, 10000);
