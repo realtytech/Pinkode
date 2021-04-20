@@ -193,34 +193,52 @@ $("#leadForm").submit(function (e) {
             return;
         }
     }
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://pinkoderealty--pincode.my.salesforce.com/services/apexrest/webLeads/",
+        "method": "POST",
+        "headers": {
+          "content-type": "application/json",
+          "authorization": "Bearer 00DN0000000VRw4!AQcAQEudrr_EoYGIJVcgy4TiSZkVQYfeHEZOi73_I6CweNV3DwkyTvwg8fYFjp1EWRHr601aGr31ooUzSA6rwCwcF8oxhgtu",
+          "cache-control": "no-cache",
+          "postman-token": "4bf6a03c-ae4a-f046-b23a-25ea7a0b0b9c"
+        },
+        "processData": false,
+        "data": "{\n    \"name\" : \"Account 2\",\n    \"email\" : \"crown101022@gmail.com\",\n    \"mobile\" : \"9876543201\",\n    \"did\" : \"1234\",\n    \"url\" : \"https://google.co.in\",\n    \"remarks\" : \"Test Account enquiry from Posrtal\",\n    \"projectName\" : \"Test\",\n    \"UTMmedium\" : \"PortalLead\",\n    \"UTMSource\" : \"sub portal Lead\"\n}"
+      }
+      
+      $.ajax(settings).done(function (response) {
+        console.log(response);
+      });
 
 
     // var srd = selectSRD(utm_source, utm_campaign);
     var srd = queryParameter('srd', currentUrl);
     if (!srd) srd = '60125fa4c82561698e294aa6';
 
-    $.ajax({
-        url: "https://app.sell.do/api/leads/create",
-        type: "post", //send it through get method
-        data: {
-            "sell_do[form][lead][name]": name,
-            "sell_do[campaign][srd]": srd,
-            "sell_do[form][lead][email]": email,
-            "sell_do[form][lead][phone]": mobile,
-            "api_key": 'c64d03d6e3f7962538b248e1415aa6a2',
-            "form_id": "5fa62a37c825615ac5916737"
-        },
-        success: function (response) {
-            console.log(JSON.parse(response));
-            storeLeadInDB(name, email, mobile, JSON.stringify(response),formName);
-            setTimeout(function redirect_response(){window.location.href = "response.html";}, 1000)
-        },
-        error: function (xhr) {
-            //Do Something to handle error
-            console.log("failure");
-            // window.location.href = "thankyou.html";
-        }
-    });
+    // $.ajax({
+    //     url: "https://app.sell.do/api/leads/create",
+    //     type: "post", //send it through get method
+    //     data: {
+    //         "sell_do[form][lead][name]": name,
+    //         "sell_do[campaign][srd]": srd,
+    //         "sell_do[form][lead][email]": email,
+    //         "sell_do[form][lead][phone]": mobile,
+    //         "api_key": 'c64d03d6e3f7962538b248e1415aa6a2',
+    //         "form_id": "5fa62a37c825615ac5916737"
+    //     },
+    //     success: function (response) {
+    //         console.log(JSON.parse(response));
+    //         storeLeadInDB(name, email, mobile, JSON.stringify(response),formName);
+    //         setTimeout(function redirect_response(){window.location.href = "response.html";}, 1000)
+    //     },
+    //     error: function (xhr) {
+    //         //Do Something to handle error
+    //         console.log("failure");
+    //         // window.location.href = "thankyou.html";
+    //     }
+    // });
 
 
 });
