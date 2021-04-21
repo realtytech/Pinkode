@@ -121,8 +121,9 @@ $("#leadForm-popup").submit(function (e) {
           "postman-token": "4bf6a03c-ae4a-f046-b23a-25ea7a0b0b9c"
         },
         "processData": false,
-        "data": data
+        "data": JSON.stringify(data)
       }
+
       
       $.ajax(settings).done(function (response) {
         console.log(response);
