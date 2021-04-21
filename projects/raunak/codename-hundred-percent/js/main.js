@@ -86,47 +86,48 @@ $("#leadForm-popup").submit(function (e) {
     // var srd = selectSRD(utm_source, utm_campaign);
     var srd = queryParameter('srd', currentUrl);
     if (!srd) srd = '60125fa4c82561698e294aa6';
+    srd = 1234;
+    var data = {
+        "name": name,
+        "mobile": mobile,
+        "email": email,
+        "url":window.location,
+        "did":srd,
+        "projectName":"Raunak Codename Hundred Percent"
 
+    }
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": "https://test.salesforce.com/services/oauth2/token",
+        "url": "https://amanframewala.pythonanywhere.com/",
+        "method": "GET",
+        "headers": {
+          "cache-control": "no-cache",
+          "postman-token": "4d5277e3-90a3-4961-bb9e-61c76a9eb44a"
+        }
+      }
+      
+      $.ajax(settings).done(function (response) {
+        var auth_token = "Bearer "+ response;
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://pinkoderealty--pincode.my.salesforce.com/services/apexrest/webLeads/",
         "method": "POST",
         "headers": {
-          "content-type": "application/x-www-form-urlencoded",
+          "content-type": "application/json",
+          "authorization": auth_token,
           "cache-control": "no-cache",
-          "postman-token": "7096d0f6-267e-5c74-837d-ee832bb63d09"
+          "postman-token": "4bf6a03c-ae4a-f046-b23a-25ea7a0b0b9c"
         },
-        "data": {
-          "client_id": "3MVG9e2mBbZnmM6kqGXNjHYLHCvKLCJVrABD7UIvi0OYCrgbTzL5wExDQD.1EZ1ztuQwFddn7Fv.HmMYLJBOw",
-          "grant_type": "password",
-          "client_secret": "3CFF905C5DEF7357E1399AE5CADE801A08BC964E33CFCFF29C334674DE6E3A61",
-          "username": "gopal.gore@excellerconsultancy.in",
-          "password": "sfdc@1234m7qduasQ516LPd9i9lloFnyq"
-        }
+        "processData": false,
+        "data": data
       }
       
       $.ajax(settings).done(function (response) {
         console.log(response);
       });
-
-      var data = "client_id=3MVG9e2mBbZnmM6kqGXNjHYLHCvKLCJVrABD7UIvi0OYCrgbTzL5wExDQD.1EZ1ztuQwFddn7Fv.HmMYLJBOw&grant_type=password&client_secret=3CFF905C5DEF7357E1399AE5CADE801A08BC964E33CFCFF29C334674DE6E3A61&username=gopal.gore%40excellerconsultancy.in&password=sfdc%401234m7qduasQ516LPd9i9lloFnyq";
-
-var xhr = new XMLHttpRequest();
-xhr.withCredentials = true;
-
-xhr.addEventListener("readystatechange", function () {
-  if (this.readyState === 4) {
-    console.log(this.responseText);
-  }
-});
-
-xhr.open("POST", "https://test.salesforce.com/services/oauth2/token");
-xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
-xhr.setRequestHeader("cache-control", "no-cache");
-xhr.setRequestHeader("postman-token", "09c0a911-69d1-2c75-c0d2-fd3ed6506de7");
-
-xhr.send(data);
+      });
 
     // $.ajax({
     //     url: "https://app.sell.do/api/leads/create",
@@ -203,6 +204,7 @@ $("#leadForm").submit(function (e) {
             return;
         }
     }
+    var auth_token = "Bearer "+ access_token;
     var settings = {
         "async": true,
         "crossDomain": true,
@@ -210,7 +212,7 @@ $("#leadForm").submit(function (e) {
         "method": "POST",
         "headers": {
           "content-type": "application/json",
-          "authorization": "Bearer 00DN0000000VRw4!AQcAQEudrr_EoYGIJVcgy4TiSZkVQYfeHEZOi73_I6CweNV3DwkyTvwg8fYFjp1EWRHr601aGr31ooUzSA6rwCwcF8oxhgtu",
+          "authorization": auth_token,
           "cache-control": "no-cache",
           "postman-token": "4bf6a03c-ae4a-f046-b23a-25ea7a0b0b9c"
         },
