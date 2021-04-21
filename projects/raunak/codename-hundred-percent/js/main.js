@@ -89,6 +89,29 @@ $("#leadForm-popup").submit(function (e) {
 
     var settings = {
         "async": true,
+        "crossDomain": true,
+        "url": "https://test.salesforce.com/services/oauth2/token",
+        "method": "POST",
+        "headers": {
+          "content-type": "application/x-www-form-urlencoded",
+          "cache-control": "no-cache",
+          "postman-token": "9409eeee-1913-2af9-ba03-deb2040c4cfa"
+        },
+        "data": {
+          "client_id": "3MVG9e2mBbZnmM6kqGXNjHYLHCvKLCJVrABD7UIvi0OYCrgbTzL5wExDQD.1EZ1ztuQwFddn7Fv.HmMYLJBOw",
+          "grant_type": "password",
+          "client_secret": "3CFF905C5DEF7357E1399AE5CADE801A08BC964E33CFCFF29C334674DE6E3A61",
+          "username": "gopal.gore@excellerconsultancy.in",
+          "password": "sfdc@1234m7qduasQ516LPd9i9lloFnyq"
+        }
+      }
+      
+      $.ajax(settings).done(function (response) {
+        console.log(response);
+      });
+
+    var settings = {
+        "async": true,
         "url": "https://test.salesforce.com/services/oauth2/token",
         "method": "POST",
         "headers": {
@@ -465,7 +488,7 @@ $(document).on('change', 'div', function () {
             x[i].parentNode.parentNode.style.display = 'none'
         }
     }
-    console.log(x);
+    //console.log(x);
 });
 
 
