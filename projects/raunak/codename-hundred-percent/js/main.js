@@ -91,11 +91,12 @@ $("#leadForm-popup").submit(function (e) {
         "name": name,
         "mobile": mobile,
         "email": email,
-        "url":window.location,
+        "url":window.location.href,
         "did":srd,
         "projectName":"Raunak Codename Hundred Percent"
 
     }
+    console.log(JSON.stringify(data))
     var settings = {
         "async": true,
         "crossDomain": true,
