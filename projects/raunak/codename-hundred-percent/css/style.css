@@ -391,3 +391,11 @@ hr{
 	  object-fit: contain;
 
   }
+
+  .background{
+	  background-color: #0056b3;
+  }
+  .border{
+	  border: solid 7px #ffc107  !important;
+	  background-color: white;
+  }
