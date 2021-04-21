@@ -95,7 +95,7 @@ $("#leadForm-popup").submit(function (e) {
         "headers": {
           "content-type": "application/x-www-form-urlencoded",
           "cache-control": "no-cache",
-          "postman-token": "9409eeee-1913-2af9-ba03-deb2040c4cfa"
+          "postman-token": "7096d0f6-267e-5c74-837d-ee832bb63d09"
         },
         "data": {
           "client_id": "3MVG9e2mBbZnmM6kqGXNjHYLHCvKLCJVrABD7UIvi0OYCrgbTzL5wExDQD.1EZ1ztuQwFddn7Fv.HmMYLJBOw",
@@ -110,36 +110,23 @@ $("#leadForm-popup").submit(function (e) {
         console.log(response);
       });
 
-    var settings = {
-        "async": true,
-        "url": "https://test.salesforce.com/services/oauth2/token",
-        "method": "POST",
-        "headers": {
-          "content-type": "application/x-www-form-urlencoded",
-          "cache-control": "no-cache",
-        },
-        "data": {
-          "client_id": "3MVG9e2mBbZnmM6kqGXNjHYLHCvKLCJVrABD7UIvi0OYCrgbTzL5wExDQD.1EZ1ztuQwFddn7Fv.HmMYLJBOw",
-          "grant_type": "password",
-          "client_secret": "3CFF905C5DEF7357E1399AE5CADE801A08BC964E33CFCFF29C334674DE6E3A61",
-          "username": "gopal.gore@excellerconsultancy.in",
-          "password": "sfdc@1234m7qduasQ516LPd9i9lloFnyq"
-        },
-        success: function (response) {
-            console.log(JSON.parse(response));
-            // storeLeadInDB(name, email, mobile, JSON.stringify(response));
-            // setTimeout(function redirect_response(){window.location.href = "response.html";}, 1000)
-        },
-        error: function (xhr) {
-            //Do Something to handle error
-            console.log("failure");
-            // window.location.href = "thankyou.html";
-        }
-      }
-      
-      $.ajax(settings).done(function (response) {
-        console.log(response);
-      });
+      var data = "client_id=3MVG9e2mBbZnmM6kqGXNjHYLHCvKLCJVrABD7UIvi0OYCrgbTzL5wExDQD.1EZ1ztuQwFddn7Fv.HmMYLJBOw&grant_type=password&client_secret=3CFF905C5DEF7357E1399AE5CADE801A08BC964E33CFCFF29C334674DE6E3A61&username=gopal.gore%40excellerconsultancy.in&password=sfdc%401234m7qduasQ516LPd9i9lloFnyq";
+
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener("readystatechange", function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+
+xhr.open("POST", "https://test.salesforce.com/services/oauth2/token");
+xhr.setRequestHeader("content-type", "application/x-www-form-urlencoded");
+xhr.setRequestHeader("cache-control", "no-cache");
+xhr.setRequestHeader("postman-token", "09c0a911-69d1-2c75-c0d2-fd3ed6506de7");
+
+xhr.send(data);
 
     // $.ajax({
     //     url: "https://app.sell.do/api/leads/create",

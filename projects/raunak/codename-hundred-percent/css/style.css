@@ -388,6 +388,6 @@ hr{
 	  height: 630px;
 	  width: 100%;
 	  z-index: 999;
-	  object-fit: fill;
+	  object-fit: contain;
 
   }
