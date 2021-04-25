@@ -35,7 +35,7 @@ function queryParameter(name, url) {
     var regexS = "[\\?&]" + name + "=([^&#]*)";
     var regex = new RegExp(regexS);
     var results = regex.exec(url);
-    return results == null ? null : results[1];
+    return results == null ? "None" : results[1];
 }
 
 $("#leadForm-popup").submit(function (e) {
@@ -87,15 +87,15 @@ $("#leadForm-popup").submit(function (e) {
     var srd = queryParameter('srd', currentUrl);
     var utm_source = queryParameter('utm_source',currentUrl);
     var utm_medium = queryParameter('utm_medium',currentUrl);
-    if (!srd) srd = '60125fa4c82561698e294aa6';
+    if (srd == "None") srd = '1234';
     var data = {
         "name": name,
         "mobile": mobile,
         "email": email,
         "url": currentUrl,
         "did": srd,
-        "utm_source":utm_source,
-        "utm_medium":utm_medium,
+        "UTMSource":utm_source,
+        "UTMmedium":utm_medium,
         "projectName": "Raunak Codename Hundred Percent"
 
     }
@@ -217,18 +217,18 @@ $("#leadForm").submit(function (e) {
      var srd = queryParameter('srd', currentUrl);
      var utm_source = queryParameter('utm_source',currentUrl);
      var utm_medium = queryParameter('utm_medium',currentUrl);
-     if (!srd) srd = '60125fa4c82561698e294aa6';
+     if (srd == "None") srd = '1234';
      var data = {
-         "name": name,
-         "mobile": mobile,
-         "email": email,
-         "url": currentUrl,
-         "did": srd,
-         "utm_source":utm_source,
-         "utm_medium":utm_medium,
-         "projectName": "Raunak Codename Hundred Percent"
- 
-     }
+        "name": name,
+        "mobile": mobile,
+        "email": email,
+        "url": currentUrl,
+        "did": srd,
+        "UTMSource":utm_source,
+        "UTMmedium":utm_medium,
+        "projectName": "Raunak Codename Hundred Percent"
+
+    }
  
      storeLeadInSFDC(data);
      return;
@@ -344,21 +344,21 @@ $("#leadFormMobile").submit(function (e) {
 
     // var srd = selectSRD(utm_source, utm_campaign);
     var srd = queryParameter('srd', currentUrl);
-    if (!srd) srd = '60125fa4c82561698e294aa6';
+    if (srd == "None") srd = '1234';
 
      // var srd = selectSRD(utm_source, utm_campaign);
      var srd = queryParameter('srd', currentUrl);
      var utm_source = queryParameter('utm_source',currentUrl);
      var utm_medium = queryParameter('utm_medium',currentUrl);
-     if (!srd) srd = '60125fa4c82561698e294aa6';
+     if (srd == "None") srd = '1234';
      var data = {
          "name": name,
          "mobile": mobile,
          "email": email,
          "url": currentUrl,
          "did": srd,
-         "utm_source":utm_source,
-         "utm_medium":utm_medium,
+         "UTMSource":utm_source,
+         "UTMmedium":utm_medium,
          "projectName": "Raunak Codename Hundred Percent"
  
      }
@@ -393,46 +393,58 @@ $("#leadFormMobile").submit(function (e) {
 });
 
 function storeLeadInSFDC(data) {
+    console.log(data)
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": "https://l3g8sgyj77.execute-api.ap-south-1.amazonaws.com/sandboxStage",
-        "method": "GET",
-    }
+        "url": "https://l3g8sgyj77.execute-api.ap-south-1.amazonaws.com/Production",
+        "method": "POST",
+        "headers": {
+          "content-type": "application/json",          
+        },
+        "processData": false,
+        "data": JSON.stringify(data)
+      }
+      
+      $.ajax(settings).done(function (response) {
+        console.log(response);
+        storeLeadInDB(data["name"], data["email"], data["mobile"], JSON.stringify(response));
+        setTimeout(function redirect_response() { window.location.href = "response.html"; }, 1000)
+      });
+  
 
-    // $.ajax(settings).done(function (response) {
+    // ajax(settings).done(function (response) {
     //     console.log(JSON.parse(response["body"]));
     // });
 
-    $.ajax(settings).done(function (response) {
-        console.log(JSON.parse(response["body"]));
-        var body = JSON.parse(response["body"]);
-        var response = body["access_token"];
-        var url = body["instance_url"] + "/services/apexrest/webLeads/";
-        var auth_token = "Bearer " + response;
-        var settings = {
-            "async": true,
-            "crossDomain": true,
-            "url": url,
-            "method": "POST",
-            "headers": {
-                "content-type": "application/json",
-                "authorization": auth_token,
-                "cache-control": "no-cache",
-                "postman-token": "4bf6a03c-ae4a-f046-b23a-25ea7a0b0b9c"
-            },
-            "processData": false,
-            "data": JSON.stringify(data)
-        }
+ 
+        // var body = JSON.parse(response["body"]);
+        // var response = body["access_token"];
+        // var url = body["instance_url"] + "/services/apexrest/webLeads/";
+        // var auth_token = "Bearer " + response;
+        // var settings = {
+        //     "async": true,
+        //     "crossDomain": true,
+        //     "url": url,
+        //     "method": "POST",
+        //     "headers": {
+        //         "content-type": "application/json",
+        //         "authorization": auth_token,
+        //         "cache-control": "no-cache",
+        //         "postman-token": "4bf6a03c-ae4a-f046-b23a-25ea7a0b0b9c"
+        //     },
+        //     "processData": false,
+        //     "data": JSON.stringify(data)
+        // }
 
 
-        $.ajax(settings).done(function (response) {
-            console.log(response);
+        // $.ajax(settings).done(function (response) {
+        //     console.log(response);
 
-            storeLeadInDB(data["name"], data["email"], data["mobile"], JSON.stringify(response));
-            setTimeout(function redirect_response() { window.location.href = "response.html"; }, 1000)
-        });
-    });
+        //     storeLeadInDB(data["name"], data["email"], data["mobile"], JSON.stringify(response));
+        //     setTimeout(function redirect_response() { window.location.href = "response.html"; }, 1000)
+        // });
+ 
 
 }
 
@@ -456,7 +468,7 @@ function storeLeadInDB(name, email, mobile, response, formName) {
     var srd = queryParameter('srd', currentUrl);
 
 
-    var project = 'Raunak Centrum';
+    var project = 'Raunak Codename Hundred Percent';
     var timestamp = Date();
     data = {
         "formId": String(Math.floor(Date.now() / 1000)),
