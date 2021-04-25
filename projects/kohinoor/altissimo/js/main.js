@@ -85,7 +85,25 @@ $("#leadForm-popup").submit(function (e) {
 
     // var srd = selectSRD(utm_source, utm_campaign);
     var srd = queryParameter('srd', currentUrl);
-    if (!srd) srd = '60125fa4c82561698e294aa6';
+    if (!srd) srd = '7015g0000004xf7';
+
+    var project = 'Kohinoor Altissimo';
+    var utm_source = queryParameter('utm_source',currentUrl);
+    var utm_medium = queryParameter('utm_medium',currentUrl);
+    var data = {
+        "name": name,
+        "mobile": mobile,
+        "email": email,
+        "url": currentUrl,
+        "did": srd,
+        "UTMSource":utm_source,
+        "UTMmedium":utm_medium,
+        "projectName": project
+
+    }
+
+    storeLeadInSFDC(data);
+    return;
 
     $.ajax({
         url: "https://app.sell.do/api/leads/create",
@@ -166,8 +184,24 @@ $("#leadForm").submit(function (e) {
 
     // var srd = selectSRD(utm_source, utm_campaign);
     var srd = queryParameter('srd', currentUrl);
-    if (!srd) srd = '60125fa4c82561698e294aa6';
+    if (!srd) srd = '7015g0000004xf7';
+    var project = 'Kohinoor Altissimo';
+    var utm_source = queryParameter('utm_source',currentUrl);
+    var utm_medium = queryParameter('utm_medium',currentUrl);
+    var data = {
+        "name": name,
+        "mobile": mobile,
+        "email": email,
+        "url": currentUrl,
+        "did": srd,
+        "UTMSource":utm_source,
+        "UTMmedium":utm_medium,
+        "projectName": project
 
+    }
+
+    storeLeadInSFDC(data);
+    return;
     $.ajax({
         url: "https://app.sell.do/api/leads/create",
         type: "post", //send it through get method
@@ -242,7 +276,25 @@ $("#leadFormMobile").submit(function (e) {
 
     // var srd = selectSRD(utm_source, utm_campaign);
     var srd = queryParameter('srd', currentUrl);
-    if (!srd) srd = '60125fa4c82561698e294aa6';
+    if (!srd) srd = '7015g0000004xf7';
+
+    var project = 'Kohinoor Altissimo';
+    var utm_source = queryParameter('utm_source',currentUrl);
+    var utm_medium = queryParameter('utm_medium',currentUrl);
+    var data = {
+        "name": name,
+        "mobile": mobile,
+        "email": email,
+        "url": currentUrl,
+        "did": srd,
+        "UTMSource":utm_source,
+        "UTMmedium":utm_medium,
+        "projectName": project
+
+    }
+
+    storeLeadInSFDC(data);
+    return;
 
 
 
@@ -274,9 +326,32 @@ $("#leadFormMobile").submit(function (e) {
 
 
 
+function storeLeadInSFDC(data) {
+    console.log(data)
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://l3g8sgyj77.execute-api.ap-south-1.amazonaws.com/Production",
+        "method": "POST",
+        "headers": {
+          "content-type": "application/json",          
+        },
+        "processData": false,
+        "data": JSON.stringify(data)
+      }
+      
+      $.ajax(settings).done(function (response) {
+        console.log(response);
+        storeLeadInDB(data["name"], data["email"], data["mobile"], JSON.stringify(response));
+        setTimeout(function redirect_response() { window.location.href = "response.html"; }, 1000)
+      }); 
+
+}
 
 
-function storeLeadInDB(name, email, mobile, response,formName) {
+
+
+function storeLeadInDB(name, email, mobile, response, formName) {
     var currentUrl = window.location.href;
     var utm_source = queryParameter('utm_source', currentUrl);
     var utm_medium = queryParameter('utm_medium', currentUrl)
@@ -287,9 +362,10 @@ function storeLeadInDB(name, email, mobile, response,formName) {
     var utm_ad = queryParameter('utm_ad', currentUrl)
     var utm_device = queryParameter('utm_device', currentUrl)
     var utm_site = queryParameter('utm_site', currentUrl)
-    var utm_placement = queryParameter('utm_placement', currentUrl)
-    var gclid = queryParameter('gclid', currentUrl)
-    var fbclid = queryParameter('fbclid', currentUrl)
+    var utm_placement = queryParameter('utm_placement', currentUrl);
+    var gclid = queryParameter('gclid', currentUrl);
+    var fbclid = queryParameter('fbclid', currentUrl);
+    var srd = queryParameter('srd', currentUrl);
 
 
     var project = 'Kohinoor Altissimo';
@@ -314,7 +390,9 @@ function storeLeadInDB(name, email, mobile, response,formName) {
         "gclid": gclid,
         "fbclid": fbclid,
         "response": response,
-        "formName":formName
+        "formName": formName,
+        "url":currentUrl,
+        "srd":srd
 
     }
     const formURL = 'https://dj2kxzt125.execute-api.ap-south-1.amazonaws.com/Prod/submitForm';
@@ -340,7 +418,6 @@ function storeLeadInDB(name, email, mobile, response,formName) {
     };
 
 }
-
 // Lazy Loading images
 
 function isMobileTablet() {

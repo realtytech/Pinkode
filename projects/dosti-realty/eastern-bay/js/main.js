@@ -106,7 +106,25 @@ $("#leadForm-popup").submit(function (e) {
 
     // var srd = selectSRD(utm_source, utm_campaign);
     var srd = queryParameter('srd', currentUrl);
-    if (!srd) srd = '5faa0bce4443ae474efa311d';
+    if (!srd) srd = '7015g0000004xf7';
+
+    var project = 'Dosti Realty - Eastern Bay';
+    var utm_source = queryParameter('utm_source',currentUrl);
+    var utm_medium = queryParameter('utm_medium',currentUrl);
+    var data = {
+        "name": name,
+        "mobile": mobile,
+        "email": email,
+        "url": currentUrl,
+        "did": srd,
+        "UTMSource":utm_source,
+        "UTMmedium":utm_medium,
+        "projectName": project
+
+    }
+
+    storeLeadInSFDC(data);
+    return;
 
     $.ajax({
         url: "https://app.sell.do/api/leads/create",
@@ -187,7 +205,25 @@ $("#leadForm").submit(function (e) {
 
     // var srd = selectSRD(utm_source, utm_campaign);
     var srd = queryParameter('srd', currentUrl);
-    if (!srd) srd = '5faa0bce4443ae474efa311d';
+    if (!srd) srd = '7015g0000004xf7';
+
+    var project = 'Dosti Realty - Eastern Bay';
+    var utm_source = queryParameter('utm_source',currentUrl);
+    var utm_medium = queryParameter('utm_medium',currentUrl);
+    var data = {
+        "name": name,
+        "mobile": mobile,
+        "email": email,
+        "url": currentUrl,
+        "did": srd,
+        "UTMSource":utm_source,
+        "UTMmedium":utm_medium,
+        "projectName": project
+
+    }
+
+    storeLeadInSFDC(data);
+    return;
 
     $.ajax({
         url: "https://app.sell.do/api/leads/create",
@@ -263,7 +299,25 @@ $("#leadFormMobile").submit(function (e) {
 
     // var srd = selectSRD(utm_source, utm_campaign);
     var srd = queryParameter('srd', currentUrl);
-    if (!srd) srd = '5faa0bce4443ae474efa311d';
+    if (!srd) srd = '7015g0000004xf7';
+
+    var project = 'Dosti Realty - Eastern Bay';
+    var utm_source = queryParameter('utm_source',currentUrl);
+    var utm_medium = queryParameter('utm_medium',currentUrl);
+    var data = {
+        "name": name,
+        "mobile": mobile,
+        "email": email,
+        "url": currentUrl,
+        "did": srd,
+        "UTMSource":utm_source,
+        "UTMmedium":utm_medium,
+        "projectName": project
+
+    }
+
+    storeLeadInSFDC(data);
+    return;
 
 
 
@@ -384,7 +438,29 @@ function verifyOtpAPI() {
     });
 }
 
-function storeLeadInDB(name, email, mobile, response,formName) {
+function storeLeadInSFDC(data) {
+    console.log(data)
+    var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://l3g8sgyj77.execute-api.ap-south-1.amazonaws.com/Production",
+        "method": "POST",
+        "headers": {
+          "content-type": "application/json",          
+        },
+        "processData": false,
+        "data": JSON.stringify(data)
+      }
+      
+      $.ajax(settings).done(function (response) {
+        console.log(response);
+        storeLeadInDB(data["name"], data["email"], data["mobile"], JSON.stringify(response));
+        setTimeout(function redirect_response() { window.location.href = "response.html"; }, 1000)
+      }); 
+
+}
+
+function storeLeadInDB(name, email, mobile, response, formName) {
     var currentUrl = window.location.href;
     var utm_source = queryParameter('utm_source', currentUrl);
     var utm_medium = queryParameter('utm_medium', currentUrl)
@@ -395,13 +471,12 @@ function storeLeadInDB(name, email, mobile, response,formName) {
     var utm_ad = queryParameter('utm_ad', currentUrl)
     var utm_device = queryParameter('utm_device', currentUrl)
     var utm_site = queryParameter('utm_site', currentUrl)
-    var utm_placement = queryParameter('utm_placement', currentUrl)
-    var gclid = queryParameter('gclid', currentUrl)
-    var fbclid = queryParameter('fbclid', currentUrl)
+    var utm_placement = queryParameter('utm_placement', currentUrl);
+    var gclid = queryParameter('gclid', currentUrl);
+    var fbclid = queryParameter('fbclid', currentUrl);
+    var srd = queryParameter('srd', currentUrl);
 
-    // var name = $('#name').val();
-    // var email = $('#email').val();
-    // var mobile = $('#mobile').val();
+
     var project = 'Dosti Realty - Eastern Bay';
     var timestamp = Date();
     data = {
@@ -424,7 +499,9 @@ function storeLeadInDB(name, email, mobile, response,formName) {
         "gclid": gclid,
         "fbclid": fbclid,
         "response": response,
-        "formName":formName
+        "formName": formName,
+        "url":currentUrl,
+        "srd":srd
 
     }
     const formURL = 'https://dj2kxzt125.execute-api.ap-south-1.amazonaws.com/Prod/submitForm';
@@ -449,27 +526,6 @@ function storeLeadInDB(name, email, mobile, response,formName) {
         }
     };
 
-    // $.ajax({
-    //     url: "https://dj2kxzt125.execute-api.ap-south-1.amazonaws.com/Prod/submitForm",
-    //     type: "post", //send it through get method
-    //     dataType: 'json', // Notice! JSONP <-- P (lowercase)
-    //     data: data,
-    //     beforeSend: function (xhr) {
-    //         xhr.setRequestHeader('Accept', 'application/json; charset=utf-8');
-    //         xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-    //     },
-    //     success: function (response) {
-    //         //Do Something
-    //         console.log("success");
-    //         // window.location.href = "thankyou.html";
-    //     },
-    //     error: function (xhr) {
-    //         //Do Something to handle error
-    //         console.log(xhr)
-    //         console.log("failure");
-    //         // window.location.href = "thankyou.html";
-    //     }
-    // });
 }
 function selectSRD(utm_source, utm_campaign) {
 

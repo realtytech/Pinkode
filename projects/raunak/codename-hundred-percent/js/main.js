@@ -87,7 +87,7 @@ $("#leadForm-popup").submit(function (e) {
     var srd = queryParameter('srd', currentUrl);
     var utm_source = queryParameter('utm_source',currentUrl);
     var utm_medium = queryParameter('utm_medium',currentUrl);
-    if (srd == "None") srd = '1234';
+    if (srd == "None") srd = '7015g0000004xf7';
     var data = {
         "name": name,
         "mobile": mobile,
@@ -217,7 +217,7 @@ $("#leadForm").submit(function (e) {
      var srd = queryParameter('srd', currentUrl);
      var utm_source = queryParameter('utm_source',currentUrl);
      var utm_medium = queryParameter('utm_medium',currentUrl);
-     if (srd == "None") srd = '1234';
+     if (srd == "None") srd = '7015g0000004xf7';
      var data = {
         "name": name,
         "mobile": mobile,
@@ -344,13 +344,13 @@ $("#leadFormMobile").submit(function (e) {
 
     // var srd = selectSRD(utm_source, utm_campaign);
     var srd = queryParameter('srd', currentUrl);
-    if (srd == "None") srd = '1234';
+    if (srd == "None") srd = '7015g0000004xf7';
 
      // var srd = selectSRD(utm_source, utm_campaign);
      var srd = queryParameter('srd', currentUrl);
      var utm_source = queryParameter('utm_source',currentUrl);
      var utm_medium = queryParameter('utm_medium',currentUrl);
-     if (srd == "None") srd = '1234';
+     if (srd == "None") srd = '7015g0000004xf7';
      var data = {
          "name": name,
          "mobile": mobile,
@@ -410,41 +410,7 @@ function storeLeadInSFDC(data) {
         console.log(response);
         storeLeadInDB(data["name"], data["email"], data["mobile"], JSON.stringify(response));
         setTimeout(function redirect_response() { window.location.href = "response.html"; }, 1000)
-      });
-  
-
-    // ajax(settings).done(function (response) {
-    //     console.log(JSON.parse(response["body"]));
-    // });
-
- 
-        // var body = JSON.parse(response["body"]);
-        // var response = body["access_token"];
-        // var url = body["instance_url"] + "/services/apexrest/webLeads/";
-        // var auth_token = "Bearer " + response;
-        // var settings = {
-        //     "async": true,
-        //     "crossDomain": true,
-        //     "url": url,
-        //     "method": "POST",
-        //     "headers": {
-        //         "content-type": "application/json",
-        //         "authorization": auth_token,
-        //         "cache-control": "no-cache",
-        //         "postman-token": "4bf6a03c-ae4a-f046-b23a-25ea7a0b0b9c"
-        //     },
-        //     "processData": false,
-        //     "data": JSON.stringify(data)
-        // }
-
-
-        // $.ajax(settings).done(function (response) {
-        //     console.log(response);
-
-        //     storeLeadInDB(data["name"], data["email"], data["mobile"], JSON.stringify(response));
-        //     setTimeout(function redirect_response() { window.location.href = "response.html"; }, 1000)
-        // });
- 
+      }); 
 
 }
 
