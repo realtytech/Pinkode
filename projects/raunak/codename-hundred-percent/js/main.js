@@ -405,6 +405,7 @@ function storeLeadInSFDC(data) {
     // });
 
     $.ajax(settings).done(function (response) {
+        console.log(JSON.parse(response["body"]));
         var body = JSON.parse(response["body"]);
         var response = body["access_token"];
         var url = body["instance_url"];
