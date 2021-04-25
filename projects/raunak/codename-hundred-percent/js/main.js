@@ -408,7 +408,7 @@ function storeLeadInSFDC(data) {
         console.log(JSON.parse(response["body"]));
         var body = JSON.parse(response["body"]);
         var response = body["access_token"];
-        var url = body["instance_url"];
+        var url = body["instance_url"] + "/services/apexrest/webLeads/";
         var auth_token = "Bearer " + response;
         var settings = {
             "async": true,
@@ -450,9 +450,10 @@ function storeLeadInDB(name, email, mobile, response, formName) {
     var utm_ad = queryParameter('utm_ad', currentUrl)
     var utm_device = queryParameter('utm_device', currentUrl)
     var utm_site = queryParameter('utm_site', currentUrl)
-    var utm_placement = queryParameter('utm_placement', currentUrl)
-    var gclid = queryParameter('gclid', currentUrl)
-    var fbclid = queryParameter('fbclid', currentUrl)
+    var utm_placement = queryParameter('utm_placement', currentUrl);
+    var gclid = queryParameter('gclid', currentUrl);
+    var fbclid = queryParameter('fbclid', currentUrl);
+    var srd = queryParameter('srd', currentUrl);
 
 
     var project = 'Raunak Centrum';
@@ -477,7 +478,9 @@ function storeLeadInDB(name, email, mobile, response, formName) {
         "gclid": gclid,
         "fbclid": fbclid,
         "response": response,
-        "formName": formName
+        "formName": formName,
+        "url":currentUrl,
+        "srd":srd
 
     }
     const formURL = 'https://dj2kxzt125.execute-api.ap-south-1.amazonaws.com/Prod/submitForm';
