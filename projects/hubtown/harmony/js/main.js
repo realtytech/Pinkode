@@ -334,7 +334,7 @@ function storeLeadInSFDC(data) {
     var settings = {
         "async": true,
         "crossDomain": true,
-        "url": "https://l3g8sgyj77.execute-api.ap-south-1.amazonaws.com/Production",
+        "url": "https://r93sljatu1.execute-api.ap-south-1.amazonaws.com/Production",
         "method": "POST",
         "headers": {
           "content-type": "application/json",          
