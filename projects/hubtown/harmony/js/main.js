@@ -45,6 +45,8 @@ $("#leadForm-popup").submit(function (e) {
     // handle button click
     $("#submit_button-popup").prop('disabled', true);
     $("#submit_button-popup").prop("value", "Processing....");
+    $("#submit_button").prop('disabled', true);
+    $("#submit_button").prop("value", "Processing....");
     var formName = "Popup-Form";
 
     // Query Params
@@ -139,6 +141,8 @@ $("#leadForm").submit(function (e) {
     e.preventDefault();
 
     // handle button click
+    $("#submit_button-popup").prop('disabled', true);
+    $("#submit_button-popup").prop("value", "Processing....");
     $("#submit_button").prop('disabled', true);
     $("#submit_button").prop("value", "Processing....");
 
@@ -235,6 +239,8 @@ $("#leadFormMobile").submit(function (e) {
     e.preventDefault();
 
     // handle button click
+    $("#submit_button-popup").prop('disabled', true);
+    $("#submit_button-popup").prop("value", "Processing....");
     $("#submit_button").prop('disabled', true);
     $("#submit_button").prop("value", "Processing....");
     var formName = "Mobile-Form";
