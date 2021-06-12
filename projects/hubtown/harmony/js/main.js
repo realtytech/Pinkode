@@ -45,6 +45,8 @@ $("#leadForm-popup").submit(function (e) {
     // handle button click
     $("#submit_button-popup").prop('disabled', true);
     $("#submit_button-popup").prop("value", "Processing....");
+    $("#submit_button_mobile").prop('disabled', true);
+    $("#submit_button_mobile").prop("value", "Processing....");
     $("#submit_button").prop('disabled', true);
     $("#submit_button").prop("value", "Processing....");
     var formName = "Popup-Form";
@@ -145,7 +147,8 @@ $("#leadForm").submit(function (e) {
     $("#submit_button-popup").prop("value", "Processing....");
     $("#submit_button").prop('disabled', true);
     $("#submit_button").prop("value", "Processing....");
-
+    $("#submit_button_mobile").prop('disabled', true);
+    $("#submit_button_mobile").prop("value", "Processing....");
     var formName = "Desktop-Form";
 
     // Query Params
@@ -243,6 +246,8 @@ $("#leadFormMobile").submit(function (e) {
     $("#submit_button-popup").prop("value", "Processing....");
     $("#submit_button").prop('disabled', true);
     $("#submit_button").prop("value", "Processing....");
+    $("#submit_button_mobile").prop('disabled', true);
+    $("#submit_button_mobile").prop("value", "Processing....");
     var formName = "Mobile-Form";
     // Query Params
     var currentUrl = window.location.href;
