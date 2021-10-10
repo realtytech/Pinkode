@@ -1,4 +1,4 @@
-var base_url = "http://islandcitycenter-dadar.in/";
+var base_url = "http://bombay-realty.co.in/island-city-center";
 //var property_id ='137';
 var property_id ='139';
 var projectName = 'Bombay Realty - ICc'
@@ -216,9 +216,9 @@ $('#enquiry-form').validate({
 
 
         var data = {
-            'name':name,'email':email,'mobile':mobile,'property_id':property_id,
+            'name':name,'email':email,'mobile':mobile,
             'projectName':projectName,
-            'did':srd,'campaign_code':campaign_code,'UTMSource':source,'UTMmedium':medium,'campaign':campaign,'country':country,'city':city,'dialing_code':dialing_code,'state':state,'keyword':keyword,'device':device,'placement':placement,'gclickid':gclid,'sfdc_project_interested':sfdc_project_interested,'adgroup':adgroup,'creative':creative,'target':target,'matchtype':matchtype,'network':network,'devicemodel':devicemodel,'adposition':adposition,'campaignid':campaignid,'feeditemid':feeditemid,'content':content,'comments':comments,'budget':budget,'configuration':configuration,'url':encodedUrl};
+            'did':srd,'UTMSource':source,'UTMmedium':medium, 'url':encodedUrl};
         console.log(data);
         storeLeadInSFDC(data);
         return;
