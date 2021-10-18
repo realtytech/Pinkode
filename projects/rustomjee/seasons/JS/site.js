@@ -202,7 +202,7 @@ $('[data-fancybox="g-tab-1"],[data-fancybox="g-tab-2"],[data-fancybox="g-tab-3"]
 		/*var speciTop = $("#luxery-sec").offset().top;*/
 		var confiTop = $("#configurations-sec").offset().top;
 		var galleryTop = $("#gallery").offset().top;
-		var walkThroughTop = $("#walk-through").offset().top;
+		// var walkThroughTop = $("#walk-through").offset().top;
 		//var planTop = $("#floor-plan").offset().top;
 		var locationTop = $("#location-sec").offset().top;
 		var contactTop = $("#contact").offset().top;
@@ -216,12 +216,9 @@ $('[data-fancybox="g-tab-1"],[data-fancybox="g-tab-2"],[data-fancybox="g-tab-3"]
 		}else if((winTop+headerH) >= confiTop && (winTop+headerH) < galleryTop) {
 			$('ul.home li a').removeClass('active');
 			$('ul.home li a[rel=configurations-sec]').addClass('active');
-		}else if((winTop+headerH) >= galleryTop && (winTop+headerH) < walkThroughTop) {
+		}else if((winTop+headerH) >= galleryTop && (winTop+headerH) < locationTop) {
 			$('ul.home li a').removeClass('active');
 			$('ul.home li a[rel=gallery]').addClass('active');
-		}else if((winTop+headerH) >= walkThroughTop && (winTop+headerH) < locationTop) {
-			$('ul.home li a').removeClass('active');
-			$('ul.home li a[rel=walk-through]').addClass('active');
 		}else if((winTop+headerH) >= locationTop && (winTop+headerH) < contactTop) {
 			$('ul.home li a').removeClass('active');
 			$('ul.home li a[rel=location-sec]').addClass('active');

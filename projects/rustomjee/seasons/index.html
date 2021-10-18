@@ -1075,7 +1075,7 @@
 	  	var about = $('.about').offset().top;
 	  	var config = $('.config-sec').offset().top;
 	 	var gallery = $('.gallery').offset().top;
-	  	var walkThrough = $('.walk-thorugh').offset().top;
+	  	// var walkThrough = $('.walk-thorugh').offset().top;
 	    var location = $('.location-map').offset().top;
 	    var contact = $('.contact-sec').offset().top;
 	    var disclaimer = $('.disclaimer').offset().top;
@@ -1089,12 +1089,9 @@
 		}else if((winTop) >= config && (winTop) < gallery) {
 		  $('.menu-btn').removeClass('active');
 		  $('.config-sec-menu-btn').addClass('active');
-		}else if((winTop) >= gallery && (winTop) < walkThrough) {
+		}else if((winTop) >= gallery && (winTop) < location) {
 		  $('.menu-btn').removeClass('active');
 		  $('.gallery-menu-btn').addClass('active');
-		}else if((winTop) >= walkThrough && (winTop) < location) {
-		  $('.menu-btn').removeClass('active');
-		  $('.walk-thorugh-menu-btn').addClass('active');
 		}else if((winTop) >= location && (winTop) < contact) {
 		  $('.menu-btn').removeClass('active');
 		  $('.location-map-menu-btn').addClass('active');
@@ -1116,7 +1113,7 @@
 		</div>
 		<a href="tel:+912261116111" class="call-icon mob-only"><i class="fa fa-phone fa-stack-1x"></i></a>
 		<section class="sticky-form">
-			<div class="wrapper">
+			<div class="">
 				<a class="form-close mob-only">x</a>
 				<div class="title">
 					<h4 class="desk-only">Contact Us</h4>
