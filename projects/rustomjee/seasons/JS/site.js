@@ -248,11 +248,19 @@ $('[data-fancybox="g-tab-1"],[data-fancybox="g-tab-2"],[data-fancybox="g-tab-3"]
 	});
 	if ($(window).width() > 1023) {
 	}
+
 	
-	$("form.frmEnquiry,form.frmInstantCallback,form.frmPopup,form.price-enquiry-form").submit(function(){    
-	    if(FLGERR == 0){
-			var aUrl = SITEURL+"/inc/site.inc.php?xAction=saveEnquiry";
+	$("form.frmEnquiry,form.frmInstantCallback,form.frmPopup,form.price-enquiry-form").submit(function(e){    
+		e.preventDefault();
+
+	    if(true){
+			// var aUrl = SITEURL+"/inc/site.inc.php?xAction=saveEnquiry";
 			showLoader();
+			var name = $(this).find('input[name="name"]').val();
+			var mobile = $(this).find('input[name="mobile"]').val();
+			var email = $(this).find('input[name="email"]').val();
+			console.log([name,mobile,email]);
+			return;
 			$.ajax({
 				type: 'post',
 				url: aUrl,
@@ -276,9 +284,14 @@ $('[data-fancybox="g-tab-1"],[data-fancybox="g-tab-2"],[data-fancybox="g-tab-3"]
 	});
 
 	$("form.e-brochure-form").submit(function(){
-    	if(FLGERR == 0){ 
-			var aUrl = SITEURL+"/inc/site.inc.php?xAction=downloadBroucherEntry";
+    	if(true){ 
+			// var aUrl = SITEURL+"/inc/site.inc.php?xAction=downloadBroucherEntry";
 			showLoader();
+			var name = $(this).find('input[name="name"]').val();
+			var mobile = $(this).find('input[name="mobile"]').val();
+			var email = $(this).find('input[name="email"]').val();
+			console.log([name,mobile,email]);
+			return;
 			$.ajax({
 				type: 'post',
 				url: aUrl,
