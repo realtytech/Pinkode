@@ -194,9 +194,9 @@ $("#leadForm").submit(function (e) {
 
     // var srd = selectSRD(utm_source, utm_campaign);
     var srd = queryParameter('srd', currentUrl);
-    if (!srd) srd = '7015g0000004xf7RC';
+    if (!srd) srd = '7015g0000004xf7RUU';
 
-    var project = 'Rustomjee Crown';
+    var project = 'Rustomjee Uptown Urbania';
     var utm_source = queryParameter('utm_source',currentUrl);
     var utm_medium = queryParameter('utm_medium',currentUrl);
     var data = {
@@ -293,9 +293,9 @@ $("#leadFormMobile").submit(function (e) {
 
     // var srd = selectSRD(utm_source, utm_campaign);
     var srd = queryParameter('srd', currentUrl);
-    if (!srd) srd = '7015g0000004xf7RC';
+    if (!srd) srd = '7015g0000004xf7RUU';
 
-    var project = 'Rustomjee Crown';
+    var project = 'Rustomjee Uptown Urbania';
     var utm_source = queryParameter('utm_source',currentUrl);
     var utm_medium = queryParameter('utm_medium',currentUrl);
     var data = {
