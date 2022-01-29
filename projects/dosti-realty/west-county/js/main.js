@@ -466,7 +466,7 @@ function storeLeadInSFDC(data) {
       $.ajax(settings).done(function (response) {
         console.log(response);
         storeLeadInDB(data["name"], data["email"], data["mobile"], JSON.stringify(response));
-        setTimeout(function redirect_response() { window.location.href = "response.html"; }, 1000)
+        setTimeout(function redirect_response() { window.location.href = "response.html"; }, 50)
       }); 
 
 }
