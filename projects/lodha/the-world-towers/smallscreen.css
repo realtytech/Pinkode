@@ -183,7 +183,7 @@ h2{
 z-index: 50;}
 
 .exclusive-banner{
-  background: url(./images/residentialBG-1.jpg);
+  background: url(./images/residentialBG-1.webp);
   filter: brightness(1.2);
   padding: 1.5rem;
   color: #bbb!important;
