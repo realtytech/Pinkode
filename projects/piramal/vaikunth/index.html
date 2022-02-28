@@ -193,7 +193,46 @@
 
                </div>
                <div class="col-md-6 p-0 m-0 pt-4 text-center">
-                  <img src="./images/About.webp" width="90%" alt="">
+                  <div class="form-section p-10">
+                     <form id="leadForm" class="">
+                        <h2 class="text-center">GRAB THE OPPORTUNITY NOW</h2>
+                        <div class="form-group mt-3 mx-auto">
+                           <input type="text" name="name" id="name" placeholder="Your Name*" class="form-control"
+                              required />
+                        </div>
+                        <div class="form-group">
+                           <input type="email" name="email" id="email" placeholder="Your Email*" class="form-control"
+                              required />
+                        </div>
+                        <div class="form-group">
+                           <input type="text" maxlength="10" minlength="10" onkeypress="return numbersonly(event)"
+                              name="mobile" id="mobile" placeholder="Mobile*" class="form-control" required />
+                        </div>
+                        <div style="font-size: xx-small; color: #999;" class="text-center">
+                           By providing your contact details you have authorized Pinkode Realty to contact you in future
+                           through calls/SMS/E-mails and inform you about projects.<br> This will override your registry
+                           on the NCPR.
+                        </div>
+
+                        <div class="text-center">
+
+                           <input type="submit" id="submit_button" class="btn" value="Submit">
+                        </div>
+
+                        <div class="text-center">
+                           <input type="button" id="verify_otp_button" class="btn" value="Verify"
+                              style="display: none; cursor: not-allowed;" onclick="verifyOtpAPI()" disabled>
+                        </div>
+                     </form>
+                     <div class="Thankyou" style="display: none;">
+                        <h2 class="th2">Thank you for your enquiry</h2>
+                        <p>Our representative will get in touch with you shortly</p>
+                        <div class="text-center">
+                           <a href="#" class=" btn" type="button">Know More</a>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- <img src="./images/About.webp" width="90%" alt=""> -->
 
                   <div>
 
@@ -202,7 +241,7 @@
 
                <hr>
                <hr>
-               <div class="col-md-6 text-white text-center p-10">
+               <div class="col-md-12 text-white text-center p-10">
                   <h1>
                      Project<span>
                         Glimpses
@@ -218,7 +257,7 @@
                         <input type="radio" id="carousel-6" name="carousel[]">
                         <input type="radio" id="carousel-7" name="carousel[]">
                         <ul class="carousel__items">
-                           <li class="carousel__item"><img src="images/gallery/0.webp" alt="">
+                           <li class="carousel__item"><img src="images/About.webp" alt="">
                               <!-- <div class="text">Elevation</div> -->
                               <!-- <div class="subtext">Artists Impression</div>    -->
                            </li>
@@ -291,45 +330,7 @@
                </div>
                <div class="col-md-6 p-0 m-0 pt-4 text-center">
                   <!-- <img src="./images/Details.webp" width="60%" alt=""> -->
-                  <div class="form-section p-10">
-                     <form id="leadForm" class="">
-                        <h2 class="text-center">GRAB THE OPPORTUNITY NOW</h2>
-                        <div class="form-group mt-3 mx-auto">
-                           <input type="text" name="name" id="name" placeholder="Your Name*" class="form-control"
-                              required />
-                        </div>
-                        <div class="form-group">
-                           <input type="email" name="email" id="email" placeholder="Your Email*" class="form-control"
-                              required />
-                        </div>
-                        <div class="form-group">
-                           <input type="text" maxlength="10" minlength="10" onkeypress="return numbersonly(event)"
-                              name="mobile" id="mobile" placeholder="Mobile*" class="form-control" required />
-                        </div>
-                        <div style="font-size: xx-small; color: #999;" class="text-center">
-                           By providing your contact details you have authorized Pinkode Realty to contact you in future
-                           through calls/SMS/E-mails and inform you about projects.<br> This will override your registry
-                           on the NCPR.
-                        </div>
-
-                        <div class="text-center">
-
-                           <input type="submit" id="submit_button" class="btn" value="Submit">
-                        </div>
-
-                        <div class="text-center">
-                           <input type="button" id="verify_otp_button" class="btn" value="Verify"
-                              style="display: none; cursor: not-allowed;" onclick="verifyOtpAPI()" disabled>
-                        </div>
-                     </form>
-                     <div class="Thankyou" style="display: none;">
-                        <h2 class="th2">Thank you for your enquiry</h2>
-                        <p>Our representative will get in touch with you shortly</p>
-                        <div class="text-center">
-                           <a href="#" class=" btn" type="button">Know More</a>
-                        </div>
-                     </div>
-                  </div>
+                  
                   <div>
   
                   </div>

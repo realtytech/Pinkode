@@ -136,13 +136,13 @@ header img{
 }
 
 .carousel__items{
-  height: 425px ;
-  max-height: 60vw;
-  max-width: 40vw;
+  height: 650px ;
+  max-height: 70vh;
+  max-width: 60vw;
 }
 
 .carousel,.container-carousel{
-  height: 475px ;
-  max-height: 60vw;
-  max-width: 40vw;
+  height: 675px ;
+  max-height: 70vh;
+  max-width: 60vw;
 }
