@@ -84,13 +84,13 @@ $("#leadForm-popup").submit(function (e) {
 
 
     // var srd = selectSRD(utm_source, utm_campaign);
-    var srd = queryParameter('srd', currentUrl);
+    var srd = queryParameter('SRD', currentUrl);
 
 
     if (!srd) srd = '7015g0000004xLTWT';
     var project = 'Lodha The World Towers';
-    var utm_source = queryParameter('utm_source',currentUrl);
-    var utm_medium = queryParameter('utm_medium',currentUrl);
+    var utm_source = queryParameter('cstm_ppc_campaign',currentUrl);
+    var utm_medium = queryParameter('cstm_ppc_channel',currentUrl);
     var data = {
         "name": name,
         "mobile": mobile,
@@ -147,7 +147,7 @@ $("#leadForm").submit(function (e) {
 
     // Query Params
     var currentUrl = window.location.href;
-    // var utm_source = queryParameter('utm_source', currentUrl);
+    // var utm_source = queryParameter('cstm_ppc_campaign', currentUrl);
     // var utm_campaign = queryParameter('utm_campaign', currentUrl)
 
     var d = new Date();
@@ -184,11 +184,11 @@ $("#leadForm").submit(function (e) {
 
 
     // var srd = selectSRD(utm_source, utm_campaign);
-    var srd = queryParameter('srd', currentUrl);
+    var srd = queryParameter('SRD', currentUrl);
     if (!srd) srd = '7015g0000004xLTWT';
     var project = 'Lodha The World Towers';
-    var utm_source = queryParameter('utm_source',currentUrl);
-    var utm_medium = queryParameter('utm_medium',currentUrl);
+    var utm_source = queryParameter('cstm_ppc_campaign',currentUrl);
+    var utm_medium = queryParameter('cstm_ppc_channel',currentUrl);
     var data = {
         "name": name,
         "mobile": mobile,
@@ -239,7 +239,7 @@ $("#leadFormMobile").submit(function (e) {
     var formName = "Mobile-Form";
     // Query Params
     var currentUrl = window.location.href;
-    // var utm_source = queryParameter('utm_source', currentUrl);
+    // var utm_source = queryParameter('cstm_ppc_campaign', currentUrl);
     // var utm_campaign = queryParameter('utm_campaign', currentUrl)
 
     var d = new Date();
@@ -276,11 +276,11 @@ $("#leadFormMobile").submit(function (e) {
 
 
     // var srd = selectSRD(utm_source, utm_campaign);
-    var srd = queryParameter('srd', currentUrl);
+    var srd = queryParameter('SRD', currentUrl);
     if (!srd) srd = '7015g0000004xLTWT';
     var project = 'Lodha The World Towers';
-    var utm_source = queryParameter('utm_source',currentUrl);
-    var utm_medium = queryParameter('utm_medium',currentUrl);
+    var utm_source = queryParameter('cstm_ppc_campaign',currentUrl);
+    var utm_medium = queryParameter('cstm_ppc_channel',currentUrl);
     var data = {
         "name": name,
         "mobile": mobile,
@@ -353,19 +353,19 @@ function storeLeadInSFDC(data) {
 
 function storeLeadInDB(name, email, mobile, response, formName) {
     var currentUrl = window.location.href;
-    var utm_source = queryParameter('utm_source', currentUrl);
-    var utm_medium = queryParameter('utm_medium', currentUrl)
-    var utm_campaign = queryParameter('utm_campaign', currentUrl)
-    var utm_adgroup = queryParameter('utm_adgroup', currentUrl)
-    var utm_keyword = queryParameter('utm_keyword', currentUrl)
-    var utm_adset = queryParameter('utm_adset', currentUrl)
-    var utm_ad = queryParameter('utm_ad', currentUrl)
-    var utm_device = queryParameter('utm_device', currentUrl)
-    var utm_site = queryParameter('utm_site', currentUrl)
-    var utm_placement = queryParameter('utm_placement', currentUrl);
+    var utm_source = queryParameter('cstm_ppc_campaign', currentUrl);
+    var utm_medium = queryParameter('cstm_ppc_channel', currentUrl)
+    var utm_campaign = queryParameter('cstm_ppc_campaign', currentUrl)
+    var utm_adgroup = queryParameter('cstm_ppc_adgroup', currentUrl)
+    var utm_keyword = queryParameter('cstm_ppc_keyword', currentUrl)
+    var utm_adset = queryParameter('cstm_ppc_adset', currentUrl)
+    var utm_ad = queryParameter('cstm_ppc_ad', currentUrl)
+    var utm_device = queryParameter('cstm_ppc_device', currentUrl)
+    var utm_site = queryParameter('cstm_ppc_site', currentUrl)
+    var utm_placement = queryParameter('cstm_ppc_placement', currentUrl);
     var gclid = queryParameter('gclid', currentUrl);
     var fbclid = queryParameter('fbclid', currentUrl);
-    var srd = queryParameter('srd', currentUrl);
+    var srd = queryParameter('SRD', currentUrl);
 
 
     var project = 'Lodha The World Towers';
