@@ -366,7 +366,7 @@ nav a:hover {
 /*.home-slide1{*/
 
 
-/*background-image: url(../images/Pittie_Kourtyard_Banner1.jpg)*/
+/*background-image: url(../images/Pittie_Kourtyard_Banner1.webp)*/
 
 
 /*}*/
@@ -375,7 +375,7 @@ nav a:hover {
 /*.home-slide2{*/
 
 
-/*background-image: url(../images/Pittie_Kourtyard_Banner2.jpg)*/
+/*background-image: url(../images/Pittie_Kourtyard_Banner2.webp)*/
 
 
 /*}*/
@@ -384,7 +384,7 @@ nav a:hover {
 /*.home-slide3{*/
 
 
-/*background-image: url(../images/Pittie_Kourtyard_Banner3.jpg)*/
+/*background-image: url(../images/Pittie_Kourtyard_Banner3.webp)*/
 
 
 /*}*/
@@ -910,7 +910,7 @@ label.error {
 }
 
 #contact {
-    /*background-image: url(../images/contact-bg.jpg);*/
+    /*background-image: url(../images/contact-bg.webp);*/
     background-size: cover;
     background-position: center;
     background: #222;
@@ -2078,7 +2078,7 @@ margin-bottom: 23px;
 }
 
 #configuration {
-    background: url("../images/conf-bg.jpg") center;
+    background: url("../images/conf-bg.webp") center;
     background-size: cover;
     background-attachment: fixed;
 }
@@ -2109,7 +2109,7 @@ margin-bottom: 23px;
 /*}*/
 
 #amenities {
-    /*background: url("../images/amenities.jpg") center;*/
+    /*background: url("../images/amenities.webp") center;*/
 }
 
 @media all and (max-width: 767px) {
@@ -2284,7 +2284,7 @@ margin-bottom: 23px;
 }
 
 .panoroma {
-    /*background: url('../images/panoroma.jpg') no-repeat left center transparent;*/
+    /*background: url('../images/panoroma.webp') no-repeat left center transparent;*/
     transition: background-position 15000ms ease-in-out;
     height: 100vh;
 }
@@ -2294,7 +2294,7 @@ margin-bottom: 23px;
 }
 
 .inner-banner {
-    /*background: url("../images/panoroma.jpg");*/
+    /*background: url("../images/panoroma.webp");*/
 }
 
 .pd0 {
@@ -3923,7 +3923,7 @@ form #msg {
 }
 
 .contact-right{
-    background-image: url(../images/contact-bg.jpg);
+    background-image: url(../images/contact-bg.webp);
     background-size: cover;
     background-position: center;
     height: 678px;
