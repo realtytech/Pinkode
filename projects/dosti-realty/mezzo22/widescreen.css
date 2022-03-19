@@ -140,7 +140,7 @@ header img{
 }
 @media screen and (max-width: 1619px) {
 	li{
-		list-style: none;
+		/* list-style: none; */
 		font-size: 12px;
 		overflow-y: clip;
 		text-transform: uppercase;
