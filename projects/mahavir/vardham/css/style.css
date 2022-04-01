@@ -3599,7 +3599,7 @@ margin: 0 auto; */
         text-align: center;
         margin: 0px;
         padding: 12px 0;
-        background: #fff;
+        /* background: #fff; */
     }
     .ameimg {
         width: 100% !important;
