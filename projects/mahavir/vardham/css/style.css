@@ -623,7 +623,7 @@ nav a:hover {
 }
 
 .grey {
-    color: #4d4e50;
+    /* color: #4d4e50; */
 }
 
 .amenities {
@@ -993,7 +993,7 @@ label.error {
 .modal-header .close,
 #main-pop .close,
 #price-model .close {
-    color: #fff !important;
+    color: #888 !important;
     opacity: 1 !important;
     margin-top: -25px;
 }
@@ -2049,14 +2049,14 @@ margin-bottom: 23px;
 #sp-footer h2 {
     font-size: 16px;
     margin: 0;
-    color: #000;
+    /* color: #000; */
     margin-bottom: 8px;
     /* font-family: 'Gotham-Medium'; */
 }
 
 #sp-footer p {
     line-height: 20px;
-    color: #000;
+    /* color: #000; */
     /* margin-bottom: 70px; */
 }
 
