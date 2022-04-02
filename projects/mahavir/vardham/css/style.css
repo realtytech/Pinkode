@@ -4118,7 +4118,7 @@ background-color: #fffc;
         display: none;
     }
 
-    #banner-image{object-fit: cover;
+    #banner-image{object-fit: contain;
         /* width: 100vw !important; */
         object-position: center;
         max-height: 60vh;
