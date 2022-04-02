@@ -279,7 +279,7 @@ padding: 0px; */
     width: 170px;
     display: inline-block;
     line-height: 30px !important;
-    color: #fff !important;
+    color: #333 !important;
     text-align: right;
 }
 
@@ -1643,7 +1643,7 @@ p.inner-interested {
 .flot-btn:focus {
     background: #fff !important;
     box-shadow: none !important;
-    color: #fff !important;
+    /* color: #fff !important; */
     border: 2px solid #fff !important;
     margin: 0px auto !important;
     display: block !important;
@@ -2589,7 +2589,7 @@ a.thumbnail:hover {
     margin: 0px auto;
     font-size: 14px !important;
     background-color: #fff !important;
-    color: #fff !important;
+    /* color: #fff !important; */
     border: 1px solid #fff !important;
     transition: all .3s cubic-bezier(.64, .09, .08, 1);
     /*box-shadow: 0 12px 20px -10px rgba(156, 39, 176, 0.28), 0 4px 20px 0px rgba(0, 0, 0, 0.12), 0 7px 8px -5px rgba(156, 39, 176, 0.2);*/
