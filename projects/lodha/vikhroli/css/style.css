@@ -620,8 +620,8 @@ nav a:hover {
 }
 
 .grey {
-    color: #4d4e50;
-    background-image: url('/images/Background.jpg');
+    /* color: #4d4e50; */
+    background-image: url('/images/Background.jpg') !important;
 }
 
 .amenities {
