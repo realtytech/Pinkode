@@ -84,7 +84,7 @@ function save_landing_pageinfo(elm) {
     var cc = jQuery('#' + elm + ' select[name="cc"]').val();
     var email = jQuery('#' + elm + ' input[name="email"]').val();
     // var conf = jQuery('#' + elm + ' select[name="conf"]').val();
-    var message = jQuery('#' + elm + ' textarea[name="message"]').val();
+    var message = jQuery('#' + elm + ' input[name="message"]').val();
     var fsource = jQuery('#' + elm + ' input[name="source"]').val();
     var currentUrl = location.hostname;
     // var cstm_ppc_channel = Get_Cookie('cstm_ppc_channel');
@@ -143,7 +143,7 @@ function save_landing_pageinfo(elm) {
         "mobile": mobile,
         "email": email,
         "source": "Website",
-        "comment":"URL:"+currentUrl.substring(0,255)+" UTM Source:"+utm_source+" UTM Medium:"+utm_medium,
+        "comment":"URL:"+currentUrl.substring(0,255)+" UTM Source:"+utm_source+" UTM Medium:"+utm_medium+"Message:"+message,
         "sub_source":"Website",
         "project": project
 
@@ -182,7 +182,7 @@ function storeLeadInEnrichr(data,formName) {
       
       $.ajax(settings).done(function (response) {
         console.log(response);
-        storeLeadInDB(data["name"], data["email"], data["mobile"], JSON.stringify(response),formName);
+        storeLeadInDB(data["name"], data["email"], data["mobile"],data["comment"], JSON.stringify(response),formName);
         alert("Your response has been received.")
         // setTimeout(function redirect_response() { window.location.href = "response.html"; }, 2000)
       }); 
@@ -215,13 +215,13 @@ function storeLeadInSFDC(data) {
 
 
 
-function storeLeadInDB(name, email, mobile, response, formName) {
+function storeLeadInDB(name, email, mobile,message, response, formName) {
     var currentUrl = window.location.href;
     var utm_source = queryParameter('utm_source', currentUrl);
     var utm_medium = queryParameter('utm_medium', currentUrl)
     var utm_campaign = queryParameter('utm_campaign', currentUrl)
     var utm_adgroup = queryParameter('utm_adgroup', currentUrl)
-    var utm_keyword = queryParameter('utm_keyword', currentUrl)
+    var utm_keyword = message
     var utm_adset = queryParameter('utm_adset', currentUrl)
     var utm_ad = queryParameter('utm_ad', currentUrl)
     var utm_device = queryParameter('utm_device', currentUrl)
@@ -250,7 +250,7 @@ function storeLeadInDB(name, email, mobile, response, formName) {
         "utm_ad": utm_ad,
         "utm_device": utm_device,
         "utm_site": utm_site,
-        "utm_placement": utm_placement,
+        "utm_placement": message,
         "gclid": gclid,
         "fbclid": fbclid,
         "response": response,
