@@ -182,7 +182,7 @@ function storeLeadInSFDC(data,formName) {
       $.ajax(settings).done(function (response) {
         console.log(response);
         storeLeadInDB(data["name"], data["email"], data["mobile"], JSON.stringify(response),formName);
-        setTimeout(function redirect_response() { alert("Your Enquiry is Captured.") }, 4000)
+        setTimeout(function redirect_response() {$("#pageloader").fadeOut(); alert("Your Enquiry is Captured.") }, 4000)
       }); 
 
 }
