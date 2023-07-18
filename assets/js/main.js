@@ -211,7 +211,7 @@
 
 function callGas() {
 
-  document.getElementById("form-submit").disabled = true; 
+  document.getElementById("form-submit").disabled = true;
 
   var form = new FormData();
   form.append("name", $('#name').val());
@@ -239,28 +239,111 @@ function callGas() {
   });
 }
 
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/service-worker.js')
-      .then((reg) => {
-        console.log('Service worker registered.', reg);
-      });
-  });
+// if ('serviceWorker' in navigator) {
+//   window.addEventListener('load', () => {
+//     navigator.serviceWorker.register('/service-worker.js')
+//       .then((reg) => {
+//         console.log('Service worker registered.', reg);
+//       });
+//   });
+// }
+
+// window.addEventListener('load', e => {
+//   // new PWAConfApp();
+//   registerSW();
+// });
+
+// async function registerSW() {
+//   if ('serviceWorker' in navigator) {
+//     try {
+//       await navigator.serviceWorker.register('../../service-worker.js');
+//     } catch (e) {
+//       alert('ServiceWorker registration failed. Sorry about that.');
+//     }
+//   } else {
+//     document.querySelector('.alert').removeAttribute('hidden');
+//   }
+// }
+
+
+function populateData() {
+  // Sample JSON object
+  var data = "eyJhZiI6eyJuYW1lIjoiQW1hbiBGcmFtZXdhbGEiLCJkZXNpZ25hdGlvbiI6IlRlY2ggSGVhZCIsInBob25lIjoiKzkxOTc1NzA2NTU4MCIsIndoYXRzYXBwIjoiOTE5NzU3MDY1NTgwIiwiZW1haWwiOiJhbWFuLnRlY2hAcGlua29kZS5pbiJ9LCJsayI6eyJuYW1lIjoiTGF4bWkgS3VtYmxlIiwiZGVzaWduYXRpb24iOiJNQU5BR0VSIFBSRS1TQUxFUyIsInBob25lIjoiNzUwNjMzNjkyNCIsIndoYXRzYXBwIjoiNzUwNjMzNjkyNCIsImVtYWlsIjoibGF4bWlAcGlua29kZS5pbiJ9LCJpcyI6eyJuYW1lIjoiSWJyYWhpbSBTaGFpa2giLCJkZXNpZ25hdGlvbiI6IlNFTklPUiBTQUxFUyBNQU5BR0VSIiwicGhvbmUiOiI5ODY3NTIyNDQwIiwid2hhdHNhcHAiOiI5ODY3NTIyNDQwIiwiZW1haWwiOiJpYnJhaGltQHBpbmtvZGUuaW4ifSwia2EiOnsibmFtZSI6IktodXNoYm9vIEFjaGFyeWEiLCJkZXNpZ25hdGlvbiI6IlNFTklPUiBTQUxFUyBNQU5BR0VSIiwicGhvbmUiOiI4MzY5MjgzMjAwIiwid2hhdHNhcHAiOiI4MzY5MjgzMjAwIiwiZW1haWwiOiJraHVzaGJvby5hY2hhcnlhQHBpbmtvZGUuaW4ifSwic2RwIjp7Im5hbWUiOiJTaG9tZWV0IERlZXBhayBQYW5kZSIsImRlc2lnbmF0aW9uIjoiU0VOSU9SIFNBTEVTIE1BTkFHRVIiLCJwaG9uZSI6IjkxNzIwNzc3NzEiLCJ3aGF0c2FwcCI6IjkxNzIwNzc3NzEiLCJlbWFpbCI6InNob21lZXQucGFuZGVAcGlua29kZS5pbiJ9LCJtYWIiOnsibmFtZSI6Ik1vaGFuIEFtamFuZXl5YSBCaGFuZGFyaSIsImRlc2lnbmF0aW9uIjoiU0VOSU9SIFNBTEVTIE1BTkFHRVIiLCJwaG9uZSI6Ijk4Njc3MTk2NDAiLCJ3aGF0c2FwcCI6Ijk4Njc3MTk2NDAiLCJlbWFpbCI6Im1vaGFuLmJoYW5kYXJpQHBpbmtvZGUuaW4ifSwiZG1qIjp7Im5hbWUiOiJEaXZ5YSBNb3RpbGFsIEpham9yaWEiLCJkZXNpZ25hdGlvbiI6IkFTU0lTVEFOVCBNQU5BR0VSIFBSRS0gU0FMRVMiLCJwaG9uZSI6IjcyMDg5NTUwMzciLCJ3aGF0c2FwcCI6IjcyMDg5NTUwMzciLCJlbWFpbCI6ImRpdnlhLmpham9yaWFAcGlua29kZS5pbiJ9LCJhdiI6eyJuYW1lIjoiQWF5dXNoIFZpZyIsImRlc2lnbmF0aW9uIjoiREVQVVRZIFNBTEVTIE1BTkFHRVIiLCJwaG9uZSI6Ijk5MjAwNjY2MTAiLCJ3aGF0c2FwcCI6Ijk5MjAwNjY2MTAiLCJlbWFpbCI6ImFheXVzaC52aWdAcGlua29kZS5pbiJ9LCJhdCI6eyJuYW1lIjoiQW51cmFkaGEgVGl3YXJpIiwiZGVzaWduYXRpb24iOiJBU1NJU1RBTlQgU0FMRVMgTUFOQUdFUiIsInBob25lIjoiNzk3NzkwNTMwNCIsIndoYXRzYXBwIjoiNzk3NzkwNTMwNCIsImVtYWlsIjoiYW51cmFkaGEudGl3YXJpQHBpbmtvZGUuaW4ifSwiYWIiOnsibmFtZSI6IkFiaGlzaGVrIEJhdmlza2FyIiwiZGVzaWduYXRpb24iOiJTQUxFUyBNQU5BR0VSIiwicGhvbmUiOiI5NTk0NzAxMzc5Iiwid2hhdHNhcHAiOiI5NTk0NzAxMzc5IiwiZW1haWwiOiJhYmhpc2hlay5iYXZpc2thckBwaW5rb2RlLmluIn0sInBzIjp7Im5hbWUiOiJQcnV0aGl2aXJhaiBTaGVsYXIiLCJkZXNpZ25hdGlvbiI6IkdFTkVSQUwgTUFOQUdFUiAtIFNBTEVTIiwicGhvbmUiOiI4MDgyNDUzMTg3Iiwid2hhdHNhcHAiOiI4MDgyNDUzMTg3IiwiZW1haWwiOiJwcnV0aGl2aXJhai5zaGVsYXJAcGlua29kZS5pbiJ9LCJhcyI6eyJuYW1lIjoiQW1hbiBTaGFybWEiLCJkZXNpZ25hdGlvbiI6IlBhcnRuZXIiLCJwaG9uZSI6Ijk5MzA0MDMyMzQiLCJ3aGF0c2FwcCI6Ijk5MzA0MDMyMzQiLCJlbWFpbCI6ImFtYW5AcGlua29kZS5pbiJ9LCJqbiI6eyJuYW1lIjoiSm9nZXNoIE5haXIiLCJkZXNpZ25hdGlvbiI6IlBhcnRuZXIiLCJwaG9uZSI6Ijk5MzA4NTM5MTYiLCJ3aGF0c2FwcCI6Ijk5MzA4NTM5MTYiLCJlbWFpbCI6ImpvZ2VzaEBwaW5rb2RlLmluIn0sImJnIjp7Im5hbWUiOiJCcmVuZGEgR2Fpa3dhZCIsImRlc2lnbmF0aW9uIjoiTWFuYWdlciAtIE9wZXJhdGlvbnMiLCJwaG9uZSI6Ijk5MzAwMTg4MTciLCJ3aGF0c2FwcCI6Ijk5MzAwMTg4MTciLCJlbWFpbCI6ImJyZW5kYS5nYWlrd2FkQHBpbmtvZGUuaW4ifX0=";
+
+  // Decode Base64 string
+  var decodedString = atob(data);
+
+  // Parse the decoded JSON string back to object
+  var contactDataList = JSON.parse(decodedString);
+
+  var arr = (window.location.href).split('/');
+  var nameKey = arr[arr.length - 1] == 'index.html' ? arr[arr.length - 2] : arr[arr.length - 1];
+
+  console.log(nameKey);
+
+  var contactData = contactDataList[nameKey];
+
+
+
+
+  // Update phone link
+  var phoneLink = document.getElementById("phone-link");
+  phoneLink.href = "tel:+91" + contactData.phone;
+
+  // Update WhatsApp link
+  var whatsappLink = document.getElementById("whatsapp-link");
+  whatsappLink.href = "https://wa.me/91" + contactData.whatsapp;
+
+  // Update email link
+  var emailLink = document.getElementById("email-link");
+  emailLink.href = "mailto:" + contactData.email;
+
+  // Update contact link
+  // var contactLink = document.getElementById("contact-link");
+  // contactLink.href = "https://pinkode.in/vcf/" + nameKey + ".vcf";
+
+  document.getElementById("name").innerHTML = contactData.name;
+
 }
 
-window.addEventListener('load', e => {
-  // new PWAConfApp();
-  registerSW(); 
-});
+function downloadVcf() {
+  var data = "eyJhZiI6eyJuYW1lIjoiQW1hbiBGcmFtZXdhbGEiLCJkZXNpZ25hdGlvbiI6IlRlY2ggSGVhZCIsInBob25lIjoiKzkxOTc1NzA2NTU4MCIsIndoYXRzYXBwIjoiOTE5NzU3MDY1NTgwIiwiZW1haWwiOiJhbWFuLnRlY2hAcGlua29kZS5pbiJ9LCJsayI6eyJuYW1lIjoiTGF4bWkgS3VtYmxlIiwiZGVzaWduYXRpb24iOiJNQU5BR0VSIFBSRS1TQUxFUyIsInBob25lIjoiNzUwNjMzNjkyNCIsIndoYXRzYXBwIjoiNzUwNjMzNjkyNCIsImVtYWlsIjoibGF4bWlAcGlua29kZS5pbiJ9LCJpcyI6eyJuYW1lIjoiSWJyYWhpbSBTaGFpa2giLCJkZXNpZ25hdGlvbiI6IlNFTklPUiBTQUxFUyBNQU5BR0VSIiwicGhvbmUiOiI5ODY3NTIyNDQwIiwid2hhdHNhcHAiOiI5ODY3NTIyNDQwIiwiZW1haWwiOiJpYnJhaGltQHBpbmtvZGUuaW4ifSwia2EiOnsibmFtZSI6IktodXNoYm9vIEFjaGFyeWEiLCJkZXNpZ25hdGlvbiI6IlNFTklPUiBTQUxFUyBNQU5BR0VSIiwicGhvbmUiOiI4MzY5MjgzMjAwIiwid2hhdHNhcHAiOiI4MzY5MjgzMjAwIiwiZW1haWwiOiJraHVzaGJvby5hY2hhcnlhQHBpbmtvZGUuaW4ifSwic2RwIjp7Im5hbWUiOiJTaG9tZWV0IERlZXBhayBQYW5kZSIsImRlc2lnbmF0aW9uIjoiU0VOSU9SIFNBTEVTIE1BTkFHRVIiLCJwaG9uZSI6IjkxNzIwNzc3NzEiLCJ3aGF0c2FwcCI6IjkxNzIwNzc3NzEiLCJlbWFpbCI6InNob21lZXQucGFuZGVAcGlua29kZS5pbiJ9LCJtYWIiOnsibmFtZSI6Ik1vaGFuIEFtamFuZXl5YSBCaGFuZGFyaSIsImRlc2lnbmF0aW9uIjoiU0VOSU9SIFNBTEVTIE1BTkFHRVIiLCJwaG9uZSI6Ijk4Njc3MTk2NDAiLCJ3aGF0c2FwcCI6Ijk4Njc3MTk2NDAiLCJlbWFpbCI6Im1vaGFuLmJoYW5kYXJpQHBpbmtvZGUuaW4ifSwiZG1qIjp7Im5hbWUiOiJEaXZ5YSBNb3RpbGFsIEpham9yaWEiLCJkZXNpZ25hdGlvbiI6IkFTU0lTVEFOVCBNQU5BR0VSIFBSRS0gU0FMRVMiLCJwaG9uZSI6IjcyMDg5NTUwMzciLCJ3aGF0c2FwcCI6IjcyMDg5NTUwMzciLCJlbWFpbCI6ImRpdnlhLmpham9yaWFAcGlua29kZS5pbiJ9LCJhdiI6eyJuYW1lIjoiQWF5dXNoIFZpZyIsImRlc2lnbmF0aW9uIjoiREVQVVRZIFNBTEVTIE1BTkFHRVIiLCJwaG9uZSI6Ijk5MjAwNjY2MTAiLCJ3aGF0c2FwcCI6Ijk5MjAwNjY2MTAiLCJlbWFpbCI6ImFheXVzaC52aWdAcGlua29kZS5pbiJ9LCJhdCI6eyJuYW1lIjoiQW51cmFkaGEgVGl3YXJpIiwiZGVzaWduYXRpb24iOiJBU1NJU1RBTlQgU0FMRVMgTUFOQUdFUiIsInBob25lIjoiNzk3NzkwNTMwNCIsIndoYXRzYXBwIjoiNzk3NzkwNTMwNCIsImVtYWlsIjoiYW51cmFkaGEudGl3YXJpQHBpbmtvZGUuaW4ifSwiYWIiOnsibmFtZSI6IkFiaGlzaGVrIEJhdmlza2FyIiwiZGVzaWduYXRpb24iOiJTQUxFUyBNQU5BR0VSIiwicGhvbmUiOiI5NTk0NzAxMzc5Iiwid2hhdHNhcHAiOiI5NTk0NzAxMzc5IiwiZW1haWwiOiJhYmhpc2hlay5iYXZpc2thckBwaW5rb2RlLmluIn0sInBzIjp7Im5hbWUiOiJQcnV0aGl2aXJhaiBTaGVsYXIiLCJkZXNpZ25hdGlvbiI6IkdFTkVSQUwgTUFOQUdFUiAtIFNBTEVTIiwicGhvbmUiOiI4MDgyNDUzMTg3Iiwid2hhdHNhcHAiOiI4MDgyNDUzMTg3IiwiZW1haWwiOiJwcnV0aGl2aXJhai5zaGVsYXJAcGlua29kZS5pbiJ9LCJhcyI6eyJuYW1lIjoiQW1hbiBTaGFybWEiLCJkZXNpZ25hdGlvbiI6IlBhcnRuZXIiLCJwaG9uZSI6Ijk5MzA0MDMyMzQiLCJ3aGF0c2FwcCI6Ijk5MzA0MDMyMzQiLCJlbWFpbCI6ImFtYW5AcGlua29kZS5pbiJ9LCJqbiI6eyJuYW1lIjoiSm9nZXNoIE5haXIiLCJkZXNpZ25hdGlvbiI6IlBhcnRuZXIiLCJwaG9uZSI6Ijk5MzA4NTM5MTYiLCJ3aGF0c2FwcCI6Ijk5MzA4NTM5MTYiLCJlbWFpbCI6ImpvZ2VzaEBwaW5rb2RlLmluIn0sImJnIjp7Im5hbWUiOiJCcmVuZGEgR2Fpa3dhZCIsImRlc2lnbmF0aW9uIjoiTWFuYWdlciAtIE9wZXJhdGlvbnMiLCJwaG9uZSI6Ijk5MzAwMTg4MTciLCJ3aGF0c2FwcCI6Ijk5MzAwMTg4MTciLCJlbWFpbCI6ImJyZW5kYS5nYWlrd2FkQHBpbmtvZGUuaW4ifX0=";
 
-async function registerSW() { 
-  if ('serviceWorker' in navigator) { 
-    try {
-      await navigator.serviceWorker.register('../../service-worker.js'); 
-    } catch (e) {
-      alert('ServiceWorker registration failed. Sorry about that.'); 
-    }
-  } else {
-    document.querySelector('.alert').removeAttribute('hidden'); 
-  }
+  // Decode Base64 string
+  var decodedString = atob(data);
+  var arr = (window.location.href).split('/');
+  var nameKey = arr[arr.length - 1] == 'index.html' ? arr[arr.length - 2] : arr[arr.length - 1];
+
+
+  // Parse the decoded JSON string back to object
+  var contactDataList = JSON.parse(decodedString);
+  var contact = contactDataList[nameKey];
+
+  // Generate the VCF content for the contact
+  var vcfContent = `BEGIN:VCARD
+        VERSION:3.0
+        FN:${contact.name}
+        TITLE:${contact.designation}
+        TEL;TYPE=CELL:${contact.phone}
+        EMAIL:${contact.email}
+        END:VCARD`;
+
+  // Create a Blob with the VCF content
+  var blob = new Blob([vcfContent], { type: 'text/vcard' });
+
+  // Create a download link for the VCF file
+  var downloadLink = document.createElement('a');
+  downloadLink.href = URL.createObjectURL(blob);
+  downloadLink.download = `${contact.name}.vcf`;
+
+  // Add the download link to the document
+  document.body.appendChild(downloadLink);
+
+  // Programmatically trigger the download
+  downloadLink.click();
+
+  // Remove the download link from the document
+  document.body.removeChild(downloadLink);
 }
+
+
