@@ -278,14 +278,15 @@ function populateData() {
 
   var arr = (window.location.href).split('/');
   var nameKey = queryParameter("id",window.location.href);
-  if(!nameKey)  nameKey = (arr[arr.length - 1].includes('index.html') || arr[arr.length - 1] == "" ) ? arr[arr.length - 2] : arr[arr.length - 1];
-
+  // if(!nameKey)  nameKey = (arr[arr.length - 1].includes('index.html') || arr[arr.length - 1] == "" ) ? arr[arr.length - 2] : arr[arr.length - 1];
   console.log(nameKey);
+  if(!nameKey){
+    document.getElementById("dynamic-info").style.display = 'none'
+    return;
+  }
+
 
   var contactData = contactDataList[nameKey];
-
-
-
 
   // Update phone link
   var phoneLink = document.getElementById("phone-link");
