@@ -277,7 +277,7 @@ function populateData() {
   var contactDataList = JSON.parse(decodedString);
 
   var arr = (window.location.href).split('/');
-  var nameKey = queryParameter(id,window.location.href);
+  var nameKey = queryParameter("id",window.location.href);
   if(!nameKey)  nameKey = (arr[arr.length - 1].includes('index.html') || arr[arr.length - 1] == "" ) ? arr[arr.length - 2] : arr[arr.length - 1];
 
   console.log(nameKey);
@@ -313,7 +313,7 @@ function downloadVcf() {
   // Decode Base64 string
   var decodedString = atob(data);
   var arr = (window.location.href).split('/');
-  var nameKey = queryParameter(id,window.location.href);
+  var nameKey = queryParameter("id",window.location.href);
   if(!nameKey)  nameKey = (arr[arr.length - 1].includes('index.html') || arr[arr.length - 1] == "" ) ? arr[arr.length - 2] : arr[arr.length - 1];
 
 
@@ -322,16 +322,26 @@ function downloadVcf() {
   var contact = contactDataList[nameKey];
 
   // Generate the VCF content for the contact
-  var vcfContent = `BEGIN:VCARD
-        VERSION:2.1
-        FN:${contact.name}
-        TITLE:${contact.designation}
-        TEL;TYPE=CELL:${contact.phone}
-        EMAIL:${contact.email}
-        END:VCARD`;
+
+
+var vcfContent2=`BEGIN:VCARD
+VERSION:2.1
+FN:${contact.name}
+TEL;WORK:${contact.phone}
+EMAIL;WORK:${contact.email}
+ADR;WORK:;;Pinkode Realty LLP, Chembur;Mumbai;Maharashtra;400071;India
+ADR;WORK:;;Pinkode Realty LLP, Chembur;Mumbai;Maharashtra;400071;India
+ORG:Pinkode Realty LLP
+TITLE:${contact.designation}
+ORG:Pinkode Realty LLP
+TITLE:${contact.designation}
+URL:pinkode.in
+URL:pinkode.in
+END:VCARD`
+
 
   // Create a Blob with the VCF content
-  var blob = new Blob([vcfContent], { type: 'text/vcard' });
+  var blob = new Blob([vcfContent2], { type: 'text/vcard' });
 
   // Create a download link for the VCF file
   var downloadLink = document.createElement('a');
