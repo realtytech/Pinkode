@@ -277,7 +277,8 @@ function populateData() {
   var contactDataList = JSON.parse(decodedString);
 
   var arr = (window.location.href).split('/');
-  var nameKey = arr[arr.length - 1] == 'index.html' ? arr[arr.length - 2] : arr[arr.length - 1];
+  var nameKey = queryParameter(id,window.location.href);
+  if(!nameKey)  nameKey = (arr[arr.length - 1].includes('index.html') || arr[arr.length - 1] == "" ) ? arr[arr.length - 2] : arr[arr.length - 1];
 
   console.log(nameKey);
 
@@ -312,7 +313,8 @@ function downloadVcf() {
   // Decode Base64 string
   var decodedString = atob(data);
   var arr = (window.location.href).split('/');
-  var nameKey = arr[arr.length - 1] == 'index.html' ? arr[arr.length - 2] : arr[arr.length - 1];
+  var nameKey = queryParameter(id,window.location.href);
+  if(!nameKey)  nameKey = (arr[arr.length - 1].includes('index.html') || arr[arr.length - 1] == "" ) ? arr[arr.length - 2] : arr[arr.length - 1];
 
 
   // Parse the decoded JSON string back to object
@@ -321,7 +323,7 @@ function downloadVcf() {
 
   // Generate the VCF content for the contact
   var vcfContent = `BEGIN:VCARD
-        VERSION:3.0
+        VERSION:2.1
         FN:${contact.name}
         TITLE:${contact.designation}
         TEL;TYPE=CELL:${contact.phone}
@@ -347,3 +349,11 @@ function downloadVcf() {
 }
 
 
+function queryParameter(name, url) {
+  if (!url) url = location.href;
+  name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+  var regexS = "[\\?&]" + name + "=([^&#]*)";
+  var regex = new RegExp(regexS);
+  var results = regex.exec(url);
+  return results == null ? null : results[1];
+}
