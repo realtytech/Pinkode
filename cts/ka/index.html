@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = (window.location.href).split('/');
+        var nameKey = (arr[arr.length - 1].includes('index.html') || arr[arr.length - 1] == "") ? arr[arr.length - 2] : arr[arr.length - 1];
+        url = "../?id=" + nameKey;
+        console.log(nameKey);
+        window.location.href = url;
+    </script>
+</body>
+
+</html>
